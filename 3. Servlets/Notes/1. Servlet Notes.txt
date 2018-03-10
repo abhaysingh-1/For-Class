@@ -421,11 +421,23 @@ Note:-
 In both the cases "1" represents "Time in Sec."
 
 
+**************
+* Assignment *
+**************	 
+> Modify studentsApp web application to have
+  - PDF file 
+  - Text File
+  - Video File
+  - Zip File
 
+> Once done, provide a hyper-link to access these
+  resources in index.html file 
 	 
 	 
 	 
-Part 1 - Summary 
+	 
+	 
+Summary 
 -------------------------------------------------------
 1. Web Browser
 2. Web Resources - (Static & Dynamic)
@@ -458,7 +470,7 @@ Web URL (Web Uniform Resource Locator's) :
 > Web Application is a Collection of web resources 
  (static OR dynamic)
   
-> Web URL uniquely identifies ONE of the web resource 
+> Web URL uniquely identifies "ONE of the web resource" 
   (static OR dynamic) present inside a Web Application
 
 > In other words, every web resource should have its 
@@ -670,7 +682,7 @@ Fragment ID
 
 Example:
 ---------	
-http://tomcat.apache.org/tomcat-6.0-doc/manager-howto.html
+http://tomcat.apache.org/tomcat-6.0-doc/setup.html
 #Introduction
 
 
@@ -683,17 +695,19 @@ http://tomcat.apache.org/tomcat-6.0-doc/manager-howto.html
 
 
 
-
+*********************** 
+* Assignment          *
+*********************** 
 
 > Create Servlet by name "StudentSearchServlet", 
   which gets the request by typing the URL (with the
   Query String as "?regno=<register_number>") in 
   the Browser and this Servlet,
 1. Needs to Get the "Register Number" from Query String   
-2. Check this Reg. No. exists in BECM19_DB DataBase 
+2. Check this Reg. No. exists in BECME1820_DB DataBase 
 3. If No, Print the Error Message in the Browser
 4. If Yes, Get the corresponding Reg. No. Data from 
-   BECM19_DB DataBase 
+   BECME1820_DB DataBase 
    ( Combination of Data Present in 
      students_info & 
 	 guardian_info Tables), 
@@ -705,8 +719,8 @@ http://tomcat.apache.org/tomcat-6.0-doc/manager-howto.html
   
   
   
-Note:-
-======
+Assignment Tips:-
+==================
 > Create "StudentSearchServlet"	by extending 
   "HttpServlet" under "src" folder & Override 
   doGet() Method
@@ -716,6 +730,9 @@ Note:-
 2. Get the Data from DB using JDBC for this 
    "Register Number" 
 3. Generate the Success / Error Response
+
+> Code to get Query String in Servlet :
+  String regnoVal = req.getParameter("regno");
   
 > After creating the Servlet configure URL for that
   servlet in web.xml (/studentSearch)
@@ -730,7 +747,6 @@ http://localhost:8080/studentsApp/studentSearch?regno=1
 > Copy & Paste Driver JAR file into 
   “WebContent/WEB-INF/lib” folder
   
-
 URL Configuration in web.xml:
 -------------------------------  
 <servlet>
@@ -745,6 +761,18 @@ URL Configuration in web.xml:
 <url-pattern>/studentSearch</url-pattern>
 </servlet-mapping>   
 
+Note:-
+======
+With this assignment we're mimicking the behaviour of
+Youtube video search / Flipkart product search
+
+Ex:-
+-----
+https://www.youtube.com/watch?v=CiV6ITr6jlc
+
+
+
+
 
 
 
@@ -753,10 +781,7 @@ URL Configuration in web.xml:
 * Web Application
 *************************************************
 
-*************************************************
-* Add Static Web Resources (PDF, ZIP & Video) to
-* Web Application & show how to access them
-*************************************************
+
 
 
 
@@ -781,9 +806,9 @@ HTTP Structure:
   
   
   
-***********************  
-* Practical Exercise  *
-***********************  
+***************  
+* Assignment  *
+***************  
 Install Fiddler Application  
   
   
@@ -877,7 +902,7 @@ Actual Content:
 > In case of static resource, content of the resource
   becomes the “Actual Content” 
   
-> In case of dynamic resource, content present in 
+> In case of dynamic resource, content present inside 
   servlets / JSP becomes the “Actual Content”
   
 > In case of Error Scenarios web server generates  
@@ -979,14 +1004,7 @@ Form Data:
 	  
 	  
 	  
-Cookies :
-=============
-> Cookies are present in Both Request & Response
 
-> It’s 
-  - an Optional Information, 
-  - if present, then its present in Header part 
-    of HTTP Request/Response
 
 
 
@@ -1012,7 +1030,7 @@ HTTP Method:
 
 > HTTP Method is the first element in the HTTP Request
 
-> - HTTP 1.0 had 3 Methods & in 
+> - HTTP 1.0 had "Three Methods" & in 
   - HTTP 1.1, "Five New Methods" got introduced 
   - So in total HTTP 1.1 has 8 different methods & 
   - every Http Request should consist of 
@@ -1098,7 +1116,7 @@ these methods in general called as doXXX(HSR, HSR) methods
   - we can override all of them 
 	OR 
   - we can override couple of them
-    (Generally we override doGet() / doPost() Method)
+    (Generally we override doGet() and/or doPost() Method)
 	
 	
 	
@@ -1151,27 +1169,7 @@ Questions We have So Far:-
   
   
   
-*********************** 
-* Practical Exercise  *
-*********************** 
-
-> Create a Login Page as shown below
-  
-  Login.html
-  ---------- 
  
- 
- 
- 
- 
-
-
- 
-
-> Create a Student Search Page as shown below
-  
-  Search.html
-  ------------  
  
  
  
@@ -1229,8 +1227,8 @@ NOTE :
   - method="get" (preferred)
   
 > Hence whenever Servlet gets a request via Submitting 
-  the form & that form has method="post" then we have 
-  to override doPost() method 
+  the form & that form has method="post" then we MUST 
+  override doPost() method 
 
 > For rest of the cases, we have to override doGet() 
   method
@@ -1283,7 +1281,40 @@ Differences between GET/doGet() &  POST/doPost()
 
 
 
-
+*************** 
+* Assignment  *
+*************** 
+> Create a Student Search Page as shown below
+  
+  Search.html
+  ------------ 
+  
+  
+  
+  
+> Whenever user submits the above form, request
+  should go to "StudentSearchServlet" & it should
+  display the corresponding result  
+  
+  
+Assignment Tips
+==================
+- Since this form collects "In-Sensitive & Less 
+  Amount of data" method attribute value is "get" i.e
+  method="get"
+  
+- In the action attribute we have to provide the 
+  Web URL of StudentSearchServlet i.e.
+action="http://localhost:8080/studentsApp/studentSearch"
+  
+- NO changes are required in "StudentSearchServlet"  
+  
+  
+  
+  
+  
+  
+  
 
 *********************** 
 * Assignment          *
@@ -1296,7 +1327,7 @@ Differences between GET/doGet() &  POST/doPost()
   
 > Create a Servlet by name "AllStudentsViewServlet" which 
 gets the request whenever user clicks on this hyper-link 
-- interact with BECM19_DB database
+- interact with BECME1820_DB database
 - get all the data from students_info & guardian_info tables and
 - display it in the browser as shown below
 
@@ -1381,7 +1412,8 @@ How Servlet Container Works :
    
 6. Once doXXX() method execution is over, 
    container converts the response object to 
-   "Raw HTTP Response" & gives it back to web server
+   "Raw HTTP Response" & gives it back to 
+   web server
    
 7. Once the response has been give back, Servlet
    Container garbage collects the request & 
@@ -1390,6 +1422,7 @@ How Servlet Container Works :
    
    
 
+   
    
    
 8. In other words for every request, container 
@@ -1438,6 +1471,21 @@ Container manages/controls the "Life Cycle of a Servlet"
 5. JSP Support :
 ----------------
 Container takes care of converting JSP into a Servlet
+
+*************** 
+* Assignment  *
+*************** 
+
+> Create a Login Page as shown below
+  
+  Login.html
+  ---------- 
+ 
+ 
+ 
+ 
+ 
+
 
 
 
@@ -3293,7 +3341,7 @@ Cookie nameCookie = new Cookie("myName","Praveen");
   
 > There are two types of cookies,
   1. Non-persistent Cookie
-  2. persistent Cookie
+  2. Persistent Cookie
 
   
   
@@ -3314,7 +3362,7 @@ Cookie nameCookie = new Cookie("myName","Praveen");
   is kept open. Once the Browser is closed, 
   cookie disappears
   
-2. persistent Cookie :-
+2. Persistent Cookie :-
 -------------------------
 > persistent Cookie will be present in Browser 
   even after Browser is Closed till it meets the
@@ -3343,15 +3391,9 @@ Cookie Related Methods :-
 > Value can be anything & it "can be changed" after 
   creation
   
-  
-  
-  
-  
-  
-
 
 2. public void HttpServletResponse
-                              .addCookie(Cookie cookieObj)
+                        .addCookie(Cookie cookieObj)
 ==========================================================
 > This method add the specified Cookie to the Response
 > This method can be called "Multiple Times" to set more
@@ -3373,22 +3415,6 @@ Cookie Related Methods :-
 > This method returns the Value of the Cookie
  
  
- 
- 
- 
- 
- 
- 
- 
-  
-
- 
- 
- 
- 
- 
- 
- 
 6. public void Cookie.setMaxAge(int expiry)
 =====================================================
 > set's the max age of the Cookie in "Seconds" 
@@ -3396,14 +3422,6 @@ Cookie Related Methods :-
 > Any -ve Value makes Cookie "Non-persistent"
 > 0 Value makes Cookie (persistent / Non-persistent) 
   to be "Deleted Immediately" from Browser 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
 Examples :
@@ -3465,6 +3483,39 @@ if(receivedCookies == null){
 	}//End of for
 }//End of if-else
 
+	
+	
+	
+	
+*****************	
+* Assignment
+*****************	
+> Implement "Remember User Name" functionality in 
+  "studentsApp" web application
+	
+	
+	
+	
+	
+	
+	
+*****************	
+* Assignment
+*****************	
+> Replace "Absolute URL" with "Relative URL" in 
+  "studentsApp" web application
+
+Ex:- 
+=======
+Absolute URL : http://localhost:8080/studentsApp/login
+Relative URL : ./login
+
+
+
+
+
+
+  
 	
 	
 	
@@ -3673,20 +3724,20 @@ if(str==null){
 Tomcat Web Server Config Changes :-
 ========================================
 1. Go to <Apache Tomcat Location>\webapps\ROOT
-
 2. Open "index.jsp"
-
 3. Remove all the Lines in the above file 
   & write the below lines
  
 <% 
-
-String url = 
-"http://<Your-Computer-IP>:8080/studentsApp/Login.html";
+   String url = 
+   "http://<Your-Computer-IP>:8080/studentsApp/Login.html";
 	
-response.sendRedirect(url);
-
+   response.sendRedirect(url);
 %>  
+  
+  
+  
+  
   
 4. Learn about "Relative URL & Absolute URL"  
    
@@ -3760,10 +3811,13 @@ Thumb Rule :-
 		   
 		   
 		   
+
 		   
-		   
-		   
-		   
+	
+
+
+
+	
 Why HttpSession (a.k.a Session) Functionality ?
 ===============================================
 > HTTP is a "Stateless Protocol" i.e. it doesn't 
@@ -3790,8 +3844,36 @@ then we MUST make use of HttpSession functionality
 	
 
 	
+	
+	
+	
+	
+	
+	
+	
 		   
-		   
+*****************	
+* Assignment    *
+*****************	
+> Create a Property file by name 
+  "studentsapp.properties" which will have,
+  - DB URL
+  - DB User Name
+  - DB Password
+  - Driver Class 
+  Information  
+
+> Modify all the Servlets which interacts with DB to 
+  get the above data from Property file instead of
+  hard coding
+
+
+
+
+
+
+
+  
 		   
 		   
 HttpSession
@@ -3987,6 +4069,21 @@ URL Rewriting
   
 
   
+******************
+* Assignment
+******************
+> Modify "studentsApp" web application to display
+  "Create Profile" option only to Admin User
+  
+> Remove "Reg. No." from "ChangePassword.html" 
+  and get the "Reg. No." from session attributes
+
+
+
+
+
+
+
   
   
   

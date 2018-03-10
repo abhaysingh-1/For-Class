@@ -38,7 +38,7 @@ behind the scene at runtime
   Request is more compared to Subsequent Requests
 
 > Whatever we write inside a JSP (Not All) becomes part 
-  of "_jspService(HSR, HSR) method of Translated Servlet"
+ of "_jspService(HSR, HSR) method of Translated Servlet"
 
 > At the end of the Day, since JSP get converted to   
   Servlet(i.e. Java). Hence, we can also have "Java 
@@ -305,8 +305,6 @@ MyFirstJSP.jsp with LifeCycle Methods :-
 
 
 Differences Between Servlets & JSP
-======================================
-
 ====================================================
 |	Servlets                |     JSP       	   |
 ====================================================

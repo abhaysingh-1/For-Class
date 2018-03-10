@@ -1,0 +1,58 @@
+<html>
+<body>	
+	<fieldset>
+		<legend><B>Student Profile Creation Form</B></legend>
+		<form action="./createProfile" method="post">
+		<table height="60%">
+			<tr>
+				<td>Reg.No  </td>
+				<td><input type="number" name="regno" placeholder="Enter Regno" required="required"/></td>
+			</tr>
+			<tr>
+				<td>First Name  </td>
+				<td><input type="text" name="fnm" placeholder="Enter First Name" required="required"/></td>
+			</tr>
+			<tr>
+				<td>Middle Name  </td>
+				<td><input type="text" name="mnm" placeholder="Enter Middle Name" required="required"/></td>
+			</tr>
+			<tr>
+				<td>Last Name  </td>
+				<td><input type="text" name="lnm" placeholder="Enter Last Name" required="required"/></td>
+			</tr>
+			<tr>
+				<td>Guardian First Name  </td>
+				<td><input type="text" name="gfnm" placeholder="Enter Guardian First Name" required="required"/></td>
+			</tr>
+			<tr>
+				<td>Guardian Middle Name  </td>
+				<td><input type="text" name="gmnm" placeholder="Enter Guardian Middle Name" required="required"/></td>
+			</tr>
+			<tr>
+				<td>Guardian Last Name  </td>
+				<td><input type="text" name="glnm" placeholder="Enter Guardian Last Name" required="required"/></td>
+			</tr>
+			<tr>
+				<td>Password  </td>
+				<td><input type="password" name="pass" placeholder="Enter Password" required="required"/></td>
+			</tr>
+			<tr>
+				<td>Admin ? </td>
+				<td>
+					<select name="isAdmin">
+						<option value="">---select---</option>
+						<option value="N">NO</option>
+						<option value="Y">YES</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="submit"/></td>
+				<td><input type="Submit" value="Reset"/></td>
+			</tr>
+		</table>
+	</form>
+	</fieldset>
+</body>
+</html>
+	
