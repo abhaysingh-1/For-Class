@@ -75,3 +75,106 @@ insert into library values('XYZ', 'Springs');
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+create database studentsapp_db;
+
+create table students_info
+( regno int(10) not null,
+  firstname varchar(50),
+  middlename varchar(50),
+  lastname varchar(50),
+  email varchar(50),
+  phone int(10) not null,
+  primary key(regno)
+);
+
+
+
+create table guardian_info
+( regno int(10) not null,
+  gfirstname varchar(50),
+  gmiddlename varchar(50),
+  glastname varchar(50),
+  phone int(10) not null,
+  primary key(regno)
+);
+
+
+create table students_otherinfo
+( regno int(10) not null,
+  isadmin varchar(1),
+  password varchar(50),
+  account_locked varchar(1),
+  login_attempts int(1),
+  last_accessed_on varchar(50),
+  primary key(regno)
+);
+
+create table students_address
+( regno int(10) not null,
+  address_type varchar(10),
+  addr1 varchar(50),
+  addr2 varchar(50),
+  landmark varchar(50),
+  city varchar(50),
+  state varchar(50),
+  pincode int(6) not null,
+  primary key(regno)
+);
+
+
+create table course_info
+( courseid int(10) not null,
+  coursename varchar(50),
+  primary key(courseid)
+);
+
+create table students_course_map
+( regno int(10) not null,
+  courseid int(10) not null,
+  primary key(regno,courseid)
+);
+
+
+insert into course_info values (1, 'Core Java');
+insert into course_info values (2, 'Java EE');
+insert into course_info values (3, 'SQL');
+insert into course_info values (4, 'HTML');
+insert into course_info values (5, 'Hibernate');
+insert into course_info values (6, 'Springs');
+insert into course_info values (7, 'AngularJS');
+insert into course_info values (8, 'Web Services');
+insert into course_info values (9, 'General Aptitude');
+insert into course_info values (10, 'Android');
+
+
+
+
+
+
+
+
+
+
+
