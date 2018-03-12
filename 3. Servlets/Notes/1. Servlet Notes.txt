@@ -1316,58 +1316,7 @@ action="http://localhost:8080/studentsApp/studentSearch"
   
   
 
-*********************** 
-* Assignment          *
-*********************** 
-> Modify the index.html to have an "Click Here" 
-  Hyper Link as shown below
-  
-  "Click Here" to View All Students Info
-  ------------
-  
-> Create a Servlet by name "AllStudentsViewServlet" which 
-gets the request whenever user clicks on this hyper-link 
-- interact with BECME1820_DB database
-- get all the data from students_info & guardian_info tables and
-- display it in the browser as shown below
 
-
-  
-  
-  
-  
-  
-Tips:-
----------
-> Create "AllStudentsViewServlet" by extending 
-  "HttpServlet" & Override doGet() Method
-
-> In doGet() Method perform below Operations
-  1. Get the Data from DB using JDBC
-  2. Generate HTML Response
-
-> SQL Query:-
-  -----------
-   select * from students_info si, guardian_info gi 
-   where si.regno=gi.regno
-
-> After creating the Servlet configure URL for that
-  servlet in web.xml (/allStudentsView)
-
-<servlet>
-  <servlet-name>allStudentsView</servlet-name>
-  <servlet-class>
-com.jspiders.studentsapp.servlets.AllStudentsViewServlet
-  </servlet-class>
-</servlet>
-
-<servlet-mapping>
-  <servlet-name>allStudentsView</servlet-name>
-  <url-pattern>/allStudentsView</url-pattern>
-</servlet-mapping>   
-
-> Provide the below url in href attribute of index.html
-  http://localhost:8080/studentsApp/allStudentsView
 
 
 
@@ -1472,57 +1421,83 @@ Container manages/controls the "Life Cycle of a Servlet"
 ----------------
 Container takes care of converting JSP into a Servlet
 
-*************** 
+
+
+*********************** 
+* Assignment          *
+*********************** 
+> Modify the index.html to have an "Click Here" 
+  Hyper Link as shown below
+  
+  "Click Here" to View All Students Info
+  ------------
+  
+> Create a Servlet by name "AllStudentsViewServlet" which 
+gets the request whenever user clicks on this hyper-link 
+- interact with BECME1820_DB database
+- get all the data from students_info & guardian_info 
+  tables and
+- display it in the browser as shown below
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+Assignment Tips:-
+-------------------
+> Create "AllStudentsViewServlet" by extending 
+  "HttpServlet" & Override doGet() Method
+
+> In doGet() Method perform below Operations
+  1. Get the Data from DB using JDBC
+  2. Generate HTML Response
+
+> SQL Query:-
+  -----------
+   select * from 
+		students_info si, guardian_info gi 
+   where si.regno = gi.regno
+
+> After creating the Servlet configure URL for that
+  servlet in web.xml (/allStudentsView)
+
+<servlet>
+  <servlet-name>allStudentsView</servlet-name>
+  <servlet-class>
+com.jspiders.studentsapp.servlets.AllStudentsViewServlet
+  </servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>allStudentsView</servlet-name>
+  <url-pattern>/allStudentsView</url-pattern>
+</servlet-mapping>   
+
+> Provide the below url in href attribute of index.html
+  http://localhost:8080/studentsApp/allStudentsView
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+***************			
 * Assignment  *
-*************** 
-
-> Create a Login Page as shown below
-  
-  Login.html
-  ---------- 
- 
- 
- 
- 
- 
-
-
-
-
-*********************** 
-* Assignment          *
-*********************** 
-
-> Modify the response of "AllStudentsViewServlet" in such 
-  a way that, display "regno" as hyper-link
-  
-> whenever user clicks on the hyper-link, request should
-  go to "StudentSearchServlet" & it should print the 
-  corresponding "regno" data in the browser
-
-
-*********************** 
-* Assignment          *
-*********************** 
-> Insert regno 6 to 20 data into below tables
-  1. Students_info
-  2. guardian_info
-  3. students_oteherinfo
-
-
-
-
-
-
-
-
-
-
-
-
-*********************			
-Practical Exercise :
-**********************
+***************
   
 > Create a HTML Form as shown below   
 
@@ -1716,7 +1691,42 @@ javax.servlet.http.HttpServletResponse
 
 
 
+*************** 
+* Assignment  *
+*************** 
 
+> Create a Login Page as shown below
+  
+  Login.html
+  ---------- 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+*********************** 
+* Assignment          *
+*********************** 
+
+> Modify the response of "AllStudentsViewServlet" in such 
+  a way that, display "regno" as hyper-link
+  
+> whenever user clicks on the hyper-link, request should
+  go to "StudentSearchServlet" & it should print the 
+  corresponding "regno" data in the browser
+
+
+*********************** 
+* Assignment          *
+*********************** 
+> Insert regno 6 to 20 data into below tables
+  1. Students_info
+  2. guardian_info
+  3. students_oteherinfo
 
   
   

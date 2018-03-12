@@ -64,10 +64,7 @@ public class AllStudentsViewServlet extends HttpServlet
 			
 			while(rs.next())
 			{
-				String url = "http://localhost:8080/studentsApp/studentSearch?regno="+rs.getInt("si.regno");
-				
 				sb.append("<tr> ");
-				sb.append("<td><a href=\""+url+"\">"+rs.getInt("si.regno")+"</a></td>  ");
 				sb.append("<td>"+rs.getString("si.firstname")+"</td>");
 				sb.append("<td>"+rs.getString("si.middlename")+"</td> ");
 				sb.append("<td>"+rs.getString("si.lastname")+"</td>");

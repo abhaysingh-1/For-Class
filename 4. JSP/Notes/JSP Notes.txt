@@ -990,7 +990,7 @@ III. Page Directive [ <%@page   attributes %> ]
 > This attribute specifies the Content Type and 
   Character Set for JSP Response
   
-> Default Contnet Type is "text/html" &
+> Default Content Type is "text/html" &
   Default Character Set is "ISO-8859-1"
   
   
@@ -1024,7 +1024,7 @@ III. Page Directive [ <%@page   attributes %> ]
 | extends	| <%@page extends="pkgNM.classNM"%>		|			 |		
 
 
-> Functionality is similler to Java "extends" statement
+> Functionality is similar to Java "extends" statement
 
 
 
@@ -1089,8 +1089,8 @@ III. Page Directive [ <%@page   attributes %> ]
 
 
 > If "true" (it's default), then "session" implicit
-  object is available in JSP & it refers to Current / 
-  New Session
+  object is available in JSP & it refers to Current  
+  or New Session
   
 > If "false", then "session" implicit object will NOT 
   be available in JSP
@@ -1102,7 +1102,7 @@ III. Page Directive [ <%@page   attributes %> ]
 
 
 
-| isThreadSafe  | <%@page isThreadSafe="true | false"%>	|	|			 |
+| isThreadSafe | <%@page isThreadSafe="true | false"%>		|			 |
 
 
 > If "true" (it's default), then JSP becomes 
