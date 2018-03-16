@@ -16,8 +16,8 @@ Java DataBase Connectivity (JDBC)
   
 > Also JDBC is "RDBMS application Independent" 
   i.e. using JDBC we can interact with any 
-  RDBMS Applications exist in the world like 
-  Oracle, MySQL, DB2, MS-SQL, SyBase, etc.,
+  RDBMS Applications like Oracle, MySQL, DB2, 
+  MS-SQL, SyBase, etc.,
   
 NOTE: 
 ------
@@ -29,8 +29,7 @@ are not RDBMS Applications
   
   
   
-  
- '  
+
   
   
  
@@ -38,33 +37,49 @@ JDBC Pre-requirements:
 =========================
 1.	Install an RDBMS Application (MySQL 5.5)
 2.	Create a "Database (Schema)" by name 
-    "BECME1820_DB"
+    "J2EE10AM_DB"
 3.	Create a table by name "STUDENTS_INFO"
     in the above "Database"
 4.	Insert some data into the above table
 
 SQL Queries for MySQL RDBMS Application:-
 ==========================================
-create database BECME1820_DB;
+create database J2EE10AM_DB;
 
 create table students_info
 ( regno int(10) not null,
   firstname varchar(50),
   middlename varchar(50),
   lastname varchar(50),
+  email varchar(50),
+  mobile int(10),
+  birth_day int(2),
+  birth_month varchar(3),
+  birth_year int(4),
   primary key(regno)
 );
 
-insert into students_info
-values (1, 'Praveen', 'NA', 'D');
+insert into students_info values 
+( 1, 'Praveen', 'NA', 'D', 
+  'abc@gmail.com', 1234567890, 
+  20, 'feb', 1991);
+ 
+ 
+ 
+insert into students_info values (1, 'Praveen', 'NA', 'D', 'abc@gmail.com', 1234567890, 20, 'apr', 1995);
+insert into students_info values (2, 'Naveen', 'NA', 'A', 'xyz@gmail.com',  1133445511, 01, 'mar', 1995);
+insert into students_info values (3, 'Raveen', 'NA', 'B', 'def@gmail.com', 1033557700, 05, 'oct', 1981);
+insert into students_info values (4, 'Keveen', 'NA', 'C', 'ghi@gmail.com', 1133668800, 09, 'oct', 1998);
+insert into students_info values (5, 'Chaveen', 'NA', 'E', 'efg@gmail.com', 1234561234, 09, 'jul', 1994);
 
-Some Useful Queries:
-========================
-1. To connect to database:-
-----------------------------
-   use BECME1820_DB;
-   
-2. To get the list of databases:-
+
+Some Useful SQL Queries
+===============================
+1. To Connect to DataBase
+---------------------------
+	use database data_base_name;
+
+2. To get the List of databases:-
 ---------------------------------
 	show databases;
 	
@@ -86,40 +101,20 @@ Some Useful Queries:
    
 ************************   
 *    Assignment        *
-************************   
-> Create 
-	"guardian_info", 
-	"students_otherinfo" and
-	“course_details”
-  tables in "BECME1820_DB" database whith the 
-  following structure
+************************ 
+> create a table to store "Course Details" in 
+  "J2EE10AM_DB" database with the following structure
 
-	"guardian_info"
-	==============================
-	1. regno 		int(10)(PK)
-	2. gfirstname	varchar(50)
-	3. gmiddlename	varchar(50)
-	4. glastname	varchar(50)
+Table Name 	: course_info
+Columns		:
+--------------
+1. course_id	int(10)(PK)
+2. course_name	varchar(25)
+3. fees			varchar(10)
+4. duration		varchar(25)
+5. faculty		varchar(50)
 
-	"students_otherinfo"
-	==============================
-	1. regno 		int(10)(PK)
-	2. isadmin		varchar(1)
-	3. password		varchar(50)
-
-	"course_details"
-	==============================
-	1. course_id	int(10)(PK)
-	2. course_name	varchar(25)
-	
-> Insert regno 1 to 5 data into "guardian_info"& 
-  "students_otherinfo" tables
-
-> While inserting data into "students_otherinfo" 
-  table make regno 1 "isadmin" value as "Y" 
-  and rest as "N"
-  
-> Insert following data into “course_details”
+> Insert following course data (along with other info)
   ===============================
   | course_id	|	course_name	|
   ===============================
@@ -132,16 +127,133 @@ Some Useful Queries:
 		7			AngularJS
 		8			Web Services
 		9			General Aptitude
-		10			Java Programming Aptitude  
+		10			Android 
+
+
+
+
+
+> create a table to store "Guardian Details" in 
+  "J2EE10AM_DB" database with the following structure
+
+Table Name 	: guardian_info
+Columns		:
+--------------
+1. regno 		int(10)(PK)
+2. gfirstname	varchar(50)
+3. gmiddlename	varchar(50)
+4. glastname	varchar(50)
+4. mobile		int(10)
+
+> Insert regno 1 to 5 data into "guardian_info"
+
+
+  
+> Create 
+	"guardian_info", 
+	"students_otherinfo" and
+	“course_info”
+  tables in "J2EE10AM_DB" database with the 
+  following structure
+
+	"guardian_info"
+	==============================
+	1. regno 		int(10)(PK)
+	2. gfirstname	varchar(50)
+	3. gmiddlename	varchar(50)
+	4. glastname	varchar(50)
+	4. mobile		int(10)
+
+	"students_otherinfo"
+	==============================
+	1. regno 		int(10)(PK)
+	2. isadmin		varchar(1)
+	3. password		varchar(50)
+
+	"course_info"
+	==============================
+	1. course_id	int(10)(PK)
+	2. course_name	varchar(25)
+	
+> Insert regno 1 to 5 data into "guardian_info"& 
+  "students_otherinfo" tables
+
+> While inserting data into "students_otherinfo" 
+  table make regno 1 "isadmin" value as "Y" 
+  and rest as "N"
+  
+> Insert following data into “course_info”
+  ===============================
+  | course_id	|	course_name	|
+  ===============================
+		1			Core Java
+		2			Java EE
+		3			SQL
+		4			HTML
+		5			Hibernate
+		6			Springs
+		7			AngularJS
+		8			Web Services
+		9			General Aptitude
+		10			Android  
   
  
  
  
  
+> Create a Table to store Students Address information 
+  in "J2EE10AM_DB" with the following structure
+
+Table Name 	: student_addressinfo
+Columns		:
+--------------
+1. regno 		int(10)
+2. addr_type 	varchar(10)
+3. addr1		varchar(100)
+4. addr2 		varchar(100)
+5. landmark		varchar(100)
+6. city			varchar(50)
+7. pincode		int(6)
+
+Note:-
+=======
+- "addr_type" should have value 
+  "present" for "Present Address" and 
+  "permanent" for "Permanent Address" 
+
+- Since every regno can have "Present as well as Permanent 
+  Address" combination of "regno & addr_type" should be made
+  as primary key i.e. "Composite Key" 
  
+> Insert regno 1 to 5 data into "student_addressinfo" 
  
+
+
+
+
+
  
- 
+> Create a Table to store Students Course & Mock rating info
+  in "J2EE10AM_DB" with the following structure
+
+Table Name 	: student_courseinfo
+Columns		:
+--------------
+1. regno 		int(10)
+2. course_id 	int(10)
+3. mock_rating	varchar(2)
+
+Note:-
+=======
+- Since every regno can have multiple mock rating per 
+  course. Hence combination of "regno & course_id" should be 
+  made as primary key i.e. "Composite Key"
+
+- Insert regno 1 to 5 data into "student_courseinfo" 
+
+
+  
+    
  
 Queries :
 ===========
@@ -160,7 +272,7 @@ create table students_otherinfo
   primary key(regno)
 );
 
-create table course_details
+create table course_info
 ( course_id int(10) not null,
   course_name varchar(50),
   primary key(course_id)
@@ -178,16 +290,16 @@ insert into students_otherinfo values (3, 'N', 'qwerty');
 insert into students_otherinfo values (4, 'N', 'qwerty');
 insert into students_otherinfo values (5, 'N', 'qwerty');
 
-insert into course_details values (1, 'Core Java');
-insert into course_details values (2, 'Java EE');
-insert into course_details values (3, 'SQL');
-insert into course_details values (4, 'HTML');
-insert into course_details values (5, 'Hibernate');
-insert into course_details values (6, 'Springs');
-insert into course_details values (7, 'AngularJS');
-insert into course_details values (8, 'Web Services');
-insert into course_details values (9, 'General Aptitude');
-insert into course_details values (10, 'Java Programming Aptitude');
+insert into course_info values (1, 'Core Java');
+insert into course_info values (2, 'Java EE');
+insert into course_info values (3, 'SQL');
+insert into course_info values (4, 'HTML');
+insert into course_info values (5, 'Hibernate');
+insert into course_info values (6, 'Springs');
+insert into course_info values (7, 'AngularJS');
+insert into course_info values (8, 'Web Services');
+insert into course_info values (9, 'General Aptitude');
+insert into course_info values (10, 'Java Programming Aptitude');
 
    
    
@@ -240,10 +352,10 @@ Port Number 	: 3306
 User Name 		: root / j2ee
 Password 		: root / j2ee
 
-DB Name 		: BECME1820_DB
+DB Name 		: J2EE10AM_DB
 Table Name		: Students_info
 
-jdbc:mysql://192.168.0.4:3306/BECME1820_DB?user=j2ee&password=j2ee
+jdbc:mysql://192.168.0.4:3306/J2EE10AM_DB?user=j2ee&password=j2ee
 
 
 
@@ -674,7 +786,7 @@ java.sql.DriverManager
    throws SQLException
 --------------------------------------------------------
  String dbUrl = 
- "jdbc:mysql://localhost:3306/BECME1820_DB
+ "jdbc:mysql://localhost:3306/J2EE10AM_DB
  			         ?user=root&password=root";
  			
  Connection con = DriverManager.getConnection(dbUrl);
@@ -685,7 +797,7 @@ java.sql.DriverManager
 										 String password) 
   throws SQLException
 --------------------------------------------------------
-String dbUrl = "jdbc:mysql://localhost:3306/BECME1820_DB";
+String dbUrl = "jdbc:mysql://localhost:3306/J2EE10AM_DB";
 String userNM = "root";
 String pass   = "root";
 				
@@ -705,7 +817,7 @@ Connection con
    throws SQLException
 -----------------------------------------------------------
 	 
-String dbUrl="jdbc:mysql://localhost:3306/BECME1820_DB";
+String dbUrl="jdbc:mysql://localhost:3306/J2EE10AM_DB";
 		
 String filePath = "C:\\db.properties";
 FileReader reader = new FileReader(filePath);
@@ -1558,3 +1670,23 @@ try {
 
 
 		  
+		  
+		  
+*************			
+Assignment :
+*************
+Create a Table to store Students & their corresponding
+Course information in "J2EE10AM_DB" with the following 
+structure
+
+Table Name 	: student_courseinfo
+Columns		:
+--------------
+1. regno 		int(10)
+2. course_id 	int(10)
+
+Note:-
+=======
+- Since every regno could have joined to multiple courses
+  hence combination of "regno & course_id" should be 
+  made as primary key i.e. "Composite Key"		  

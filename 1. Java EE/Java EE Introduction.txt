@@ -134,7 +134,7 @@ Types of Applications
   "Intranet" or in "Internet"
   ex: 
   - Gmail Web Application is present in Internet
-  - "Jspider Attendance Tracking Web Application"
+  - "JSpider Attendance Tracking Web Application"
     is present in Intranet		
 	
 > I.P Address / "Computer Name (DNS Name)" Uniquely 

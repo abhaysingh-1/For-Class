@@ -1582,6 +1582,55 @@ Apart from the above, there are many more Getter Methods,
 which helps to get information from Request Object		
 			
 			
+			
+			
+
+**************			
+* Assignment *
+**************			
+> Create a Servlet by name "FormExampleServelt"
+  - which gets the Request from "FormExample.html"
+  - extracts the Form Data and
+  - print the Form Data in Browser
+
+
+
+
+
+
+Assignment Tips:-
+-------------------
+> Create "FormExampleServelt" by extending 
+  "HttpServlet" & Override doPost() Method
+
+> In doPost() Method perform below Operations
+  1. Get the Form Data using 
+     getParameter() & getParameterValues() methods
+  2. Generate HTML Response
+
+> After creating the Servlet configure URL for that
+  servlet in web.xml (/formExample)
+
+<servlet>
+	<servlet-name>formExample</servlet-name>
+	<servlet-class>
+	com.jspiders.studentsapp.servlets.FormExampleServlet
+	</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>formExample</servlet-name>
+	<url-pattern>/formExample</url-pattern>
+</servlet-mapping>
+
+> Provide the below url in action attribute 
+  of FormExample.html
+  http://localhost:8080/studentsApp/formExample
+
+> First we should access the HTML form using HTML URL i.e,
+  http://localhost:8080/studentsApp/FormExample.html
+  fill out the form & 
+  submit the form to make request to Servlet
 
 
 *************			
@@ -1592,6 +1641,9 @@ Assignment :
   
   CreateProfile.html
   -------------------
+  
+  
+  
   
   
   
@@ -1691,14 +1743,7 @@ javax.servlet.http.HttpServletResponse
 
 
 
-*************** 
-* Assignment  *
-*************** 
 
-> Create a Login Page as shown below
-  
-  Login.html
-  ---------- 
  
  
  
@@ -1734,7 +1779,7 @@ javax.servlet.http.HttpServletResponse
 Methods in Response Object :-
 ===================================================
 
-1. void ServletResponse.setContentType
+1. public void ServletResponse.setContentType
 						      (String contentType)
 ---------------------------------------------------
  
@@ -1774,11 +1819,12 @@ NOTE :
   reduces the size of the Actual Content there by
   increases the performance
 
-*************			
-Assignment :
-*************
-> Replace all "String concatenation" / "StringBuffer"
-  code to PrintWriter 
+  
+  
+  
+  
+  
+
     
   
   
@@ -1786,23 +1832,19 @@ Assignment :
   
   
   
-5. void HttpServletResponse
+5. public void HttpServletResponse
 			  .setHeader(String key, String value)
 --------------------------------------------------------
 > As the name implies, this method helps us to set the 
   Header info in the Response
   
-  
-6. void HttpServletResponse
+6. public void HttpServletResponse
 		      .sendError(int statusCode, String errMsg) 
    throws IOException      
 --------------------------------------------------------
 > As the name implies, this method helps us to send the 
   Error Response to Browser
 
-
- 
-  
 Note:-
 =======  
 > Apart from the above, there are many more Methods,
@@ -1810,9 +1852,22 @@ Note:-
     
   
   
+ 
+ 
+********************************************
+* NOTE : re-look at all the Servlets Code   *
+********************************************  
   
   
-  
+*************			
+Assignment :
+*************
+> Replace all "String concatenation" / "StringBuffer"
+  code to PrintWriter 
+
+
+
+
   
   
 *************			
@@ -2033,6 +2088,10 @@ NOTE:
   file & reading the data from XSD file
 
 
+
+
+
+
   
 ************			
 Assignment :
@@ -2070,6 +2129,8 @@ Deployment Descriptor (DD)  :-
 
 > Hence every dynamic web application must have ONLY
   ONE web.xml
+  
+  
   
   
   
