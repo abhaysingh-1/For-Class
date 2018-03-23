@@ -110,11 +110,12 @@ Columns		:
 --------------
 1. course_id	int(10)(PK)
 2. course_name	varchar(25)
-3. fees			varchar(10)
+3. fee			varchar(10)
 4. duration		varchar(25)
 5. faculty		varchar(50)
 
-> Insert following course data (along with other info)
+> Insert following course data (along with other info).
+  Note:- Data for "duration" should be in Months & Days
   ===============================
   | course_id	|	course_name	|
   ===============================
@@ -130,6 +131,16 @@ Columns		:
 		10			Android 
 
 
+Queries :-
+=========
+create table course_info
+( course_id int(10) not null,
+  course_name varchar(50),
+  fee varchar(10),
+  duration varchar(25),
+  faculty varchar(50),
+  primary key(course_id)
+);
 
 
 
@@ -196,8 +207,15 @@ Columns		:
 		8			Web Services
 		9			General Aptitude
 		10			Android  
-  
- 
+
+
+
+
+
+
+
+
+
  
  
  
@@ -272,11 +290,7 @@ create table students_otherinfo
   primary key(regno)
 );
 
-create table course_info
-( course_id int(10) not null,
-  course_name varchar(50),
-  primary key(course_id)
-);
+
 
 insert into guardian_info values (1, 'AAA', 'NA', 'BBB');
 insert into guardian_info values (2, 'BBB', 'NA', 'DDD');
@@ -290,18 +304,38 @@ insert into students_otherinfo values (3, 'N', 'qwerty');
 insert into students_otherinfo values (4, 'N', 'qwerty');
 insert into students_otherinfo values (5, 'N', 'qwerty');
 
-insert into course_info values (1, 'Core Java');
-insert into course_info values (2, 'Java EE');
-insert into course_info values (3, 'SQL');
-insert into course_info values (4, 'HTML');
-insert into course_info values (5, 'Hibernate');
-insert into course_info values (6, 'Springs');
-insert into course_info values (7, 'AngularJS');
-insert into course_info values (8, 'Web Services');
-insert into course_info values (9, 'General Aptitude');
-insert into course_info values (10, 'Java Programming Aptitude');
 
-   
+> Create a table to store students other information
+  such as password, last login time, etc.,  with the 
+  following structure
+
+Table Name 	: student_otherinfo
+Columns		:
+--------------
+1. regno 		   	int(10)(PK)
+2. isadmin		   	varchar(1)
+3. password		   	varchar(50)
+4. login_attempts  	int(1)
+5. last_login_time 	varchar(50)
+
+
+
+
+
+	"course_info"
+	==============================
+	1. course_id	int(10)(PK)
+	2. course_name	varchar(25)
+	
+> Insert regno 1 to 5 data into "guardian_info"& 
+  "students_otherinfo" tables
+
+> While inserting data into "students_otherinfo" 
+  table make regno 1 "isadmin" value as "Y" 
+  and rest as "N"
+  
+
+  
    
 Necessary Steps to Work with JDBC
 ==================================
@@ -346,18 +380,14 @@ Note:-
   
   
   
-IP Address 		: 192.168.0.4
-Computer Name 	: QSP-SHMUTT-PC
-Port Number 	: 3306
-User Name 		: root / j2ee
-Password 		: root / j2ee
+IP Address 		:	192.168.0.6
+Computer Name	:	QSP-SHMUTT-PC
+Port Number		:	3306
+User Name		:	root / j2ee
+Password		:	root / j2ee
+DB Name			:	J2EE10AM_DB
 
-DB Name 		: J2EE10AM_DB
-Table Name		: Students_info
-
-jdbc:mysql://192.168.0.4:3306/J2EE10AM_DB?user=j2ee&password=j2ee
-
-
+jdbc:mysql://192.168.0.6:3306/J2EE10AM_DB?user=j2ee&password=j2ee
 
 
 

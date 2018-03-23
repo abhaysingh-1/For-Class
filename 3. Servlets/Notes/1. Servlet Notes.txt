@@ -1765,6 +1765,12 @@ javax.servlet.http.HttpServletResponse
   corresponding "regno" data in the browser
 
 
+  
+  
+  
+  
+  
+  
 *********************** 
 * Assignment          *
 *********************** 
@@ -1772,7 +1778,32 @@ javax.servlet.http.HttpServletResponse
   1. Students_info
   2. guardian_info
   3. students_oteherinfo
+  4. student_addressinfo
+  5. student_courseinfo
+  6. student_mockinfo
 
+  
+  
+*********************** 
+* Assignment          *
+***********************   
+  
+> Create a HTML Form as shown below
+  
+  SearchByStudentInfo.html
+  --------------------------
+
+
+> Whenever user submits the above form, request
+  should go to "SearchByStudentInfoServlet" & it
+  should display the corresponding results  
+  
+  
+  
+  
+  
+  
+  
   
   
   
