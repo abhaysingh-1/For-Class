@@ -1,65 +1,144 @@
 create database studentsapp_db;
+use studentsapp_db;
 
-create table students_info
-( regno int(10) not null,
+--***************************************************--
+-- Table Creation Queries							 --
+--***************************************************--
+create table student_info;
+( regno int not null,
   firstname varchar(50),
   middlename varchar(50),
   lastname varchar(50),
+  email varchar(50),
+  mobile bigint,
+  birth_day int,
+  birth_month varchar(3),
+  birth_year int,
   primary key(regno)
 );
 
+create table course_info;
+( course_id int not null,
+  course_name varchar(50),
+  fee float,
+  duration varchar(25),
+  faculty varchar(50),
+  primary key(course_id)
+);
 
-create table guardian_info
-( regno int(10) not null,
+create table guardian_info;
+( regno int not null,
   gfirstname varchar(50),
   gmiddlename varchar(50),
   glastname varchar(50),
+  mobile bigint,
   primary key(regno)
 );
 
+create table student_addressinfo
+( regno int not null,
+  addr_type varchar(10),
+  addr1		varchar(100),
+  addr2 	varchar(100),
+  landmark	varchar(100),
+  city		varchar(50),
+  pincode	int,
+  primary key(regno, addr_type)
+);
 
-create table students_otherinfo
-( regno int(10) not null,
+create table student_courseinfo;
+( regno int not null,
+  course_id int not null,
+  mock_rating	varchar(2),
+  primary key(regno, course_id)
+);
+
+
+create table student_otherinfo
+( regno int not null,
   isadmin varchar(1),
   password varchar(50),
+  login_attempts int,
+  last_login_time varchar(50),
   primary key(regno)
 );
 
 
-insert into students_info values (1, 'Praveen', 'NA', 'D');
-insert into students_info values (2, 'Sachin', 'NA', 'B S');
-insert into students_info values (3, 'Mallesh', 'NA', 'D');
-insert into students_info values (4, 'Rekha', 'NA', 'M');
-insert into students_info values (5, 'Nirbhay', 'NA', 'D S');
+--***************************************************--
+-- Table Data Insertion Queries						 --
+--***************************************************--
+insert into students_info; values (1, 'Praveen', 'NA', 'D', 'abc@gmail.com', 9445326450, 20, 'APR', 1995);
+insert into students_info; values (2, 'Naveen', 'NA', 'A', 'xyz@gmail.com',  9880235641, 01, 'MAR', 1995);
+insert into students_info; values (3, 'Raveen', 'NA', 'B', 'def@gmail.com', 9536412985, 05, 'OCT', 1981);
+insert into students_info; values (4, 'Keveen', 'NA', 'C', 'ghi@gmail.com', 8521469703, 09, 'OCT', 1998);
+insert into students_info; values (5, 'Chaveen', 'NA', 'E', 'efg@gmail.com', 9675325938, 09, 'JUL', 1994);
 
-insert into guardian_info values (1, 'AAA', 'NA', 'BBB');
-insert into guardian_info values (2, 'BBB', 'NA', 'DDD');
-insert into guardian_info values (3, 'ABC', 'NA', 'XYZ');
-insert into guardian_info values (4, 'XYZ', 'NA', 'ABC');
-insert into guardian_info values (5, 'DEF', 'NA', 'GHI');
+insert into course_info; values (1, 'Core Java', 8000.00, '4 Months', 'Madhu');
+insert into course_info; values (2, 'Java EE', 5000.00, '2 Months', 'Praveen');
+insert into course_info; values (3, 'SQL', 2000.20, '1 Months', 'Deekshit');
+insert into course_info; values (4, 'HTML', 1000.50, '1 Months', 'Priyanka');
+insert into course_info; values (5, 'Hibernate', 2500.25, '1 Months', 'Harsha');
+insert into course_info; values (6, 'Springs', 2500.00, '1 Months', 'Harsha');
+insert into course_info; values (7, 'AngularJS', 3500.50, '1 Months', 'Shashi');
+insert into course_info; values (8, 'Web Services', 8000.00, '2 Months', 'Praveen');
+insert into course_info; values (9, 'General Aptitude', 5000.50, '1 Months', 'Namratha');
+insert into course_info; values (10, 'Android', 7000.45, '2 Months', 'Swetha');
 
-insert into students_otherinfo values (1, 'Y', 'qwerty');
-insert into students_otherinfo values (2, 'N', 'qwerty');
-insert into students_otherinfo values (3, 'N', 'qwerty');
-insert into students_otherinfo values (4, 'N', 'qwerty');
-insert into students_otherinfo values (5, 'N', 'qwerty');
+insert into guardian_info; values (1, 'Dyamappa', 'NA', 'B S', 9956321784);
+insert into guardian_info; values (2, 'Anjana', 'NA', 'D', 9886420364);
+insert into guardian_info; values (3, 'Ravindra', 'NA', 'X', 7765314651);
+insert into guardian_info; values (4, 'Arayana', 'NA', 'B C', 8652349134);
+insert into guardian_info; values (5, 'Rejani', 'NA', 'Changappa', 9446349753);
 
-insert into course_details values (1, 'Core Java');
-insert into course_details values (2, 'Java EE');
-insert into course_details values (3, 'SQL');
-insert into course_details values (4, 'HTML');
-insert into course_details values (5, 'Hibernate');
-insert into course_details values (6, 'Springs');
-insert into course_details values (7, 'AngularJS');
-insert into course_details values (8, 'Web Services');
-insert into course_details values (9, 'General Aptitude');
-insert into course_details values (10, 'Java Programming Aptitude');
+insert into student_addressinfo values (1, 'present', '#1, 2nd Cross, 3rd Main', 'ABC Nagar, 2nd Stage', 'Near Canara Bank', 'Bangalore', 560008);
+insert into student_addressinfo values (1, 'permanent', '#9, 8th Cross, 7th Main', 'XYZ Nagar, 4th Stage', 'Near Gurukul', 'Mangalore', 574142); 
+insert into student_addressinfo values (2, 'present', '#4A, 5 & 6 2nd Phase', 'Peenya Industrial Estate', 'Near Manufacturing Facilities', 'Bangalore', 560078);
+insert into student_addressinfo values (2, 'permanent', ' 2257/1 Vinoba Road', 'Near Kala Mandir', '', 'Chitradurga', 577527); 
+insert into student_addressinfo values (3, 'present', '# 217, 10 A Main', '2nd Floor, HRBR Layout, 1st Block', 'Near Horamavu Signal', 'Bangalore', 560004);
+insert into student_addressinfo values (3, 'permanent', '88 Door No,8th Main,9th Cross', 'K H Road,Saraswathipuram', 'Near Alma Master', 'Delhi', 110011); 
+insert into student_addressinfo values (4, 'present', '#37, 1st Floor Basco Court', 'Basavanagudi', 'NA', 'Bangalore', 560010);
+insert into student_addressinfo values (4, 'permanent', '115/ 48, East End C Main Road', 'Sri Kanva Pride, 2nd Floor', 'Jayanagar 9th Block', 'Hyderabad', 500012); 
+insert into student_addressinfo values (5, 'present', 'Sri Ram Mens PG, 2Nd Floor, Samrat Complex', 'Udayaravi Road,Kuvempunagar', 'Near Vijaya Bank', 'Bangalore', 560017);
+insert into student_addressinfo values (5, 'permanent', 'No.28, 4th B Cross , V Block, ', 'Koramangala Industrial Layout', 'Above Taj Paradise Hotel', 'Pune', 411041); 
+
+insert into student_courseinfo; values (1, 1, '1*');
+insert into student_courseinfo; values (1, 2, '1*');
+insert into student_courseinfo; values (1, 3, '1*');
+insert into student_courseinfo; values (1, 4, '1*');
+insert into student_courseinfo; values (1, 5, '1*');
+insert into student_courseinfo; values (1, 6, '1*');
+insert into student_courseinfo; values (1, 7, '1*');
+insert into student_courseinfo; values (1, 8, '1*');
+insert into student_courseinfo; values (1, 9, '1*');
+insert into student_courseinfo; values (1, 10,'1*');
+
+insert into student_courseinfo; values (2, 1, '1*');
+insert into student_courseinfo; values (2, 2, '2*');
+insert into student_courseinfo; values (2, 3, '2');
+insert into student_courseinfo; values (2, 4, '1');
+insert into student_courseinfo; values (2, 5, null);
+insert into student_courseinfo; values (2, 6, null);
+
+insert into student_courseinfo; values (3, 1, '1*');
+insert into student_courseinfo; values (3, 2, null);
+
+insert into student_courseinfo; values (4, 1, null);
+insert into student_courseinfo; values (4, 2, null);
+insert into student_courseinfo; values (4, 3, null);
+insert into student_courseinfo; values (4, 4, null);
+insert into student_courseinfo; values (4, 5, null);
+insert into student_courseinfo; values (4, 6, null);
+insert into student_courseinfo; values (4, 8, null);
+
+insert into student_courseinfo; values (5, 7, '1*');
+insert into student_courseinfo; values (5, 10, '1*');
+
 
 
 
 create table library
 (  student_nm varchar(50),
-  book_nm varchar(50)
+   book_nm varchar(50)
 );
 
 insert into library values('ABC', 'Core Java');
@@ -99,7 +178,7 @@ insert into library values('XYZ', 'Springs');
 
 create database studentsapp_db;
 
-create table students_info
+create table students_info;
 ( regno int(10) not null,
   firstname varchar(50),
   middlename varchar(50),
@@ -111,7 +190,7 @@ create table students_info
 
 
 
-create table guardian_info
+create table guardian_info;
 ( regno int(10) not null,
   gfirstname varchar(50),
   gmiddlename varchar(50),
@@ -121,7 +200,7 @@ create table guardian_info
 );
 
 
-create table students_otherinfo
+create table students_otherinfo;
 ( regno int(10) not null,
   isadmin varchar(1),
   password varchar(50),
@@ -144,7 +223,7 @@ create table students_address
 );
 
 
-create table course_info
+create table course_info;
 ( courseid int(10) not null,
   coursename varchar(50),
   primary key(courseid)
@@ -157,16 +236,16 @@ create table students_course_map
 );
 
 
-insert into course_info values (1, 'Core Java');
-insert into course_info values (2, 'Java EE');
-insert into course_info values (3, 'SQL');
-insert into course_info values (4, 'HTML');
-insert into course_info values (5, 'Hibernate');
-insert into course_info values (6, 'Springs');
-insert into course_info values (7, 'AngularJS');
-insert into course_info values (8, 'Web Services');
-insert into course_info values (9, 'General Aptitude');
-insert into course_info values (10, 'Android');
+insert into course_info; values (1, 'Core Java');
+insert into course_info; values (2, 'Java EE');
+insert into course_info; values (3, 'SQL');
+insert into course_info; values (4, 'HTML');
+insert into course_info; values (5, 'Hibernate');
+insert into course_info; values (6, 'Springs');
+insert into course_info; values (7, 'AngularJS');
+insert into course_info; values (8, 'Web Services');
+insert into course_info; values (9, 'General Aptitude');
+insert into course_info; values (10, 'Android');
 
 
 
@@ -177,4 +256,35 @@ insert into course_info values (10, 'Android');
 
 
 
+select * from course_info;
+select * from guardian_info;
+select * from student_addressinfo;
+select * from student_courseinfo;
+select * from student_info;
+select * from student_otherinfo;
 
+select * from library;
+
+
+
+
+select * from student_info si, 
+student_courseinfo sci,
+
+student_addressinfo sai
+where si.regno = sci.regno
+and si.regno = sai.regno
+and sci.course_id = ci.course_id
+and si.regno = sci.regno
+and si.firstname like '%pra%'
+
+select * from student_courseinfo sci, course_info ci where sci.course_id=ci.course_id and ci.course_name like '%java%' and sci.regno=1;
+
+
+and (si.firstname like '%pra%'
+or si.middlename like '%pra%'
+or si.lastname like '%pra%'
+or sci.mock_rating like '%1*%'
+or si.mobile = 9445326450
+or sai.city like '%Java%'
+or sai.pincode = 560008);

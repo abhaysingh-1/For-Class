@@ -2,21 +2,20 @@
 *    Java Thumb Rules     *
 ***************************
 > Anything in Java,
-  - which start with Upper-case Letter 
-    & without parenthesis  
-	is either "Class Name OR Interface Name"  
+- which start with Upper-case Letter & without parenthesis  
+  is either "Class Name OR Interface Name"  
   
-  - which start with Lower-case Letter 
-    & without parenthesis is a "Variable Name"
+- which start with Lower-case Letter & without parenthesis 
+  is a "Variable Name"
 
-  - which start with Lower-case Letter 
-    & with parenthesis is a "Method Name"
+- which start with Lower-case Letter & with parenthesis 
+  is a "Method Name"
 
-  - which start with Upper-case Letter 
-    & with parenthesis is a "Constructor"
+- which start with Upper-case Letter & with parenthesis 
+  is a "Constructor"
 	
-> In Java, anything apart from Primitive Data 
-    Types are called as "Object References"  
+> In Java, anything apart from Primitive Data Types 
+  are called as "Object References"  
   
   For Ex:
   ---------
@@ -70,7 +69,7 @@
   there MUST be a "At-least One Implementation Class"  
   
 > Simply having an Abstract Class (which has min. 
-  one non-static methods)is of "No Use" & 
+  one non-static methods) is of "No Use" & 
   there MUST be a "At-least One Sub-Class"  
   
 

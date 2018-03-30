@@ -2679,19 +2679,19 @@ public class MyAnotherServlet implements Servlet
    
 > As shown in the above example Servlet interface 
   has below 5 Abstract Methods
-									------
-1. void init(ServletConfig config) 		 |
-  throws ServletException				 |
-										 |     Servlet
-2. void service(ServletRequest req, 	 |---> Life-cycle
-			   ServletResponse resp) 	 |     Methods
-  throws ServletException, IOException	 |
-										 |
-3. void destroy()						 |		
-									------
-4. ServletConfig getServletConfig()
+									               ------
+1. public abstract void init(ServletConfig config) 		 |
+   throws ServletException				                 |
+										                 |     Servlet
+2. public abstract void service(ServletRequest req,      |---> Life-cycle
+			                    ServletResponse resp)    |     Methods
+  throws ServletException, IOException	                 |
+										                 |
+3. public abstract void destroy()				         |		
+									                ------
+4. public abstract ServletConfig getServletConfig()
    
-5. String getServletInfo()
+5. public abstract String getServletInfo()
    
 > If we implements Servlet Interface then that 
   Servlet will become "Protocol-Independent Servlet"   
@@ -2821,7 +2821,7 @@ Note:
 Single Threaded Servlets :
 ==========================
 > We Know that, by default servlets are Multi 
-  Threaded in Nature. Hence following are the 2 ways
+  Threaded in nature. Hence following are the 2 ways
   to create Single Threaded Servlet  
   
 1. By Implementing "javax.servlet.SingleThreadModel"

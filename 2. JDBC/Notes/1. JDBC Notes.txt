@@ -38,7 +38,7 @@ JDBC Pre-requirements:
 1.	Install an RDBMS Application (MySQL 5.5)
 2.	Create a "Database (Schema)" by name 
     "J2EE10AM_DB"
-3.	Create a table by name "STUDENTS_INFO"
+3.	Create a table by name "STUDENT_INFO"
     in the above "Database"
 4.	Insert some data into the above table
 
@@ -46,31 +46,31 @@ SQL Queries for MySQL RDBMS Application:-
 ==========================================
 create database J2EE10AM_DB;
 
-create table students_info
-( regno int(10) not null,
+create table student_info
+( regno int not null,
   firstname varchar(50),
   middlename varchar(50),
   lastname varchar(50),
   email varchar(50),
-  mobile int(10),
-  birth_day int(2),
+  mobile bigint,
+  birth_day int,
   birth_month varchar(3),
-  birth_year int(4),
+  birth_year int,
   primary key(regno)
 );
 
 insert into students_info values 
 ( 1, 'Praveen', 'NA', 'D', 
-  'abc@gmail.com', 1234567890, 
-  20, 'feb', 1991);
+  'abc@gmail.com', 9886767360, 
+  20, 'FEB', 1991);
  
  
  
-insert into students_info values (1, 'Praveen', 'NA', 'D', 'abc@gmail.com', 1234567890, 20, 'apr', 1995);
-insert into students_info values (2, 'Naveen', 'NA', 'A', 'xyz@gmail.com',  1133445511, 01, 'mar', 1995);
-insert into students_info values (3, 'Raveen', 'NA', 'B', 'def@gmail.com', 1033557700, 05, 'oct', 1981);
-insert into students_info values (4, 'Keveen', 'NA', 'C', 'ghi@gmail.com', 1133668800, 09, 'oct', 1998);
-insert into students_info values (5, 'Chaveen', 'NA', 'E', 'efg@gmail.com', 1234561234, 09, 'jul', 1994);
+insert into student_info values (1, 'Praveen', 'NA', 'D', 'abc@gmail.com', 9445326450, 20, 'APR', 1995);
+insert into student_info values (2, 'Naveen', 'NA', 'A', 'xyz@gmail.com',  9880235641, 01, 'MAR', 1995);
+insert into student_info values (3, 'Raveen', 'NA', 'B', 'def@gmail.com', 9536412985, 05, 'OCT', 1981);
+insert into student_info values (4, 'Keveen', 'NA', 'C', 'ghi@gmail.com', 8521469703, 09, 'OCT', 1998);
+insert into student_info values (5, 'Chaveen', 'NA', 'E', 'efg@gmail.com', 9675325938, 09, 'JUL', 1994);
 
 
 Some Useful SQL Queries
@@ -108,7 +108,7 @@ Some Useful SQL Queries
 Table Name 	: course_info
 Columns		:
 --------------
-1. course_id	int(10)(PK)
+1. course_id	int(PK)
 2. course_name	varchar(25)
 3. fee			varchar(10)
 4. duration		varchar(25)
@@ -134,15 +134,24 @@ Columns		:
 Queries :-
 =========
 create table course_info
-( course_id int(10) not null,
+( course_id int not null,
   course_name varchar(50),
-  fee varchar(10),
+  fee float,
   duration varchar(25),
   faculty varchar(50),
   primary key(course_id)
 );
 
-
+insert into course_info values (1, 'Core Java', 8000.00, '4 Months', 'Madhu');
+insert into course_info values (2, 'Java EE', 5000.00, '2 Months', 'Praveen');
+insert into course_info values (3, 'SQL', 2000.20, '1 Months', 'Deekshit');
+insert into course_info values (4, 'HTML', 1000.50, '1 Months', 'Priyanka');
+insert into course_info values (5, 'Hibernate', 2500.25, '1 Months', 'Harsha');
+insert into course_info values (6, 'Springs', 2500.00, '1 Months', 'Harsha');
+insert into course_info values (7, 'AngularJS', 3500.50, '1 Months', 'Shashi');
+insert into course_info values (8, 'Web Services', 8000.00, '2 Months', 'Praveen');
+insert into course_info values (9, 'General Aptitude', 5000.50, '1 Months', 'Namratha');
+insert into course_info values (10, 'Android', 7000.45, '2 Months', 'Swetha');
 
 > create a table to store "Guardian Details" in 
   "J2EE10AM_DB" database with the following structure
@@ -150,65 +159,32 @@ create table course_info
 Table Name 	: guardian_info
 Columns		:
 --------------
-1. regno 		int(10)(PK)
+1. regno 		int(PK)
 2. gfirstname	varchar(50)
 3. gmiddlename	varchar(50)
 4. glastname	varchar(50)
-4. mobile		int(10)
+4. mobile		bigint
 
 > Insert regno 1 to 5 data into "guardian_info"
 
 
+Queries :-
+=========
+
+create table guardian_info
+( regno int not null,
+  gfirstname varchar(50),
+  gmiddlename varchar(50),
+  glastname varchar(50),
+  mobile bigint,
+  primary key(regno)
+);
   
-> Create 
-	"guardian_info", 
-	"students_otherinfo" and
-	“course_info”
-  tables in "J2EE10AM_DB" database with the 
-  following structure
-
-	"guardian_info"
-	==============================
-	1. regno 		int(10)(PK)
-	2. gfirstname	varchar(50)
-	3. gmiddlename	varchar(50)
-	4. glastname	varchar(50)
-	4. mobile		int(10)
-
-	"students_otherinfo"
-	==============================
-	1. regno 		int(10)(PK)
-	2. isadmin		varchar(1)
-	3. password		varchar(50)
-
-	"course_info"
-	==============================
-	1. course_id	int(10)(PK)
-	2. course_name	varchar(25)
-	
-> Insert regno 1 to 5 data into "guardian_info"& 
-  "students_otherinfo" tables
-
-> While inserting data into "students_otherinfo" 
-  table make regno 1 "isadmin" value as "Y" 
-  and rest as "N"
-  
-> Insert following data into “course_info”
-  ===============================
-  | course_id	|	course_name	|
-  ===============================
-		1			Core Java
-		2			Java EE
-		3			SQL
-		4			HTML
-		5			Hibernate
-		6			Springs
-		7			AngularJS
-		8			Web Services
-		9			General Aptitude
-		10			Android  
-
-
+insert into guardian_info values (1, 'Dyamappa', 'NA', 'B S', 9956321784);
+insert into guardian_info values (2, 'Anjana', 'NA', 'D', 9886420364);
+insert into guardian_info values (3, 'Ravindra', 'NA', 'X', 7765314651);
+insert into guardian_info values (4, 'Arayana', 'NA', 'B C', 8652349134);
+insert into guardian_info values (5, 'Rejani', 'NA', 'Changappa', 9446349753);
 
 
 
@@ -225,13 +201,13 @@ Columns		:
 Table Name 	: student_addressinfo
 Columns		:
 --------------
-1. regno 		int(10)
+1. regno 		int
 2. addr_type 	varchar(10)
 3. addr1		varchar(100)
 4. addr2 		varchar(100)
 5. landmark		varchar(100)
 6. city			varchar(50)
-7. pincode		int(6)
+7. pincode		int
 
 Note:-
 =======
@@ -247,19 +223,43 @@ Note:-
  
 
 
+Queries :-
+=========
+create table student_addressinfo
+( regno int not null,
+  addr_type varchar(10),
+  addr1		varchar(100),
+  addr2 	varchar(100),
+  landmark	varchar(100),
+  city		varchar(50),
+  pincode	int,
+  primary key(regno, addr_type)
+);
+
+insert into student_addressinfo values (1, 'present', '#1, 2nd Cross, 3rd Main', 'ABC Nagar, 2nd Stage', 'Near Canara Bank', 'Bangalore', 560008);
+insert into student_addressinfo values (1, 'permanent', '#9, 8th Cross, 7th Main', 'XYZ Nagar, 4th Stage', 'Near Gurukul', 'Mangalore', 574142); 
+insert into student_addressinfo values (2, 'present', '#4A, 5 & 6 2nd Phase', 'Peenya Industrial Estate', 'Near Manufacturing Facilities', 'Bangalore', 560078);
+insert into student_addressinfo values (2, 'permanent', ' 2257/1 Vinoba Road', 'Near Kala Mandir', '', 'Chitradurga', 577527); 
+insert into student_addressinfo values (3, 'present', '# 217, 10 A Main', '2nd Floor, HRBR Layout, 1st Block', 'Near Horamavu Signal', 'Bangalore', 560004);
+insert into student_addressinfo values (3, 'permanent', '88 Door No,8th Main,9th Cross', 'K H Road,Saraswathipuram', 'Near Alma Master', 'Delhi', 110011); 
+insert into student_addressinfo values (4, 'present', '#37, 1st Floor Basco Court', 'Basavanagudi', 'NA', 'Bangalore', 560010);
+insert into student_addressinfo values (4, 'permanent', '115/ 48, East End C Main Road', 'Sri Kanva Pride, 2nd Floor', 'Jayanagar 9th Block', 'Hyderabad', 500012); 
+insert into student_addressinfo values (5, 'present', 'Sri Ram Mens PG, 2Nd Floor, Samrat Complex', 'Udayaravi Road,Kuvempunagar', 'Near Vijaya Bank', 'Bangalore', 560017);
+insert into student_addressinfo values (5, 'permanent', 'No.28, 4th B Cross , V Block, ', 'Koramangala Industrial Layout', 'Above Taj Paradise Hotel', 'Pune', 411041); 
 
 
 
- 
 > Create a Table to store Students Course & Mock rating info
   in "J2EE10AM_DB" with the following structure
 
 Table Name 	: student_courseinfo
 Columns		:
 --------------
-1. regno 		int(10)
-2. course_id 	int(10)
+1. regno 		int
+2. course_id 	int
 3. mock_rating	varchar(2)
+
+
 
 Note:-
 =======
@@ -271,68 +271,98 @@ Note:-
 
 
   
+Queries :-
+=========
+create table student_courseinfo
+( regno int not null,
+  course_id int not null,
+  mock_rating	varchar(2),
+  primary key(regno, course_id)
+);
+
+insert into student_courseinfo values (1, 1, '1*');
+insert into student_courseinfo values (1, 2, '1*');
+insert into student_courseinfo values (1, 3, '1*');
+insert into student_courseinfo values (1, 4, '1*');
+insert into student_courseinfo values (1, 5, '1*');
+insert into student_courseinfo values (1, 6, '1*');
+insert into student_courseinfo values (1, 7, '1*');
+insert into student_courseinfo values (1, 8, '1*');
+insert into student_courseinfo values (1, 9, '1*');
+insert into student_courseinfo values (1, 10,'1*');
+
+insert into student_courseinfo values (2, 1, '1*');
+insert into student_courseinfo values (2, 2, '2*');
+insert into student_courseinfo values (2, 3, '2');
+insert into student_courseinfo values (2, 4, '1');
+insert into student_courseinfo values (2, 5, null);
+insert into student_courseinfo values (2, 6, null);
+
+insert into student_courseinfo values (3, 1, '1*');
+insert into student_courseinfo values (3, 2, null);
+
+insert into student_courseinfo values (4, 1, null);
+insert into student_courseinfo values (4, 2, null);
+insert into student_courseinfo values (4, 3, null);
+insert into student_courseinfo values (4, 4, null);
+insert into student_courseinfo values (4, 5, null);
+insert into student_courseinfo values (4, 6, null);
+insert into student_courseinfo values (4, 8, null);
+
+insert into student_courseinfo values (5, 7, '1*');
+insert into student_courseinfo values (5, 10, '1*');
     
  
-Queries :
-===========
-create table guardian_info
-( regno int(10) not null,
-  gfirstname varchar(50),
-  gmiddlename varchar(50),
-  glastname varchar(50),
-  primary key(regno)
-);
-
-create table students_otherinfo
-( regno int(10) not null,
-  isadmin varchar(1),
-  password varchar(50),
-  primary key(regno)
-);
 
 
 
-insert into guardian_info values (1, 'AAA', 'NA', 'BBB');
-insert into guardian_info values (2, 'BBB', 'NA', 'DDD');
-insert into guardian_info values (3, 'ABC', 'NA', 'XYZ');
-insert into guardian_info values (4, 'XYZ', 'NA', 'ABC');
-insert into guardian_info values (5, 'DEF', 'NA', 'GHI');
 
-insert into students_otherinfo values (1, 'Y', 'qwerty');
-insert into students_otherinfo values (2, 'N', 'qwerty');
-insert into students_otherinfo values (3, 'N', 'qwerty');
-insert into students_otherinfo values (4, 'N', 'qwerty');
-insert into students_otherinfo values (5, 'N', 'qwerty');
-
-
-> Create a table to store students other information
+> Create a table to store "students other informations"
   such as password, last login time, etc.,  with the 
   following structure
 
 Table Name 	: student_otherinfo
 Columns		:
 --------------
-1. regno 		   	int(10)(PK)
+1. regno 		   	int(PK)
 2. isadmin		   	varchar(1)
 3. password		   	varchar(50)
-4. login_attempts  	int(1)
+4. login_attempts  	int
 5. last_login_time 	varchar(50)
 
-
-
-
-
-	"course_info"
-	==============================
-	1. course_id	int(10)(PK)
-	2. course_name	varchar(25)
-	
-> Insert regno 1 to 5 data into "guardian_info"& 
-  "students_otherinfo" tables
+> Insert regno 1 to 5 data "student_otherinfo" table
 
 > While inserting data into "students_otherinfo" 
   table make regno 1 "isadmin" value as "Y" 
   and rest as "N"
+  
+  
+  
+  
+  
+Queries :-
+=========
+  
+create table student_otherinfo
+( regno int not null,
+  isadmin varchar(1),
+  password varchar(50),
+  login_attempts int,
+  last_login_time varchar(50),
+  primary key(regno)
+);
+
+insert into student_otherinfo values (1, 'Y', 'qwerty', 0, null);
+insert into student_otherinfo values (2, 'N', 'qwerty', 0, null);
+insert into student_otherinfo values (3, 'N', 'qwerty', 0, null);
+insert into student_otherinfo values (4, 'N', 'qwerty', 0, null);
+insert into student_otherinfo values (5, 'N', 'qwerty', 0, null);
+
+
+
+
+	
+
   
 
   
@@ -609,22 +639,10 @@ DataBase Uniform Resource Locator (DB URL)
 > The structure of DB URL is
   <Protocol>:<Sub-protocol>:<Sub-name>
 
-  
-  
-  
-  
-  
-
-
-
-
-
-  
 1. Protocol     
 ============
 > It's a Mandatory Information
-> In case of Java / Java EE, Protocol 
-  is always "jdbc"
+> In case of Java/Java EE, Protocol is always "jdbc"
 
 
 
@@ -757,17 +775,13 @@ java.sql.DriverManager
   - returns an object of "Connection" if it is able 
     to establish the connection to DB
   
-  
-  
-  
-  
-  
-  
-  
-  
 > "java.sql.Connection" is an interface & It's an
   "Object representation of Physical DB Connection" 
   that is used by Java program to communicate with DB
+  
+  
+  
+  
   
   
   
@@ -1712,8 +1726,8 @@ structure
 Table Name 	: student_courseinfo
 Columns		:
 --------------
-1. regno 		int(10)
-2. course_id 	int(10)
+1. regno 		int
+2. course_id 	int
 
 Note:-
 =======
