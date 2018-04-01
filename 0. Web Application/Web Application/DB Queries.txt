@@ -4,7 +4,7 @@ use studentsapp_db;
 --***************************************************--
 -- Table Creation Queries							 --
 --***************************************************--
-create table student_info;
+create table student_info
 ( regno int not null,
   firstname varchar(50),
   middlename varchar(50),
@@ -17,7 +17,7 @@ create table student_info;
   primary key(regno)
 );
 
-create table course_info;
+create table course_info
 ( course_id int not null,
   course_name varchar(50),
   fee float,
@@ -26,7 +26,7 @@ create table course_info;
   primary key(course_id)
 );
 
-create table guardian_info;
+create table guardian_info
 ( regno int not null,
   gfirstname varchar(50),
   gmiddlename varchar(50),
@@ -46,7 +46,7 @@ create table student_addressinfo
   primary key(regno, addr_type)
 );
 
-create table student_courseinfo;
+create table student_courseinfo
 ( regno int not null,
   course_id int not null,
   mock_rating	varchar(2),
@@ -67,28 +67,28 @@ create table student_otherinfo
 --***************************************************--
 -- Table Data Insertion Queries						 --
 --***************************************************--
-insert into students_info; values (1, 'Praveen', 'NA', 'D', 'abc@gmail.com', 9445326450, 20, 'APR', 1995);
-insert into students_info; values (2, 'Naveen', 'NA', 'A', 'xyz@gmail.com',  9880235641, 01, 'MAR', 1995);
-insert into students_info; values (3, 'Raveen', 'NA', 'B', 'def@gmail.com', 9536412985, 05, 'OCT', 1981);
-insert into students_info; values (4, 'Keveen', 'NA', 'C', 'ghi@gmail.com', 8521469703, 09, 'OCT', 1998);
-insert into students_info; values (5, 'Chaveen', 'NA', 'E', 'efg@gmail.com', 9675325938, 09, 'JUL', 1994);
+insert into student_info values (1, 'Praveen', 'NA', 'D', 'abc@gmail.com', 9445326450, 20, 'APR', 1995);
+insert into student_info values (2, 'Naveen', 'NA', 'A', 'xyz@gmail.com',  9880235641, 01, 'MAR', 1995);
+insert into student_info values (3, 'Raveen', 'NA', 'B', 'def@gmail.com', 9536412985, 05, 'OCT', 1981);
+insert into student_info values (4, 'Keveen', 'NA', 'C', 'ghi@gmail.com', 8521469703, 09, 'OCT', 1998);
+insert into student_info values (5, 'Chaveen', 'NA', 'E', 'efg@gmail.com', 9675325938, 09, 'JUL', 1994);
 
-insert into course_info; values (1, 'Core Java', 8000.00, '4 Months', 'Madhu');
-insert into course_info; values (2, 'Java EE', 5000.00, '2 Months', 'Praveen');
-insert into course_info; values (3, 'SQL', 2000.20, '1 Months', 'Deekshit');
-insert into course_info; values (4, 'HTML', 1000.50, '1 Months', 'Priyanka');
-insert into course_info; values (5, 'Hibernate', 2500.25, '1 Months', 'Harsha');
-insert into course_info; values (6, 'Springs', 2500.00, '1 Months', 'Harsha');
-insert into course_info; values (7, 'AngularJS', 3500.50, '1 Months', 'Shashi');
-insert into course_info; values (8, 'Web Services', 8000.00, '2 Months', 'Praveen');
-insert into course_info; values (9, 'General Aptitude', 5000.50, '1 Months', 'Namratha');
-insert into course_info; values (10, 'Android', 7000.45, '2 Months', 'Swetha');
+insert into course_info values (1, 'Core Java', 8000.00, '4 Months', 'Madhu');
+insert into course_info values (2, 'Java EE', 5000.00, '2 Months', 'Praveen');
+insert into course_info values (3, 'SQL', 2000.20, '1 Months', 'Deekshit');
+insert into course_info values (4, 'HTML', 1000.50, '1 Months', 'Priyanka');
+insert into course_info values (5, 'Hibernate', 2500.25, '1 Months', 'Harsha');
+insert into course_info values (6, 'Springs', 2500.00, '1 Months', 'Harsha');
+insert into course_info values (7, 'AngularJS', 3500.50, '1 Months', 'Shashi');
+insert into course_info values (8, 'Web Services', 8000.00, '2 Months', 'Praveen');
+insert into course_info values (9, 'General Aptitude', 5000.50, '1 Months', 'Namratha');
+insert into course_info values (10, 'Android', 7000.45, '2 Months', 'Swetha');
 
-insert into guardian_info; values (1, 'Dyamappa', 'NA', 'B S', 9956321784);
-insert into guardian_info; values (2, 'Anjana', 'NA', 'D', 9886420364);
-insert into guardian_info; values (3, 'Ravindra', 'NA', 'X', 7765314651);
-insert into guardian_info; values (4, 'Arayana', 'NA', 'B C', 8652349134);
-insert into guardian_info; values (5, 'Rejani', 'NA', 'Changappa', 9446349753);
+insert into guardian_info values (1, 'Dyamappa', 'NA', 'B S', 9956321784);
+insert into guardian_info values (2, 'Anjana', 'NA', 'D', 9886420364);
+insert into guardian_info values (3, 'Ravindra', 'NA', 'X', 7765314651);
+insert into guardian_info values (4, 'Arayana', 'NA', 'B C', 8652349134);
+insert into guardian_info values (5, 'Rejani', 'NA', 'Changappa', 9446349753);
 
 insert into student_addressinfo values (1, 'present', '#1, 2nd Cross, 3rd Main', 'ABC Nagar, 2nd Stage', 'Near Canara Bank', 'Bangalore', 560008);
 insert into student_addressinfo values (1, 'permanent', '#9, 8th Cross, 7th Main', 'XYZ Nagar, 4th Stage', 'Near Gurukul', 'Mangalore', 574142); 
@@ -101,38 +101,43 @@ insert into student_addressinfo values (4, 'permanent', '115/ 48, East End C Mai
 insert into student_addressinfo values (5, 'present', 'Sri Ram Mens PG, 2Nd Floor, Samrat Complex', 'Udayaravi Road,Kuvempunagar', 'Near Vijaya Bank', 'Bangalore', 560017);
 insert into student_addressinfo values (5, 'permanent', 'No.28, 4th B Cross , V Block, ', 'Koramangala Industrial Layout', 'Above Taj Paradise Hotel', 'Pune', 411041); 
 
-insert into student_courseinfo; values (1, 1, '1*');
-insert into student_courseinfo; values (1, 2, '1*');
-insert into student_courseinfo; values (1, 3, '1*');
-insert into student_courseinfo; values (1, 4, '1*');
-insert into student_courseinfo; values (1, 5, '1*');
-insert into student_courseinfo; values (1, 6, '1*');
-insert into student_courseinfo; values (1, 7, '1*');
-insert into student_courseinfo; values (1, 8, '1*');
-insert into student_courseinfo; values (1, 9, '1*');
-insert into student_courseinfo; values (1, 10,'1*');
+insert into student_courseinfo values (1, 1, '1*');
+insert into student_courseinfo values (1, 2, '1*');
+insert into student_courseinfo values (1, 3, '1*');
+insert into student_courseinfo values (1, 4, '1*');
+insert into student_courseinfo values (1, 5, '1*');
+insert into student_courseinfo values (1, 6, '1*');
+insert into student_courseinfo values (1, 7, '1*');
+insert into student_courseinfo values (1, 8, '1*');
+insert into student_courseinfo values (1, 9, '1*');
+insert into student_courseinfo values (1, 10,'1*');
 
-insert into student_courseinfo; values (2, 1, '1*');
-insert into student_courseinfo; values (2, 2, '2*');
-insert into student_courseinfo; values (2, 3, '2');
-insert into student_courseinfo; values (2, 4, '1');
-insert into student_courseinfo; values (2, 5, null);
-insert into student_courseinfo; values (2, 6, null);
+insert into student_courseinfo values (2, 1, '1*');
+insert into student_courseinfo values (2, 2, '2*');
+insert into student_courseinfo values (2, 3, '2');
+insert into student_courseinfo values (2, 4, '1');
+insert into student_courseinfo values (2, 5, null);
+insert into student_courseinfo values (2, 6, null);
 
-insert into student_courseinfo; values (3, 1, '1*');
-insert into student_courseinfo; values (3, 2, null);
+insert into student_courseinfo values (3, 1, '1*');
+insert into student_courseinfo values (3, 2, null);
 
-insert into student_courseinfo; values (4, 1, null);
-insert into student_courseinfo; values (4, 2, null);
-insert into student_courseinfo; values (4, 3, null);
-insert into student_courseinfo; values (4, 4, null);
-insert into student_courseinfo; values (4, 5, null);
-insert into student_courseinfo; values (4, 6, null);
-insert into student_courseinfo; values (4, 8, null);
+insert into student_courseinfo values (4, 1, null);
+insert into student_courseinfo values (4, 2, null);
+insert into student_courseinfo values (4, 3, null);
+insert into student_courseinfo values (4, 4, null);
+insert into student_courseinfo values (4, 5, null);
+insert into student_courseinfo values (4, 6, null);
+insert into student_courseinfo values (4, 8, null);
 
-insert into student_courseinfo; values (5, 7, '1*');
-insert into student_courseinfo; values (5, 10, '1*');
+insert into student_courseinfo values (5, 7, '1*');
+insert into student_courseinfo values (5, 10, '1*');
 
+insert into student_otherinfo values (1, 'Y', 'qwerty', 0, null);
+insert into student_otherinfo values (2, 'N', 'qwerty', 0, null);
+insert into student_otherinfo values (3, 'N', 'qwerty', 0, null);
+insert into student_otherinfo values (4, 'N', 'qwerty', 0, null);
+insert into student_otherinfo values (5, 'N', 'qwerty', 0, null);
 
 
 
@@ -178,7 +183,7 @@ insert into library values('XYZ', 'Springs');
 
 create database studentsapp_db;
 
-create table students_info;
+create table student_info;
 ( regno int(10) not null,
   firstname varchar(50),
   middlename varchar(50),
@@ -265,26 +270,61 @@ select * from student_otherinfo;
 
 select * from library;
 
+select * from student_info si, 
+student_addressinfo sai,
+student_courseinfo sci, 
+course_info ci
+where si.regno = sai.regno
+and sci.course_id=ci.course_id
+and sci.regno=si.regno
+and 
 
+(si.firstname like '%pra%'
+or si.middlename like '%pra%'
+or si.lastname like '%pra%')
 
+and sai.city like '%bangalore%'
+and sai.pincode = 560008
+and sci.mock_rating like '%1*%'
+and ci.course_name like '%java%';
+
+--====================================================
 
 select * from student_info si, 
-student_courseinfo sci,
-
 student_addressinfo sai
-where si.regno = sci.regno
-and si.regno = sai.regno
-and sci.course_id = ci.course_id
-and si.regno = sci.regno
-and si.firstname like '%pra%'
+where si.regno = sai.regno
+and sai.city like '%bangalore%';
 
-select * from student_courseinfo sci, course_info ci where sci.course_id=ci.course_id and ci.course_name like '%java%' and sci.regno=1;
+--====================================================
+
+select * from student_info si, 
+student_addressinfo sai,
+student_courseinfo sci, 
+course_info ci
+where si.regno = sai.regno
+and sci.course_id=ci.course_id
+and sci.regno=si.regno
+and sai.city like '%bangalore%'
+and sci.mock_rating like '%1*%'
+and ci.course_name like '%core%';
 
 
-and (si.firstname like '%pra%'
-or si.middlename like '%pra%'
-or si.lastname like '%pra%'
-or sci.mock_rating like '%1*%'
-or si.mobile = 9445326450
-or sai.city like '%Java%'
-or sai.pincode = 560008);
+
+
+sb.append("select * from student_info si,"); 
+sb.append("student_addressinfo sai,");
+sb.append("student_courseinfo sci,"); 
+sb.append("course_info ci");
+sb.append("where si.regno = sai.regno");
+sb.append("and sci.course_id=ci.course_id");
+sb.append("and sci.regno=si.regno");
+sb.append("and"); 
+sb.append("
+sb.append("(si.firstname like '%pra%'");
+sb.append("or si.middlename like '%pra%'");
+sb.append("or si.lastname like '%pra%')");
+sb.append("
+sb.append("and sai.city like '%bangalore%'");
+sb.append("and sai.pincode = 560008");
+sb.append("and sci.mock_rating like '%1*%'");
+sb.append("and ci.course_name like '%java%';");
