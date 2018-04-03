@@ -3033,7 +3033,7 @@ Image:
 
 Syntax:-
 --------
-void HttpServletResponse.sendRedirect(String url) 
+public void HttpServletResponse.sendRedirect(String url) 
 throws IOException	  
 	  
 Example :-
@@ -3053,6 +3053,9 @@ resp.sendRedirect(url);
 
 
 
+
+
+
 **************			
 * Assignment *
 **************	
@@ -3065,13 +3068,29 @@ resp.sendRedirect(url);
   
   
   
-> Create a Servlet which gets the request from this 
-  form, takes the "keyword" & display the results 
-  for that keyword in "www.grainger.com" in Browser
+  
+  
+  
+  
+  
+  
+> Create a Servlet by name "GraingerSearchServlet" 
+  - which gets the request from this form, 
+  - takes the "keyword" & 
+  - display the results for that keyword in 
+    "www.grainger.com" in Browser
 
 
 
 
+  
+  
+  
+  
+  
+  
+  
+  
   
   
 *************			
@@ -3090,11 +3109,16 @@ resp.sendRedirect(url);
   
   
   
-> Create a Servlet 
+> Create a Servlet by name "AdvanceSearchServlet"
   - which gets the request from this form,
   - takes the "keyword" & 
   - display the results for that keyword in 
     the corresponding Website    
+  
+  
+  
+  
+  
   
   
   
@@ -3139,9 +3163,10 @@ throws ServletException, IOException
   1. "Request" Object
   2. "ServletContext" Object
 
+----------------------------------------------------------	
 1. RequestDispatcher  
           ServletRequest.getRequestDispatcher(String url)
-	
+----------------------------------------------------------	
 	url = "currentDate";    //Internal Resource - Dynamic
 	url = "index.html";		//Internal Resource - Static
 	
@@ -3154,9 +3179,10 @@ throws ServletException, IOException
 					= req.getRequestDispatcher(url);
 	dispatcher.forward(req, resp);
 	
+----------------------------------------------------------		
 2. RequestDispatcher 
    ServletContext.getRequestDispatcher(String url)
-
+---------------------------------------------------------
    //In this case URL MUST start with "/" 
    String url = "/currentDate";
    
@@ -3165,6 +3191,7 @@ throws ServletException, IOException
 				= context.getRequestDispatcher(url);
 			
    dispatcher.forward(req, resp);
+	
 	
 	
 	
