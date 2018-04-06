@@ -960,19 +960,14 @@ Examples:
  
 NOTE : 
 ------
-1. ABC = Table Name
-2. Dynamic SQL Query MUST Contain One/More "?"
-3. "Select" SQL Queries
-    	|
-    	|----> Static
-    	|
-    	|----> Dynamic
-    
-    "Other Than Select" SQL Queries
-    	|
-    	|----> Static
-    	|
-    	|----> Dynamic
+> ABC = Table Name
+> Dynamic SQL Query MUST Contain One/More "?"
+> There can be 4 possible combination of Queries we can 
+   issue in JDBC 3rd step
+   1. Static Select
+   2. Static Other than Select
+   3. Dynamic Select
+   4. Dynamic Other than Select 
     
 	
 
@@ -1009,7 +1004,7 @@ JDBC Statements
   above type), then we MUST invoke any one of the 
   below method to issue SQL queries to DB
 
-1. int executeUpdate() throws SQLException
+1. public int executeUpdate() throws SQLException
 ---------------------------------------------------
 > This method is used to execute "Other than SELECT" 
   SQL Queries
@@ -1017,21 +1012,36 @@ JDBC Statements
 > This method returns "No. of Rows Affected Count" 
   in the form of Integer
 
-2. ResultSet executeQuery() throws SQLException
-----------------------------------------------------
+2. public ResultSet executeQuery() throws SQLException
+------------------------------------------------------
 > This method is used to execute "ONLY SELECT" SQL 
   Queries   
    
 > This method returns "DB Results" in the form of 
   "ResultSet" Object  
    
+NOTE:-
+========
+1. If Query is "Static Select" then 
+   - create "Statement" Object &
+   - invoke "executeQuery()" method on that Object
  
+2. If Query is "Static Other than Select" then 
+   - create "Statement" Object &
+   - invoke "executeUpdate()" method on that Object 
  
+3. If Query is "Dynamic Select" then 
+   - create "PreparedStatement" Object &
+   - invoke "executeQuery()" method on that Object
  
- 
- 
- 
- 
+4. If Query is "Dynamic Other than Select" then 
+   - create "PreparedStatement" Object &
+   - invoke "executeUpdate()" method on that Object
+   
+   
+   
+   
+   
 java.sql.Statement
 =====================
 > Its an interface & an Object of Statement is used 

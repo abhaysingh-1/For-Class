@@ -3372,15 +3372,30 @@ NOTE:
 ************************
 * Assignment           *
 ************************
-> "LoginServlet" assignment error response 
+> Modify the Error Response of "LoginServlet" 
   i.e. "Invalid User Name / Password" to include 
   "Login.html" 
+  
+> Also modify the Success Response of "LoginServlet" 
+  i.e. "Displaying His Own Data" to include 
+  "Header.html" & "Footer.html"
+  
+  
+  
+  
+  
+  
+  
   
 > Modify all the assignment responses to include 
   "Header.html" and "Footer.html"
   
 
 
+  
+  
+  
+  
 
 **************	  
 * Assignment *	  
@@ -3389,7 +3404,15 @@ NOTE:
   i.e. user should provide 
   - "Date of Birth" & 
   - "Age at the Date"	  
-  as input
+  as input shown below
+  
+  
+  
+  
+  
+  
+  
+  
   
 > StudentsApp will calculate his Age & display his age in
   - years months days
@@ -3399,9 +3422,20 @@ NOTE:
   - or hours
   - or minutes
   - or seconds
-	  
-	  
-	  
+  as shown below
+  
+  
+  
+  
+  
+  
+  
+  
+  
+NOTE :- 
+---------
+We're mimicking the behaviour of 
+"http://www.calculator.net/age-calculator.html"	  
 	  
 	  
 	  
@@ -3520,7 +3554,6 @@ Cookie Related Methods :-
 > Value can be anything & it "can be changed" after 
   creation
   
-
 2. public void HttpServletResponse
                         .addCookie(Cookie cookieObj)
 ==========================================================
@@ -3543,14 +3576,33 @@ Cookie Related Methods :-
 ======================================================
 > This method returns the Value of the Cookie
  
- 
 6. public void Cookie.setMaxAge(int expiry)
 =====================================================
 > set's the max age of the Cookie in "Seconds" 
 > Any +ve Value makes Cookie "persistent" 
 > Any -ve Value makes Cookie "Non-persistent"
+
+
+
+
+
+
 > 0 Value makes Cookie (persistent / Non-persistent) 
   to be "Deleted Immediately" from Browser 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
 Examples :
