@@ -1,0 +1,263 @@
+<html>
+<body>
+	<form action="./createProfile" method="post">
+
+		<table width="1000">
+			<tr>
+				<td>
+					<fieldset>
+						<legend>
+							<B>Profile Related Info ...</B>
+						</legend>
+						<table>
+							<tr>
+								<td>Reg.No</td>
+								<td><input type="number" name="regno"
+									placeholder="Enter Regno" required="required" /></td>
+							<tr>
+								<td>Password</td>
+								<td><input type="password" name="pass"
+									placeholder="Enter Password" required="required" /></td>
+							</tr>
+							<tr>
+								<td>Admin ?</td>
+								<td><select name="isAdmin">
+										<option value="">---select---</option>
+										<option value="N">NO</option>
+										<option value="Y">YES</option>
+								</select></td>
+							</tr>
+							
+						</table>
+					</fieldset>
+				</td>
+				<td>
+					<fieldset>
+						<legend>
+							<B>Course Related Info ...</B>
+						</legend>
+						<table>
+							<tr>
+								<td>
+									<table>
+										<tr>
+											<td>Core Java
+											<td>
+											<td><input type="checkbox" name="course" value="java"></td>
+										<tr>
+											<td>J2EE
+											<td>
+											<td><input type="checkbox" name="course" value="j2ee"></td>
+										</tr>
+										<tr>
+											<td>SQL
+											<td>
+											<td><input type="checkbox" name="course" value="sql"></td>
+										</tr>
+										<tr>
+											<td>HTML
+											<td>
+											<td><input type="checkbox" name="course" value="html"></td>
+										</tr>
+										<tr>
+											<td>Hibernate
+											<td>
+											<td><input type="checkbox" name="course"
+												value="hibernate"></td>
+										</tr>
+									</table>
+								</td>
+								<td><table>
+										<tr>
+											<td>Springs
+											<td>
+											<td><input type="checkbox" name="course" value="springs"></td>
+										</tr>
+										<tr>
+											<td>Angular JS
+											<td>
+											<td><input type="checkbox" name="course"
+												value="angularJS"></td>
+										</tr>
+										<tr>
+											<td>Web Services
+											<td>
+											<td><input type="checkbox" name="course"
+												value="webservices"></td>
+										</tr>
+										<tr>
+											<td>General Aptitude
+											<td>
+											<td><input type="checkbox" name="course" value="apti"></td>
+										</tr>
+										<tr>
+											<td>Android
+											<td>
+											<td><input type="checkbox" name="course" value="android"></td>
+										</tr>
+									</table></td>
+							</tr>
+						</table>
+					</fieldset>
+				</td>
+			</tr>
+		</table>
+
+
+
+		<table width="1000">
+			<tr>
+				<td>
+					<fieldset>
+						<legend>
+							<B>Student Basic Info ...</B>
+						</legend>
+						<table>
+							<tr>
+								<td>First Name</td>
+								<td><input type="text" name="fnm"
+									placeholder="Enter First Name" required="required" /></td>
+							</tr>
+							<tr>
+								<td>Middle Name</td>
+								<td><input type="text" name="mnm"
+									placeholder="Enter Middle Name" required="required" /></td>
+							</tr>
+							<tr>
+								<td>Last Name</td>
+								<td><input type="text" name="lnm"
+									placeholder="Enter Last Name" required="required" /></td>
+							</tr>
+							
+						</table>
+					</fieldset>
+				</td>
+				<td>
+					<fieldset>
+						<legend>
+							<B>Guardian Info ...</B>
+						</legend>
+						<table>
+							<tr>
+								<td>Guardian First Name</td>
+								<td><input type="text" name="gfnm"
+									placeholder="Enter Guardian First Name" required="required" /></td>
+							</tr>
+							<tr>
+								<td>Guardian Middle Name</td>
+								<td><input type="text" name="gmnm"
+									placeholder="Enter Guardian Middle Name" required="required" /></td>
+							</tr>
+							<tr>
+								<td>Guardian Last Name</td>
+								<td><input type="text" name="glnm"
+									placeholder="Enter Guardian Last Name" required="required" /></td>
+							</tr>
+							
+						</table>
+					</fieldset>
+				</td>
+			</tr>
+		</table>
+
+
+
+
+
+		<table>
+			<tr>
+				<td>
+					<table width="500">
+						<tr>
+							<td>
+								<fieldset>
+									<legend>
+										<B>Student Present Address ...</B>
+									</legend>
+									<table>
+										
+										<tr>
+											<td>Address 1</td>
+											<td><input type="text" name="pre.addr1"
+												placeholder="Enter Address 1" required="required" /></td>
+										</tr>
+										<tr>
+											<td>Address 2</td>
+											<td><input type="text" name="pre.addr2"
+												placeholder="Enter Address 2" required="required" /></td>
+										</tr>
+										<tr>
+											<td>Land Mark</td>
+											<td><input type="text" name="pre.landmark"
+												placeholder="Enter Land Mark" required="required" /></td>
+										</tr>
+										<tr>
+											<td>City</td>
+											<td><input type="text" name="pre.city"
+												placeholder="Enter City" required="required" /></td>
+										</tr>
+										
+										<tr>
+											<td>Pincode</td>
+											<td><input type="number" name="pre.pincode"
+												placeholder="Enter Pincode" required="required" /></td>
+										</tr>
+									</table>
+								</fieldset>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<table width="500">
+						<tr>
+							<td>
+								<fieldset>
+									<legend>
+										<B>Student Permanent Address ...</B>
+									</legend>
+									<table>
+										
+										<tr>
+											<td>Address 1</td>
+											<td><input type="text" name="per.addr1"
+												placeholder="Enter Address 1" required="required" /></td>
+										</tr>
+										<tr>
+											<td>Address 2</td>
+											<td><input type="text" name="per.addr2"
+												placeholder="Enter Address 2" required="required" /></td>
+										</tr>
+										<tr>
+											<td>Land Mark</td>
+											<td><input type="text" name="per.landmark"
+												placeholder="Enter Land Mark" required="required" /></td>
+										</tr>
+										<tr>
+											<td>City</td>
+											<td><input type="text" name="per.city"
+												placeholder="Enter City" required="required" /></td>
+										</tr>
+										
+										<tr>
+											<td>Pincode</td>
+											<td><input type="number" name="per.pincode"
+												placeholder="Enter Pincode" required="required" /></td>
+										</tr>
+									</table>
+								</fieldset>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<BR><BR>
+		<input type="submit" value="Create Profile" /> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="Submit" value="Reset" />
+
+		 
+	</form>
+</body>
+</html>
