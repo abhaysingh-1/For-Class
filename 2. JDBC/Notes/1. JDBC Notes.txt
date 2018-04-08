@@ -312,7 +312,208 @@ insert into student_courseinfo values (4, 8, null);
 insert into student_courseinfo values (5, 7, '1*');
 insert into student_courseinfo values (5, 10, '1*');
     
- 
+
+
+
+	
+> Create a Table to store Students Education info
+  in "J2EE10AM_DB" with the following structure
+
+Table Name 	: education_type
+Columns		:
+--------------
+1. type int
+2. name varchar(50)
+
+Table Name 	: student_educationinfo
+Columns		:
+--------------
+1. regno int
+2. type int
+3. college varchar(250)
+4. university varchar(250)
+5. branch varchar(50)
+6. yop int
+7. percentage float
+
+> Insert following educational details.
+  ===============================================
+  | type		|	name						|
+  ===============================================
+		1		S.S.L.C (10th Standard)
+		2		2nd P.U.C (12th Standard or +2)
+		3		Diploma (Under Graduation)
+		4		Degree (Graduation)
+		5		Master Degree (Post Graduation)
+
+Note:-
+=======
+- Since every regno can have multiple education info. 
+  Hence combination of "regno & type" should be 
+  made as primary key i.e. "Composite Key"
+
+- Insert regno 1 to 5 data into "student_educationinfo" 
+
+Queries :-
+=========
+create table education_type
+( type int not null,
+  name varchar(50),
+  primary key(type)
+);
+
+create table student_educationinfo
+( 
+  regno int not null,
+  type int not null,
+  college varchar(250),
+  university varchar(250),
+  branch varchar(50),
+  yop int,
+  percentage float,
+  primary key(regno,type)
+);
+
+insert into education_type values (1, 'S.S.L.C (10th Standard)');
+insert into education_type values (2, '2nd P.U.C (12th Standard or +2)');
+insert into education_type values (3, 'Diploma (Under Graduation)');
+insert into education_type values (4, 'Degree (Graduation)');
+insert into education_type values (5, 'Master Degree (Post Graduation)');
+
+insert into student_educationinfo values (1, 1, 'Marimallappa High School, Mysore', 'Karnataka Secondary Education Examination Board', null, 1996, 78.5);
+insert into student_educationinfo values (1, 2, 'Marimallappa P.U. College, Mysore', 'Department of Pre-University Education, Karnataka', 'PCMB', 1998, 65);
+insert into student_educationinfo values (1, 4, 'A.P.S College of Engineering, Bangalore', 'Visvesvaraya Technological University, Karnataka', 'E&C', 2002, 65.5);
+
+insert into student_educationinfo values (2, 1, 'Bapuji High School, Chitradurga', 'Karnataka Secondary Education Examination Board', null, 2000, 68.59);
+insert into student_educationinfo values (2, 3, 'SJM Institute Of Technology, Chitradurga', 'Visvesvaraya Technological University, Karnataka', 'CS', 2003, 75.96);
+insert into student_educationinfo values (2, 4, 'SJM Institute Of Technology, Chitradurga', 'Visvesvaraya Technological University, Karnataka', 'IS', 2002, 86.4);
+
+insert into student_educationinfo values (3, 1, 'S R S High School, Delhi', 'Board of Higher Secondary Education Delhi', null, 2005, 59.75);
+insert into student_educationinfo values (3, 2, 'Anjan College, Delhi', 'Delhi Board of Senior Secondary Education', 'null', 2007, 61.2);
+insert into student_educationinfo values (3, 3, 'Shiva Institute Of Technology, Delhi', 'Delhi Technological University, Delhi', 'Mech.', 2010, 65.23);
+insert into student_educationinfo values (3, 4, 'Shiva Institute Of Technology, Delhi', 'Delhi Technological University, Delhi', 'Mech.', 2014, 78.2);
+insert into student_educationinfo values (3, 5, 'Shiva Institute Of Technology, Delhi', 'Delhi Technological University, Delhi', 'Mech.', 2017, 80);
+
+insert into student_educationinfo values (4, 1, 'SLV High School, Hyderabad','Board of Intermediate and Secondary Education, Hyderabad', null, 2012, 59.5);
+insert into student_educationinfo values (4, 2, 'Saraswati College, Hyderabad', 'Board of Intermediate and Secondary Education, Hyderabad', null, 2014, 58);
+insert into student_educationinfo values (4, 4, 'A.P.S College of Engineering, Bangalore', 'Visvesvaraya Technological University, Karnataka', 'E&C', 2016, 55.5);
+
+insert into student_educationinfo values (5, 1, 'Government High School, Pune', 'Maharashtra State Board of Secondary and Higher Secondary Education', null, 2009, 59.75);
+insert into student_educationinfo values (5, 2, 'Government College, Pune', 'Maharashtra State Board of Secondary and Higher Secondary Education', 'null', 2011, 61);
+insert into student_educationinfo values (5, 3, 'Government Institute Of Technology, Delhi', 'Maharashtra State Board of Technical Education', 'E&E', 2014, 65);
+insert into student_educationinfo values (5, 4, 'Government Institute Of Technology, Delhi', 'Maharashtra State Board of Technical Education', 'E&E', 2017, 78);
+
+
+
+> Create a Table to store Requirement info
+  in "J2EE10AM_DB" with the following structure
+
+Table Name 	: requirement_info
+Columns		:
+--------------
+1. req_id int
+2. company_name varchar(50)
+3. designation varchar(50)
+4. skills varchar(50)
+5. interview_location varchar(50)
+6. job_location varchar(50)
+7. salary varchar(250)
+8. 10_percentage int
+9. 12_percentage int
+10. degree_percentage int
+11. masterdegree_percentage int
+12. other_info varchar(250)
+
+> Insert 10 requirements to this table 
+
+
+create table requirement_info
+(req_id int,
+company_name varchar(50),
+designation varchar(50),
+skills varchar(50),
+interview_location varchar(50),
+job_location varchar(50),
+salary varchar(250),
+10_percentage int,
+12_percentage int,
+degree_percentage int,
+masterdegree_percentage int,
+other_info varchar(250),
+primary key (req_id)
+);
+
+insert into requirement_info values (1, 'Capgemini', 'Software Engineer', 'Java/J2EE', 'Bangalore', 'Any Where in India', 'As per comapany standrads', '60', '60', '60', '60', null);
+insert into requirement_info values (2, 'Cognizant', 'Junior Consultant', 'Java/J2EE/SQL/HTML', 'Bangalore', 'Bangalore', '2.5 LPA', '60', '60', '60', '60', 'First 3 months training will be in Chennai');
+insert into requirement_info values (3, 'Icicle Technologies', 'Developer', 'Java/J2EE/SQL/HTML/Hibernate/Springs', 'Bangalore', 'Mumbai', 'First 3 months 10K/month later 3 LPA', null, null, '60', '60', 'Candidate should be ready to work in Mumbai & Client location in Mumbai');
+insert into requirement_info values (4, 'Ascendum Solutions', 'Software Developer', 'Hibernate/Springs', 'Bangalore', 'Bangalore', 'First 3 months no salary later 1.8 LPA', null, null, null, null, 'Candidate should be ready to work in Client locations');
+insert into requirement_info values (5, 'Tech Mahindra', 'Software Consultant', 'Java', 'Bangalore', 'Any Where in India', '2.8 LPA', 55, 65, 60, 60, null);
+insert into requirement_info values (6, 'Infosys', 'Software Engineer', 'Any Programming Language', 'Bangalore', 'Any Where in India', '3.5 LPA', 75, 75, 75, 75, 'Candidate should be ready to work on any Technology');
+insert into requirement_info values (7, 'Wipro', 'Software Engineer', 'Any Programming Language preferably Java', 'Bangalore', 'Any Where in India', '3.0 LPA', 0, 0, 65, 65, 'Candidate should be ready to work on any Technology and any where in India');
+insert into requirement_info values (8, 'TestYentra', 'Software Engineer', 'Java/Java EE', 'Bangalore', 'Any Where in India', '3.0 LPA', 0, 0, 65, 65, 'Candidate should be ready to work on any Technology including Selenium');
+insert into requirement_info values (9, 'Prasanna Technologies', 'Software Engineer', 'Java/Java EE/Frameworks (Spring Mandatory)', 'Mangalore', 'Mangalore', 'As per comapany standrads', 0, 0, 65, 65, 'Candidate should be ready to work in Magalore');
+insert into requirement_info values (10, 'All State', 'Software Developer', 'Java EE', 'Bangalore', 'Bangalore', '6 LPA', 60, 60, 65, 65, null);
+
+
+
+> Create a Table to store Student Interview info
+  in "J2EE10AM_DB" with the following structure
+
+Table Name 	: student_interviewinfo
+Columns		:
+--------------
+1. regno int
+2. req_id int
+2. isCleared varchar(1)
+3. feedback varchar(250)
+
+> Insert regno 1 to 5 data to this table 
+
+Queries
+========
+create table student_interviewinfo
+(regno int,
+req_id int,
+isCleared varchar(1),
+feedback varchar(250),
+primary key (regno,req_id) );
+
+insert into student_interviewinfo values (1, 1, 'N', 'Candidate failed in Aptitude round');
+insert into student_interviewinfo values (1, 5, 'N', 'Candidate failed in Technical round');
+insert into student_interviewinfo values (1, 6, 'N', 'Candidate failed in Technical round');
+insert into student_interviewinfo values (1, 10, 'Y', null);
+
+insert into student_interviewinfo values (2, 1, 'N', 'Candidate failed in Technical round');
+insert into student_interviewinfo values (2, 2, 'N', 'Candidate failed in Technical round');
+insert into student_interviewinfo values (2, 5, 'N', 'Candidate failed in Technical round');
+insert into student_interviewinfo values (2, 9, 'Y', null);
+
+insert into student_interviewinfo values (3, 1, 'N', 'Candidate failed in Aptitude round');
+insert into student_interviewinfo values (3, 2, 'N', 'Candidate failed in Technical round');
+insert into student_interviewinfo values (3, 3, 'N', 'Candidate failed in HR round');
+insert into student_interviewinfo values (3, 4, 'N', 'Candidate failed in HR round');
+insert into student_interviewinfo values (3, 5, 'N', 'Candidate failed in Logical Reasoning round');
+insert into student_interviewinfo values (3, 6, 'N', 'Candidate failed in Group Discussion round');
+insert into student_interviewinfo values (3, 7, 'N', 'Candidate failed in Technical round');
+insert into student_interviewinfo values (3, 8, 'N', 'Candidate failed in HR round');
+
+insert into student_interviewinfo values (4, 1, 'N', 'Candidate failed in HR round');
+insert into student_interviewinfo values (4, 2, 'N', 'Candidate failed in Technical round');
+insert into student_interviewinfo values (4, 3, 'N', 'Candidate failed in HR round');
+insert into student_interviewinfo values (4, 4, 'N', 'Candidate failed in Aptitude round');
+insert into student_interviewinfo values (4, 5, 'N', 'Candidate failed in Logical Reasoning round');
+insert into student_interviewinfo values (4, 6, 'N', 'Candidate failed in Group Discussion round');
+insert into student_interviewinfo values (4, 7, 'N', 'Candidate failed in Technical round');
+insert into student_interviewinfo values (4, 8, 'Y', null);
+
+insert into student_interviewinfo values (5, 6, 'Y', null);
+
+
+
+
+
+
+
 
 
 
