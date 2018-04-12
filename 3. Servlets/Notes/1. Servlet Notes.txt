@@ -3787,7 +3787,7 @@ Attributes Summarized :-
 | 1. Instance      | One per Application              | One per Request & Response Cycle  | One per Login/Logout         |
 --------------------------------------------------------------------------------------------------------------------------
 | 2. Lifespan      | Created during Server Start up   | Create When Request Comes         | Create When User Login       |
-|                  | Destroyed during Server shut-down| Destroyed When Response is Given  | Destroyed When User Logout   |
+|                  | Destroyed when Server goes down  | Destroyed When Response is Given  | Destroyed When User Logout   |
 --------------------------------------------------------------------------------------------------------------------------
 | 3. Scope         | Application                      | Request & Response Cycle          | Session                      |
 --------------------------------------------------------------------------------------------------------------------------
