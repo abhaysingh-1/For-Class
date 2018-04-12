@@ -22,10 +22,13 @@ public class StudentSearchServlet extends HttpServlet{
 						 HttpServletResponse resp) 
 	throws ServletException, IOException {
 		
-		//Get the Query String Info
+		//I. Get the Query String Info
 		String regnoVal = req.getParameter("regno");
 		
-		//Check this Reg. No. exists in BECM19_DB DataBase
+		/*
+		 * II. Check this Reg. No. exists in 
+		 * BECME1820_DB DataBase
+		 */
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -42,7 +45,7 @@ public class StudentSearchServlet extends HttpServlet{
 			
 			//3. Issue SQL Queries via Connection
 			String query = " select * from "
-					       + "   students_info si, "
+					       + "   student_info si, "
 					       + "   guardian_info gi "
 						   + " where si.regno=gi.regno "
 					       + " and si.regno=? ";
