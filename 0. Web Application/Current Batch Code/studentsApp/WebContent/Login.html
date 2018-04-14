@@ -1,13 +1,45 @@
 <html>
+<head>
+<link rel="stylesheet" href="./css/header.css">
+<style>
+#example1 {
+	border: 10px double #0f3777;
+	padding: 25px;
+	background: url(./imgs/LoginBanner.png) 100%;
+	background-repeat: no-repeat;
+	background-origin: padding-box;
+	font-family: Cambria(Headings);
+	font-size: 25px;
+	color: white;
+}
+
+input {
+	font-family: Cambria(Headings);
+	font-size: 25px;
+	color: #0f3777;
+}
+</style>
+</head>
 <body>
-	<form 
-		action="http://localhost:8080/studentsApp/login" 
-		method="post">
-	
-		Reg. No. <input type="text" name="regno" />
-		Password <input type="password" name="pass" />
-		<BR>
-		<input type="submit" value="Sign In">
+	<div class="header" id="top">
+		<ul class="topnav">
+			<font class="a" id="font">Welcome to StudentsApp...</font>
+		</ul>
+	</div>
+	<BR>
+	<BR>
+	<BR>
+	<BR>
+	<BR>
+	<form action="http://localhost:8080/studentsApp/login" method="post">
+
+		<div id="example1">
+			Reg. No. <input type="number" name="regno" required="required" /> <BR />
+			<BR /> <BR> Password <input type="password" name="pass" /> 
+			<BR>
+			<BR> <input type="image" src="./imgs/login-button.png"
+				width="195" height="65" alt="Submit">
+		</div>
 	</form>
 </body>
 </html>

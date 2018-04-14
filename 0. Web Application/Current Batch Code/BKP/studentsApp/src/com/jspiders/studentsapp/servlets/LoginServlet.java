@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import com.mysql.jdbc.Driver;
 
 public class LoginServlet extends HttpServlet 
@@ -73,10 +72,6 @@ public class LoginServlet extends HttpServlet
 			if(rs.next())
 			{
 				//Valid credentials
-				
-				//1. Create a Session
-				HttpSession session = req.getSession(true);
-				
 				int regnum = rs.getInt("regno");
 				String fNM = rs.getString("firstname");
 				String mNM = rs.getString("middlename");
@@ -124,7 +119,6 @@ public class LoginServlet extends HttpServlet
 				dispatcher.include(req, resp);
 				
 			}else{
-				//In-Valid credentials
 				out.print("<font color=\"red\">");
 				out.println("In-Valid User Name / Password");
 				out.print("</font>");
