@@ -213,6 +213,16 @@
   	<url-pattern>/deleteCookie</url-pattern>
   </servlet-mapping>   
   
+  <servlet>
+  	<servlet-name>layout</servlet-name>
+  	<servlet-class>com.jspiders.studentsapp.servlets.StudentsAppLayoutServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>layout</servlet-name>
+  	<url-pattern>/layout</url-pattern>
+  </servlet-mapping>   
+  
   
   
     
