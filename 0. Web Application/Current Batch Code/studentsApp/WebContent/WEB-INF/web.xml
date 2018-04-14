@@ -214,6 +214,7 @@
   </servlet-mapping>   
   
   <servlet>
+<<<<<<< HEAD
   	<servlet-name>layout</servlet-name>
   	<servlet-class>com.jspiders.studentsapp.servlets.StudentsAppLayoutServlet</servlet-class>
   </servlet>
@@ -223,8 +224,45 @@
   	<url-pattern>/layout</url-pattern>
   </servlet-mapping>   
   
+=======
+  	<servlet-name>first</servlet-name>
+  	<servlet-class>com.jspiders.studentsapp.servlets.FirstServlet</servlet-class>
+  </servlet>
+>>>>>>> 1696ebd6870c35e797241a29fde810b6f8fc394a
   
+  <servlet-mapping>
+  	<servlet-name>first</servlet-name>
+  	<url-pattern>/first</url-pattern>
+  </servlet-mapping> 
+      
+  <servlet>
+  	<servlet-name>second</servlet-name>
+  	<servlet-class>com.jspiders.studentsapp.servlets.SecondServlet</servlet-class>
+  </servlet>
   
-    
+  <servlet-mapping>
+  	<servlet-name>second</servlet-name>
+  	<url-pattern>/second</url-pattern>
+  </servlet-mapping>    
+
+  <servlet>
+  	<servlet-name>logout</servlet-name>
+  	<servlet-class>com.jspiders.studentsapp.servlets.LogoutServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>logout</servlet-name>
+  	<url-pattern>/logout</url-pattern>
+  </servlet-mapping>       
+  
+  <session-config>
+  	<!-- Time in Min -->
+  	<session-timeout>1</session-timeout>
+  </session-config>
   
 </web-app>
+
+
+
+
+

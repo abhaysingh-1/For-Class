@@ -1268,19 +1268,48 @@ where "con" is the Object reference of
   
   
 ******************
-* GPS Exercise 1
+*    Assignment  *
 ******************    
-1. Write "StatementExample" Program
-2. Write a Java program to delete Reg. No. 6 data 
-   from students_info table
 
+Write a Java program to delete Reg. No. 6 data 
+from students_info table
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NOTE:-
+==========
+Query:-
+---------
 delete from students_info where regno=6
-Statement
-executeUpdate()
+
+> Since the Query is Static & other than Select,
+  we must need to create Statement Object & we need to 
+  invoke executeUpdate() method on Statement Object
 
 
 
 
+  
+  
   
   
 java.sql.PreparedStatement
@@ -1431,18 +1460,28 @@ PreparedStatement pstmt3 = con.prepareStatement(query3);
   should have data as shown below
 
 Register_Number, First_NM, Middle_NM, Last_NM,
-Guardian_First_NM,Guardian_Middle_NM,Guardian_Last_NM,
-Is_Admin, Password
+email_id,Mobile_No,Birth_Day,Birth_Month,Birth_Year
 
 Ex:- 
 -----
-1,AAA,BBB,CCC,XXX,YYY,ZZZ,Y,qwerty
-2,ABC,DEF,GHI,JKL,MNO,PQR,N,qwerty
+6,AAA,BBB,CCC,abc@gmail.com,1277767890,15,mar,1995
+7,XXX,YYY,ZZZ,xyz@gmail.com,1277999990,25,feb,1998
   
-> Write a Java Program which reads the data from this
-  CSV file (line-by-line) & insert it into 
-  corresponding tables
+  
+  
+  
+  
+> Write a Java Program which,
+  - reads the data from this CSV file (line-by-line)
+  - extracts each value from a perticular line & 
+  - insert the data into students_info table
 
+  
+  
+  
+  
+  
+  
   
   
   
@@ -1461,8 +1500,8 @@ Tips:-
   String[] values = val.split(",");
   
 - Modify the above program, rather than printing the
-  data, insert the data into tables (refer the previous
-  assignment)
+  data, insert the data into tables (refer 
+  "PreparedStatementExample2" Program)
   
   
   
@@ -1482,6 +1521,26 @@ Tips:-
   
   
 
+  
+***************			
+* Assignment  *
+***************
+> create a CSV file, which consists of (around 5) 
+  - Students Information
+  - Guardian Information
+  - Student Address Information
+  - Student Course Information
+  - Student Education Information  
+  - Student Other Information 
+  
+> Write a Java Program which reads the data from this file
+  (line-by-line) and insert data into corresponding tables
+  
+  
+  
+  
+  
+  
 Processing the Results returned by SQL Queries :-
 ================================================
 > Whenever we issue SQL Queries to RDBMS Application 
@@ -1494,9 +1553,6 @@ Processing the Results returned by SQL Queries :-
   JDBC returns 
   - "No. of Rows Affected Count" as "Integer Value" 
   - "DB Results" in the form of "ResultSet Object" 
-  
-  
-  
   
 java.sql.ResultSet
 ===================

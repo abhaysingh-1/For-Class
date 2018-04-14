@@ -1,9 +1,10 @@
+DROP DATABASE IF EXISTS studentsapp_db;
 create database studentsapp_db;
 use studentsapp_db;
 
---***************************************************--
--- Table Creation Queries							 --
---***************************************************--
+--***************************************************
+-- Table Creation Queries							 
+--***************************************************
 create table student_info
 ( regno int not null,
   firstname varchar(50),
@@ -107,9 +108,9 @@ isCleared varchar(1),
 feedback varchar(250),
 primary key (regno,req_id) );
 
---***************************************************--
--- Table Data Insertion Queries						 --
---***************************************************--
+--***************************************************
+-- Table Data Insertion Queries						 
+--***************************************************
 insert into student_info values (1, 'Praveen', 'NA', 'D', 'abc@gmail.com', 9445326450, 20, 'APR', 1995);
 insert into student_info values (2, 'Naveen', 'NA', 'A', 'xyz@gmail.com',  9880235641, 01, 'MAR', 1995);
 insert into student_info values (3, 'Raveen', 'NA', 'B', 'def@gmail.com', 9536412985, 05, 'OCT', 1981);
