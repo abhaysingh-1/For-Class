@@ -42,7 +42,7 @@ public class ChangePasswordServlet extends HttpServlet
 				con = DriverManager.getConnection(dbUrl);
 
 				//3. Issue SQL Queries via Connection 
-				String query = " update students_otherinfo "
+				String query = " update student_otherinfo "
 								+ " set password=? " 
 								+ " where Regno=? "
 								+ " and password=? ";
@@ -70,7 +70,7 @@ public class ChangePasswordServlet extends HttpServlet
 				}
 				
 			} catch (Exception e) {
-
+				e.printStackTrace();
 			} finally {
 				//5. Close All JDBC Objects
 				try 

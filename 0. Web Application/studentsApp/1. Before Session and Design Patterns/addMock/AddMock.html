@@ -1,0 +1,47 @@
+<html>
+<body>
+	<form action="./addMock" method="post">
+
+					<fieldset>
+						<legend>
+							<B>Add Final Mock Rating for a Student ...</B>
+						</legend>
+						<table>
+							<tr>
+								<td>Reg. No. </td>
+								<td><input type="number" name="regno" placeholder="Enter Reg. No." required="required" /></td>
+							<tr>
+								<td>Course Name </td>
+								<td>
+									<select name="courseId">
+										<option value="">--- Select ---</option>
+										<option value="1">Core Java</option>			
+										<option value="2">Java EE</option>
+										<option value="3">SQL</option>
+										<option value="4">HTML</option>
+										<option value="5">Hibernate</option>
+										<option value="6">Springs</option>
+										<option value="7">AngularJS</option>
+										<option value="8">Web Services</option>
+										<option value="9">General Aptitude</option>
+										<option value="10">Android</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Final Mock Rating </td>
+								<td><input type="text" name="mock" placeholder="Enter Course Fees" required="required" /></td>
+							</tr>
+						</table>
+					</fieldset>
+
+
+		<BR><BR>
+		<input type="submit" value="Add Mock" /> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="Submit" value="Reset" />
+
+		 
+	</form>
+</body>
+</html>

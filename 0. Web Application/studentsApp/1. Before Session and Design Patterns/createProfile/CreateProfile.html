@@ -1,7 +1,6 @@
 <html>
 <body>
 	<form action="./createProfile" method="post">
-
 		<table width="1000">
 			<tr>
 				<td>
@@ -27,7 +26,16 @@
 										<option value="Y">YES</option>
 								</select></td>
 							</tr>
-							
+							<tr>
+								<td>Email</td>
+								<td><input type="email" name="email" placeholder="Enter E-Mail Address" required="required" /></td>
+							</tr>
+							<tr>
+								<td>Date of Birth</td>
+								<td>
+									<input type="date" name="dob" required="required">
+								</td>
+							</tr>
 						</table>
 					</fieldset>
 				</td>
@@ -103,16 +111,14 @@
 			</tr>
 		</table>
 
-
-
-		<table width="1000">
+		<table>
 			<tr>
 				<td>
 					<fieldset>
 						<legend>
 							<B>Student Basic Info ...</B>
 						</legend>
-						<table>
+						<table width="470">
 							<tr>
 								<td>First Name</td>
 								<td><input type="text" name="fnm"
@@ -128,7 +134,11 @@
 								<td><input type="text" name="lnm"
 									placeholder="Enter Last Name" required="required" /></td>
 							</tr>
-							
+							<tr>
+								<td>Primary Mobile Number</td>
+								<td><input type="number" name="phone"
+									placeholder="Enter Mobile Number" required="required" /></td>
+							</tr>
 						</table>
 					</fieldset>
 				</td>
@@ -137,7 +147,7 @@
 						<legend>
 							<B>Guardian Info ...</B>
 						</legend>
-						<table>
+						<table width="460">
 							<tr>
 								<td>Guardian First Name</td>
 								<td><input type="text" name="gfnm"
@@ -153,16 +163,16 @@
 								<td><input type="text" name="glnm"
 									placeholder="Enter Guardian Last Name" required="required" /></td>
 							</tr>
-							
+							<tr>
+								<td>Guardian Mobile Number</td>
+								<td><input type="number" name="gphone"
+									placeholder="Enter Guardian Mobile Number" required="required" /></td>
+							</tr>
 						</table>
 					</fieldset>
 				</td>
 			</tr>
 		</table>
-
-
-
-
 
 		<table>
 			<tr>
@@ -252,12 +262,11 @@
 				</td>
 			</tr>
 		</table>
-		<BR><BR>
-		<input type="submit" value="Create Profile" /> 
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<BR>
 		<input type="Submit" value="Reset" />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="submit" value="Create Profile" /> 
 
-		 
 	</form>
 </body>
 </html>
