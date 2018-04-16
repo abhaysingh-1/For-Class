@@ -1,6 +1,7 @@
 <html>
 <body>
 	<form action="./createProfile" method="post">
+	<table border="1"><tr><td>
 		<table width="1000">
 			<tr>
 				<td>
@@ -11,20 +12,20 @@
 						<table>
 							<tr>
 								<td>Reg.No</td>
-								<td><input type="number" name="regno"
-									placeholder="Enter Regno" required="required" /></td>
+								<td><input type="number" name="regno" placeholder="Enter Regno" required="required" /></td>
 							<tr>
 								<td>Password</td>
-								<td><input type="password" name="pass"
-									placeholder="Enter Password" required="required" /></td>
+								<td><input type="password" name="pass" placeholder="Enter Password" required="required" /></td>
 							</tr>
 							<tr>
 								<td>Admin ?</td>
-								<td><select name="isAdmin">
+								<td>
+									<select name="isAdmin">
 										<option value="">---select---</option>
 										<option value="N">NO</option>
 										<option value="Y">YES</option>
-								</select></td>
+									</select>
+								</td>
 							</tr>
 							<tr>
 								<td>Email</td>
@@ -49,59 +50,45 @@
 								<td>
 									<table>
 										<tr>
-											<td>Core Java
-											<td>
-											<td><input type="checkbox" name="course" value="java"></td>
+											<td>Core Java</td>
+											<td><input type="checkbox" name="course" value="1"></td>
 										<tr>
-											<td>J2EE
-											<td>
-											<td><input type="checkbox" name="course" value="j2ee"></td>
+											<td>J2EE</td>
+											<td><input type="checkbox" name="course" value="2"></td>
 										</tr>
 										<tr>
-											<td>SQL
-											<td>
-											<td><input type="checkbox" name="course" value="sql"></td>
+											<td>SQL</td>
+											<td><input type="checkbox" name="course" value="3"></td>
 										</tr>
 										<tr>
-											<td>HTML
-											<td>
-											<td><input type="checkbox" name="course" value="html"></td>
+											<td>HTML</td>
+											<td><input type="checkbox" name="course" value="4"></td>
 										</tr>
 										<tr>
-											<td>Hibernate
-											<td>
-											<td><input type="checkbox" name="course"
-												value="hibernate"></td>
+											<td>Hibernate</td>
+											<td><input type="checkbox" name="course" value="5"></td>
 										</tr>
 									</table>
 								</td>
 								<td><table>
 										<tr>
-											<td>Springs
-											<td>
-											<td><input type="checkbox" name="course" value="springs"></td>
+											<td>Springs</td>
+											<td><input type="checkbox" name="course" value="6"></td>
 										</tr>
 										<tr>
-											<td>Angular JS
-											<td>
-											<td><input type="checkbox" name="course"
-												value="angularJS"></td>
+											<td>Angular JS</td>
+											<td><input type="checkbox" name="course" value="7"></td>
 										</tr>
 										<tr>
-											<td>Web Services
-											<td>
-											<td><input type="checkbox" name="course"
-												value="webservices"></td>
+											<td>Web Services</td>											<td><input type="checkbox" name="course" value="8"></td>
 										</tr>
 										<tr>
-											<td>General Aptitude
-											<td>
-											<td><input type="checkbox" name="course" value="apti"></td>
+											<td>General Aptitude</td>
+											<td><input type="checkbox" name="course" value="9"></td>
 										</tr>
 										<tr>
-											<td>Android
-											<td>
-											<td><input type="checkbox" name="course" value="android"></td>
+											<td>Android</td>
+											<td><input type="checkbox" name="course" value="10"></td>
 										</tr>
 									</table></td>
 							</tr>
@@ -121,23 +108,19 @@
 						<table width="470">
 							<tr>
 								<td>First Name</td>
-								<td><input type="text" name="fnm"
-									placeholder="Enter First Name" required="required" /></td>
+								<td><input type="text" name="fnm" placeholder="Enter First Name" required="required" /></td>
 							</tr>
 							<tr>
 								<td>Middle Name</td>
-								<td><input type="text" name="mnm"
-									placeholder="Enter Middle Name" required="required" /></td>
+								<td><input type="text" name="mnm" placeholder="Enter Middle Name" required="required" /></td>
 							</tr>
 							<tr>
 								<td>Last Name</td>
-								<td><input type="text" name="lnm"
-									placeholder="Enter Last Name" required="required" /></td>
+								<td><input type="text" name="lnm" placeholder="Enter Last Name" required="required" /></td>
 							</tr>
 							<tr>
 								<td>Primary Mobile Number</td>
-								<td><input type="number" name="phone"
-									placeholder="Enter Mobile Number" required="required" /></td>
+								<td><input type="number" name="phone" placeholder="Enter Mobile Number" required="required" /></td>
 							</tr>
 						</table>
 					</fieldset>
@@ -150,23 +133,19 @@
 						<table width="460">
 							<tr>
 								<td>Guardian First Name</td>
-								<td><input type="text" name="gfnm"
-									placeholder="Enter Guardian First Name" required="required" /></td>
+								<td><input type="text" name="gfnm" placeholder="Enter Guardian First Name" required="required" /></td>
 							</tr>
 							<tr>
 								<td>Guardian Middle Name</td>
-								<td><input type="text" name="gmnm"
-									placeholder="Enter Guardian Middle Name" required="required" /></td>
+								<td><input type="text" name="gmnm" placeholder="Enter Guardian Middle Name" required="required" /></td>
 							</tr>
 							<tr>
 								<td>Guardian Last Name</td>
-								<td><input type="text" name="glnm"
-									placeholder="Enter Guardian Last Name" required="required" /></td>
+								<td><input type="text" name="glnm" placeholder="Enter Guardian Last Name" required="required" /></td>
 							</tr>
 							<tr>
 								<td>Guardian Mobile Number</td>
-								<td><input type="number" name="gphone"
-									placeholder="Enter Guardian Mobile Number" required="required" /></td>
+								<td><input type="number" name="gphone" placeholder="Enter Guardian Mobile Number" required="required" /></td>
 							</tr>
 						</table>
 					</fieldset>
@@ -185,32 +164,26 @@
 										<B>Student Present Address ...</B>
 									</legend>
 									<table>
-										
 										<tr>
 											<td>Address 1</td>
-											<td><input type="text" name="pre.addr1"
-												placeholder="Enter Address 1" required="required" /></td>
+											<td><input type="text" name="pre.addr1" placeholder="Enter Address 1" required="required" /></td>
 										</tr>
 										<tr>
 											<td>Address 2</td>
-											<td><input type="text" name="pre.addr2"
-												placeholder="Enter Address 2" required="required" /></td>
+											<td><input type="text" name="pre.addr2" placeholder="Enter Address 2" required="required" /></td>
 										</tr>
 										<tr>
 											<td>Land Mark</td>
-											<td><input type="text" name="pre.landmark"
-												placeholder="Enter Land Mark" required="required" /></td>
+											<td><input type="text" name="pre.landmark" placeholder="Enter Land Mark" required="required" /></td>
 										</tr>
 										<tr>
 											<td>City</td>
-											<td><input type="text" name="pre.city"
-												placeholder="Enter City" required="required" /></td>
+											<td><input type="text" name="pre.city" placeholder="Enter City" required="required" /></td>
 										</tr>
 										
 										<tr>
 											<td>Pincode</td>
-											<td><input type="number" name="pre.pincode"
-												placeholder="Enter Pincode" required="required" /></td>
+											<td><input type="number" name="pre.pincode" placeholder="Enter Pincode" required="required" /></td>
 										</tr>
 									</table>
 								</fieldset>
@@ -230,29 +203,24 @@
 										
 										<tr>
 											<td>Address 1</td>
-											<td><input type="text" name="per.addr1"
-												placeholder="Enter Address 1" required="required" /></td>
+											<td><input type="text" name="per.addr1" placeholder="Enter Address 1" required="required" /></td>
 										</tr>
 										<tr>
 											<td>Address 2</td>
-											<td><input type="text" name="per.addr2"
-												placeholder="Enter Address 2" required="required" /></td>
+											<td><input type="text" name="per.addr2" placeholder="Enter Address 2" required="required" /></td>
 										</tr>
 										<tr>
 											<td>Land Mark</td>
-											<td><input type="text" name="per.landmark"
-												placeholder="Enter Land Mark" required="required" /></td>
+											<td><input type="text" name="per.landmark" placeholder="Enter Land Mark" required="required" /></td>
 										</tr>
 										<tr>
 											<td>City</td>
-											<td><input type="text" name="per.city"
-												placeholder="Enter City" required="required" /></td>
+											<td><input type="text" name="per.city" placeholder="Enter City" required="required" /></td>
 										</tr>
 										
 										<tr>
 											<td>Pincode</td>
-											<td><input type="number" name="per.pincode"
-												placeholder="Enter Pincode" required="required" /></td>
+											<td><input type="number" name="per.pincode" placeholder="Enter Pincode" required="required" /></td>
 										</tr>
 									</table>
 								</fieldset>
@@ -262,6 +230,61 @@
 				</td>
 			</tr>
 		</table>
+		</td></tr>
+		<tr><td>
+			<table>
+				<tr align="center">
+					<td><B>Education Type</B></td>
+					<td><B>College Name</B></td>
+					<td><B>University Name</B></td>
+					<td><B>Branch</B></td>
+					<td><B>Year of Passout</B></td>
+					<td><B>Percentage</B></td>
+				</tr>
+				<tr>
+					<td>10th Standard</td>
+					<td><textarea rows="2" cols="22" name="sslc.colnm" required="required"></textarea></td>
+					<td><textarea rows="2" cols="22" name="sslc.uninm" required="required"></textarea></td>
+					<td><input type="text" name="sslc.branch" readonly="readonly"></td>
+					<td><input type="number" name="sslc.yop" required="required"></td>
+					<td><input type="text" name="sslc.percentage" required="required"></td>
+				</tr>
+				<tr>
+					<td>12th Standard</td>
+					<td><textarea rows="2" cols="22" name="puc.colnm"></textarea></td>
+					<td><textarea rows="2" cols="22" name="puc.uninm"></textarea></td>
+					<td><input type="text" name="puc.branch"></td>
+					<td><input type="number" name="puc.yop"></td>
+					<td><input type="text" name="puc.percentage"></td>
+				</tr>
+				<tr>
+					<td>Diploma(Under Graduation)</td>
+					<td><textarea rows="2" cols="22" name="ug.colnm"></textarea></td>
+					<td><textarea rows="2" cols="22" name="ug.uninm"></textarea></td>
+					<td><input type="text" name="ug.branch"></td>
+					<td><input type="number" name="ug.yop"></td>
+					<td><input type="text" name="ug.percentage"></td>
+				</tr>
+				<tr>
+					<td>Degree(Graduation)</td>
+					<td><textarea rows="2" cols="22" name="deg.colnm" required="required"></textarea></td>
+					<td><textarea rows="2" cols="22" name="deg.uninm" required="required"></textarea></td>
+					<td><input type="text" name="deg.branch" required="required"></td>
+					<td><input type="number" name="deg.yop" required="required"></td>
+					<td><input type="text" name="deg.percentage" required="required"></td>
+				</tr>
+				<tr>
+					<td>Master Degree</td>
+					<td><textarea rows="2" cols="22" name="pg.colnm"></textarea></td>
+					<td><textarea rows="2" cols="22" name="pg.uninm"></textarea></td>
+					<td><input type="text" name="pg.branch"></td>
+					<td><input type="number" name="pg.yop"></td>
+					<td><input type="text" name="pg.percentage"></td>
+				</tr>
+			</table>
+		</td></tr>
+		</table>
+		
 		<BR>
 		<input type="Submit" value="Reset" />
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

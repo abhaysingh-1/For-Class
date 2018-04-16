@@ -1,5 +1,5 @@
 package com.jspiders.studentsapp.servlets;
-
+ 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -61,11 +61,49 @@ public class CreateProfileServlet extends HttpServlet
 		String per_landmark = req.getParameter("per.landmark");
 		String per_city = req.getParameter("per.city");
 		String per_pincode = req.getParameter("per.pincode");
+		
+		//Student 10th Standard Info
+		String colnm10 = req.getParameter("sslc.colnm");
+		String uninm10 = req.getParameter("sslc.uninm");
+		String branch10 = req.getParameter("sslc.branch");
+		String yop10 = req.getParameter("sslc.yop");
+		String percentage10 = req.getParameter("sslc.percentage");
+		
+		//Student 12th Standard Info
+		String colnm12 = req.getParameter("puc.colnm");
+		String uninm12 = req.getParameter("puc.uninm");
+		String branch12 = req.getParameter("puc.branch");
+		String yop12 = req.getParameter("puc.yop");
+		String percentage12 = req.getParameter("puc.percentage");
 
+		//Student Diploma Info
+		String colnmUG = req.getParameter("ug.colnm");
+		String uninmUG = req.getParameter("ug.uninm");
+		String branchUG = req.getParameter("ug.branch");
+		String yopUG = req.getParameter("ug.yop");
+		String percentageUG = req.getParameter("ug.percentage");
+		
+		//Student Degree Info
+		String colnmDEG = req.getParameter("deg.colnm");
+		String uninmDEG = req.getParameter("deg.uninm");
+		String branchDEG = req.getParameter("deg.branch");
+		String yopDEG = req.getParameter("deg.yop");
+		String percentageDEG = req.getParameter("deg.percentage");
+		
+		//Student Master Degree Info
+		String colnmPG = req.getParameter("pg.colnm");
+		String uninmPG = req.getParameter("pg.uninm");
+		String branchPG = req.getParameter("pg.branch");
+		String yopPG = req.getParameter("pg.yop");
+		String percentagePG = req.getParameter("pg.percentage");
+		
 		//II. Store the Form Data into DB
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		
+		dispatcher=req.getRequestDispatcher("header");
+		dispatcher.include(req, resp);
+
 		out.print("<html>");
 		out.print("<body>");
 		
@@ -93,6 +131,9 @@ public class CreateProfileServlet extends HttpServlet
 			
 			String query5 = " insert into student_courseinfo (regno, course_id) "
 							+ " values (?, ?) ";
+			
+			String query6 = " insert into student_educationinfo "
+							+ " values (?, ?, ?, ?, ?, ?, ?) ";
 
 			pstmt = con.prepareStatement(query1);
 			pstmt.setInt(1, Integer.parseInt(regnoVal) );
@@ -138,9 +179,7 @@ public class CreateProfileServlet extends HttpServlet
 			pstmt.setString(6, pre_city);
 			pstmt.setString(7, pre_pincode);
 			pstmt.executeUpdate();
-			pstmt.close();
-			
-			pstmt = con.prepareStatement(query4);
+
 			pstmt.setInt(1, Integer.parseInt(regnoVal) );
 			pstmt.setString(2, "permanent");
 			pstmt.setString(3, per_addr1);
@@ -157,6 +196,66 @@ public class CreateProfileServlet extends HttpServlet
 				pstmt.setInt(2, Integer.parseInt(course) );
 				pstmt.executeUpdate();
 			}
+			pstmt.close();
+
+			pstmt = con.prepareStatement(query6);
+			
+			//Insert Student SSLC Info - Its Mandatory for Student
+			pstmt.setInt(1, Integer.parseInt(regnoVal) );
+			pstmt.setInt(2, 1); //SSLC
+			pstmt.setString(3, colnm10); 
+			pstmt.setString(4, uninm10); 
+			pstmt.setString(5, branch10); 
+			pstmt.setString(6, yop10); 
+			pstmt.setString(7, percentage10); 
+			pstmt.executeUpdate();
+
+			//Insert Student Degree Info - Its Mandatory for Student
+			pstmt.setInt(1, Integer.parseInt(regnoVal) );
+			pstmt.setInt(2, 4); //Degree
+			pstmt.setString(3, colnmDEG); 
+			pstmt.setString(4, uninmDEG); 
+			pstmt.setString(5, branchDEG); 
+			pstmt.setString(6, yopDEG); 
+			pstmt.setString(7, percentageDEG); 
+			pstmt.executeUpdate();
+			
+			//Insert Student PUC Info - If Exists
+			if(colnm12 != null && !colnm12.equals("")) {
+				pstmt.setInt(1, Integer.parseInt(regnoVal) );
+				pstmt.setInt(2, 2); //PUC
+				pstmt.setString(3, colnm12); 
+				pstmt.setString(4, uninm12); 
+				pstmt.setString(5, branch12); 
+				pstmt.setString(6, yop12); 
+				pstmt.setString(7, percentage12); 
+				pstmt.executeUpdate();
+			}
+			
+			//Insert Student Diploma Info - If Exists
+			if(colnmUG != null && !colnmUG.equals("")) {
+				pstmt.setInt(1, Integer.parseInt(regnoVal) );
+				pstmt.setInt(2, 3); //Diploma
+				pstmt.setString(3, colnmUG); 
+				pstmt.setString(4, uninmUG); 
+				pstmt.setString(5, branchUG); 
+				pstmt.setString(6, yopUG); 
+				pstmt.setString(7, percentageUG); 
+				pstmt.executeUpdate();
+			}
+			
+			//Insert Student Master Degree Info - If Exists
+			if(colnmPG != null && !colnmPG.equals("")) {
+				pstmt.setInt(1, Integer.parseInt(regnoVal) );
+				pstmt.setInt(2, 5); //Master Degree
+				pstmt.setString(3, colnmPG); 
+				pstmt.setString(4, uninmPG); 
+				pstmt.setString(5, branchPG); 
+				pstmt.setString(6, yopPG); 
+				pstmt.setString(7, percentagePG); 
+				pstmt.executeUpdate();
+			}
+			
 			pstmt.close();
 
 			//4. Process the Results returned by SQL Queries

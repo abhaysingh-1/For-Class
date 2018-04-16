@@ -39,8 +39,6 @@ public class HeaderPageServlet extends HttpServlet{
 		out.print("				</li>");
 		out.print("				<li><a href=\"./layout?body=ChangePassword.html\" class=\"color\">Change Password</a></li>");
 		out.print("				<li><a href=\"#\" class=\"color\">Logout</a></li>");
-		out.print("				<li><a href=\"./bodyPage?body=changePassword\" class=\"color\">Change Password</a></li>");
-		out.print("				<li><a href=\"./logout\" class=\"color\">Logout</a></li>");
 		out.print("			</ul>");
 		out.print("		</div>");
 		out.print("		<div class=\"header\" align=\"left\" id=\"top\">");
@@ -56,7 +54,7 @@ public class HeaderPageServlet extends HttpServlet{
 		out.print("				<li class=\"dropdown\">");
 		out.print("					<a href=\"#\" class=\"dropbtn\" id=\"font\">Admin Tasks</a>");
 		out.print("				<div class=\"dropdown-content\">");
-		out.print("					<a href=\"./bodyPage?body=createProfile\">Create Student Profile</a>");
+		out.print("					<a href=\"./layout?body=CreateProfile.html\">Create Student Profile</a>");
 		out.print("					<a href=\"./layout?body=AddCourse.html\">Add New Course</a>");
 		out.print("      			<a href=\"#\">Unlock Account</a>");
 		out.print("     			<a href=\"./layout?body=AddMock.html\">Add Mock Ratings</a>");

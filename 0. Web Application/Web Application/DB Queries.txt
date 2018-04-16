@@ -302,12 +302,20 @@ insert into library values('XYZ', 'Springs');
 
 
 
-select * from course_info;
+select * from student_info;
 select * from guardian_info;
 select * from student_addressinfo;
 select * from student_courseinfo;
-select * from student_info;
+select * from student_educationinfo;
 select * from student_otherinfo;
+
+select * from student_interviewinfo;
+
+select * from course_info;
+select * from education_type;
+select * from requirement_info;
+
+
 
 select * from library;
 
