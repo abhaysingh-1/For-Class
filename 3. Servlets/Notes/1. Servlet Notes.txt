@@ -231,7 +231,7 @@ index.html
 			Current Date & Time is :
 			<BR>
 			<font color="red"> 
-				16-Jan-2018 12:02 AM
+				20-APR-2018 12:02 AM
 			</font>
 		</h1>
 	</body>
@@ -4249,6 +4249,10 @@ URL Rewriting
   "Session Hijacking" issue)
   
 
+  
+  
+  
+  
   
 ******************
 * Assignment

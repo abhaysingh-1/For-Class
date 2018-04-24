@@ -184,8 +184,7 @@ public void jspInit() {
   "init(ServletConfig)" method which in turn invokes 
   "jspInit()" Method
 
-> jspInit() Method is called ONLY ONCE in JSP 
-  Life cycle
+> jspInit() Method is called ONLY ONCE in JSP Life cycle
 
 > We May / May Not override this method. If we don't 
   override then default implementation from 

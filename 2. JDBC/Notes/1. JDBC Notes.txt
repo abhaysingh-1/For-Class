@@ -1670,7 +1670,16 @@ public void close() throws SQLException
 
 
 
+***************
+* Assignment  *
+***************
+> Modify the "MyFirstJDBCProgram" to read, Driver Class,
+DB URL, user name & password from property file to 
+interact with DB
 
+> Reuse the above program by modifying values of
+  property file to Oracle RDBMS application details
+  to read the data from Oracle DB
 
   
   
@@ -1734,7 +1743,7 @@ JDBC Summary:
 		  
 > Though JDBC claims that it is "DB Independent" but,
   because of "SQL Queries (step 3)", it is "partially
-  In-Dependent"
+  DB Dependent"
   
 Note:
 ======
@@ -1742,20 +1751,20 @@ SQL is "DB Dependent". For example, below are the
 different SQL queries used to fetch first 5 records 
 of the table depending on RDBMS application
 		  
-MySQL & PostgreSQL:	
+>MySQL & PostgreSQL:	
 ---------------------
 SELECT * FROM ABC LIMIT 5;
 
-Oracle:	
+>Oracle:	
 --------
 SELECT * FROM ABC WHERE rownum <=5;
 
-MSSQL Server:	
+>MSSQL Server:	
 ---------------
 SELECT TOP 5 * FROM ABC;
 
 		  
---******************* END of JDBC ************************		  
+******************* END of JDBC ************************		  
 
 
 
