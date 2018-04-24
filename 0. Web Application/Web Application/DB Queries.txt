@@ -6,7 +6,7 @@ use studentsapp_db;
 -- Table Creation Queries							 
 --***************************************************
 create table student_info
-( regno int not null,
+( uid int not null,
   firstname varchar(50),
   middlename varchar(50),
   lastname varchar(50),
@@ -15,7 +15,7 @@ create table student_info
   birth_day int,
   birth_month varchar(3),
   birth_year int,
-  primary key(regno)
+  primary key(uid)
 );
 
 create table course_info
@@ -28,40 +28,40 @@ create table course_info
 );
 
 create table guardian_info
-( regno int not null,
+( uid int not null,
   gfirstname varchar(50),
   gmiddlename varchar(50),
   glastname varchar(50),
   mobile bigint,
-  primary key(regno)
+  primary key(uid)
 );
 
 create table student_addressinfo
-( regno int not null,
+( uid int not null,
   addr_type varchar(10),
   addr1		varchar(100),
   addr2 	varchar(100),
   landmark	varchar(100),
   city		varchar(50),
   pincode	int,
-  primary key(regno, addr_type)
+  primary key(uid, addr_type)
 );
 
 create table student_courseinfo
-( regno int not null,
+( uid int not null,
   course_id int not null,
   mock_rating	varchar(2),
-  primary key(regno, course_id)
+  primary key(uid, course_id)
 );
 
 
 create table student_otherinfo
-( regno int not null,
+( uid int not null,
   isadmin varchar(1),
   password varchar(50),
   login_attempts int,
   last_login_time varchar(50),
-  primary key(regno)
+  primary key(uid)
 );
 
 
@@ -74,14 +74,14 @@ create table education_type
 
 create table student_educationinfo
 ( 
-  regno int not null,
+  uid int not null,
   type int not null,
   college varchar(250),
   university varchar(250),
   branch varchar(50),
   yop int,
   percentage float,
-  primary key(regno,type)
+  primary key(uid,type)
 );
 
 
@@ -102,11 +102,16 @@ primary key (req_id)
 );
 
 create table student_interviewinfo
-(regno int,
+(uid int,
 req_id int,
-isCleared varchar(1),
+course_id varchar(1),
 feedback varchar(250),
-primary key (regno,req_id) );
+primary key (uid,req_id) );
+
+create table student_feedbackinfo
+(uid int,
+course_id int,
+feedback varchar(250) );
 
 --***************************************************
 -- Table Data Insertion Queries						 
@@ -253,6 +258,20 @@ insert into student_interviewinfo values (4, 8, 'Y', null);
 
 insert into student_interviewinfo values (5, 6, 'Y', null);
 
+insert into student_feedbackinfo values (1, 1, 'Need more focus on Collections');
+insert into student_feedbackinfo values (1, 2, 'Very Good');
+insert into student_feedbackinfo values (2, 1, 'Good');
+insert into student_feedbackinfo values (2, 1, 'Intially its appears good but know i feel ok ok');
+insert into student_feedbackinfo values (2, 2, 'Very Good');
+
+
+
+
+
+
+
+
+
 
 create table library
 (  student_nm varchar(50),
@@ -323,9 +342,9 @@ select * from student_info si,
 student_addressinfo sai,
 student_courseinfo sci, 
 course_info ci
-where si.regno = sai.regno
+where si.uid = sai.uid
 and sci.course_id=ci.course_id
-and sci.regno=si.regno
+and sci.uid=si.uid
 and 
 
 (si.firstname like '%pra%'
@@ -341,7 +360,7 @@ and ci.course_name like '%java%';
 
 select * from student_info si, 
 student_addressinfo sai
-where si.regno = sai.regno
+where si.uid = sai.uid
 and sai.city like '%bangalore%';
 
 --====================================================
@@ -350,9 +369,9 @@ select * from student_info si,
 student_addressinfo sai,
 student_courseinfo sci, 
 course_info ci
-where si.regno = sai.regno
+where si.uid = sai.uid
 and sci.course_id=ci.course_id
-and sci.regno=si.regno
+and sci.uid=si.uid
 and sai.city like '%bangalore%'
 and sci.mock_rating like '%1*%'
 and ci.course_name like '%core%';
@@ -364,9 +383,9 @@ sb.append("select * from student_info si,");
 sb.append("student_addressinfo sai,");
 sb.append("student_courseinfo sci,"); 
 sb.append("course_info ci");
-sb.append("where si.regno = sai.regno");
+sb.append("where si.uid = sai.uid");
 sb.append("and sci.course_id=ci.course_id");
-sb.append("and sci.regno=si.regno");
+sb.append("and sci.uid=si.uid");
 sb.append("and"); 
 sb.append("
 sb.append("(si.firstname like '%pra%'");
