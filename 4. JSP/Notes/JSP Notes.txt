@@ -941,7 +941,8 @@ III. Page Directive [ <%@page   attributes %> ]
 
 
 
-| info			| <%@page info="My First JSP" %>			|			 |
+
+| info			| <%@page info="My First JSP" %>	|			 |
 
 > This attribute is used to provide documentation 
   information for a JSP
@@ -951,6 +952,37 @@ III. Page Directive [ <%@page   attributes %> ]
   
   
 
+  
+  
+  
+  
+  
+  
+  
+  
+| import | <%@page import="pkg1.class1, pkg2.*, .."%>| 			 |
+|        | OR                                        | 			 |
+| 	     | <%@page import="pkg1.class1"%>            | 			 |
+| 		 | <%@page import="pkg2.*"%>                 | 			 |
+
+
+> Functionality is similar to Java "import" statement
+
+
+
+
+
+
+
+
+  
+  
+| extends	| <%@page extends="pkgNM.classNM"%>		|			 |		
+
+
+> Functionality is similar to Java "extends" statement
+
+  
   
   
   
@@ -999,13 +1031,6 @@ III. Page Directive [ <%@page   attributes %> ]
 
 
 
-| import | <%@page import="pkg1.class1, pkg2.*, .."%>| 			 |
-|        | OR                                        | 			 |
-| 	     | <%@page import="pkg1.class1"%>            | 			 |
-| 		 | <%@page import="pkg2.*"%>                 | 			 |
-
-
-> Functionality is similar to Java "import" statement
 
 
 
@@ -1018,12 +1043,6 @@ III. Page Directive [ <%@page   attributes %> ]
 
 
 
-
-
-| extends	| <%@page extends="pkgNM.classNM"%>		|			 |		
-
-
-> Functionality is similar to Java "extends" statement
 
 
 

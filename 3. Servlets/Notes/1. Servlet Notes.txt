@@ -421,6 +421,9 @@ Note:-
 In both the cases "1" represents "Time in Sec."
 
 
+
+
+
 **************
 * Assignment *
 **************	 
@@ -547,7 +550,19 @@ Domain:
   
   
   
+Assignment
+============
+> Connect 2 Computers to Same Netwrok (using Wifi or 
+  Mobile Hotspot) 
   
+> Open browser in one computer & try to access 
+  - index.html 
+  - MyFirstServlet 
+  - PDF file 
+  - Text File
+  - Video File
+  - Zip File
+  present in another computer 
   
   
   
@@ -579,11 +594,22 @@ Port:
   and default port number
   for HTTPS is changed from 443 to 8443
 
+Assignment
+============
+> Open <Tomcat_Location>\conf\server.xml file
 
+> Revert the Port number of HTTP Protocol from 8080 to 80
 
+> Try to access index.html & MyFirstServlet 
 
-  
-  
+> Also try to access 
+  - index.html 
+  - MyFirstServlet 
+  - PDF file 
+  - Text File
+  - Video File
+  - Zip File
+  in another computer (connected to same network)   
   
   
   
@@ -704,10 +730,10 @@ http://tomcat.apache.org/tomcat-6.0-doc/setup.html
   Query String as "?regno=<register_number>") in 
   the Browser and this Servlet,
 1. Needs to Get the "Register Number" from Query String   
-2. Check this Reg. No. exists in BECME1820_DB DataBase 
+2. Check this Reg. No. exists in J2EE10AM_DB DataBase 
 3. If No, Print the Error Message in the Browser
 4. If Yes, Get the corresponding Reg. No. Data from 
-   BECME1820_DB DataBase 
+   J2EE10AM_DB DataBase 
    ( Combination of Data Present in 
      students_info & 
 	 guardian_info Tables), 
@@ -768,7 +794,8 @@ Youtube video search / Flipkart product search
 
 Ex:-
 -----
-https://www.youtube.com/watch?v=CiV6ITr6jlc
+https://www.youtube.com/results?search_query=praveen
+https://www.flipkart.com/search?q=praveen
 
 
 
@@ -1434,7 +1461,7 @@ Container takes care of converting JSP into a Servlet
   
 > Create a Servlet by name "AllStudentsViewServlet" which 
 gets the request whenever user clicks on this hyper-link 
-- interact with BECME1820_DB database
+- interact with J2EE10AM_DB database
 - get all the data from students_info & guardian_info 
   tables and
 - display it in the browser as shown below
