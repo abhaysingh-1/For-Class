@@ -735,7 +735,7 @@ http://tomcat.apache.org/tomcat-6.0-doc/setup.html
 4. If Yes, Get the corresponding Reg. No. Data from 
    J2EE10AM_DB DataBase 
    ( Combination of Data Present in 
-     students_info & 
+     student_info & 
 	 guardian_info Tables), 
   and display the Data in the Browser as shown below
 
@@ -814,6 +814,21 @@ https://www.flipkart.com/search?q=praveen
 
 
 
+*********************** 
+* Assignment          *
+*********************** 
+> Modify the "StudentSearchServlet" to fetch all the 
+  relevant student information from J2EE10AM_DB & print
+  it in Browser
+  
+  We should get the Data from below tables:
+  -----------------------------------------
+  1. student_info
+  2. guardian_info
+  3. student_addressinfo
+  4. student_courseinfo
+  5. student_educationinfo
+  6. student_otherinfo
 
 
 
@@ -1166,13 +1181,35 @@ these methods in general called as doXXX(HSR, HSR) methods
 
   
   
+*************** 
+* Assignment  *
+*************** 
+> Create a Student Search Page & Login Page 
+  as shown below
+  
+  Search.html
+  ------------   
+  
+
   
   
   
+  
+  
+  Login.html
+  ----------  
   
   
 
 
+  
+  
+  
+  
+  
+  
+  
+  
  
 Questions We have So Far:-
 ==============================
@@ -1306,23 +1343,17 @@ Differences between GET/doGet() &  POST/doPost()
 
    We "cannot bookmark" POST requests
 
-
-
 *************** 
 * Assignment  *
 *************** 
-> Create a Student Search Page as shown below
-  
-  Search.html
-  ------------ 
-  
-  
-  
-  
-> Whenever user submits the above form, request
+> Whenever user submits "Search.html" form, request
   should go to "StudentSearchServlet" & it should
   display the corresponding result  
   
+
+
+
+
   
 Assignment Tips
 ==================
@@ -1340,7 +1371,84 @@ action="http://localhost:8080/studentsApp/studentSearch"
   
   
   
+
+*********************** 
+* Assignment          *
+*********************** 
+> Modify the index.html to have an "Click Here" 
+  Hyper Link as shown below
   
+  "Click Here" to View All Students Info
+  ------------
+  
+> Create a Servlet by name "AllStudentsViewServlet" which 
+ gets the request whenever user clicks on this hyper-link 
+
+- interact with J2EE10AM_DB database & get all the relevant
+  student information & print it in Browser
+
+- We should get the Data from below tables:
+  -----------------------------------------
+  1. student_info
+  2. guardian_info
+  3. student_addressinfo
+  4. student_courseinfo
+  5. student_educationinfo
+  6. student_otherinfo
+  
+  
+  
+  
+  
+  
+  
+  
+  
+Assignment Tips:-
+-------------------
+> Create "AllStudentsViewServlet" by extending 
+  "HttpServlet" & Override doGet() Method
+
+> In doGet() Method perform below Operations
+  1. Get the Data from DB using JDBC
+  2. Generate HTML Response
+
+> SQL Query:-
+  -----------
+select * from 
+ student_info si, 
+ guardian_info gi, 
+ student_addressinfo sai,
+ student_courseinfo sci,
+ student_educationinfo sei,
+ student_otherinfo soi
+where si.regno = gi.regno
+and si.regno = sai.regno
+and si.regno = sci.regno
+and si.regno = sei.regno
+and si.regno = soi.regno 
+(NOTE : re-write the SQL Query )
+
+> After creating the Servlet configure URL for that
+  servlet in web.xml (/allStudentsView)
+
+<servlet>
+  <servlet-name>allStudentsView</servlet-name>
+  <servlet-class>
+com.jspiders.studentsapp.servlets.AllStudentsViewServlet
+  </servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>allStudentsView</servlet-name>
+  <url-pattern>/allStudentsView</url-pattern>
+</servlet-mapping>   
+
+> Provide the below url in href attribute of index.html
+  http://localhost:8080/studentsApp/allStudentsView
+  
+
+
   
 
 
@@ -1351,27 +1459,21 @@ action="http://localhost:8080/studentsApp/studentSearch"
 Servlet Container :
 ===================
 > Servlet Container is a sub-component of web 
-  server that helps both web server & servlet 
+  server that helps both Web Server & Servlet 
   to communicate with each other
   
-> As the name implies, all Servlets of dynamic 
+> As the name implies, all Servlet's of dynamic 
   web application are directly under the control
   of Servlet Container
 
-  
-  
-  
-  
-  
-  
 How Servlet Container Works :
 ==============================
 1. Whenever request comes, web server hand over 
-   the complete request to servlet container
+   the complete request to Servlet Container
    
 2. Container by looking at the URL present in 
    the request & referring web.xml it comes to 
-   know the servlet which handles that request
+   know the Servlet which handles that request
    
 3. Container then "creates an instance" of that 
    Servlet
@@ -1448,67 +1550,6 @@ Container manages/controls the "Life Cycle of a Servlet"
 ----------------
 Container takes care of converting JSP into a Servlet
 
-
-
-*********************** 
-* Assignment          *
-*********************** 
-> Modify the index.html to have an "Click Here" 
-  Hyper Link as shown below
-  
-  "Click Here" to View All Students Info
-  ------------
-  
-> Create a Servlet by name "AllStudentsViewServlet" which 
-gets the request whenever user clicks on this hyper-link 
-- interact with J2EE10AM_DB database
-- get all the data from students_info & guardian_info 
-  tables and
-- display it in the browser as shown below
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-Assignment Tips:-
--------------------
-> Create "AllStudentsViewServlet" by extending 
-  "HttpServlet" & Override doGet() Method
-
-> In doGet() Method perform below Operations
-  1. Get the Data from DB using JDBC
-  2. Generate HTML Response
-
-> SQL Query:-
-  -----------
-   select * from 
-		students_info si, guardian_info gi 
-   where si.regno = gi.regno
-
-> After creating the Servlet configure URL for that
-  servlet in web.xml (/allStudentsView)
-
-<servlet>
-  <servlet-name>allStudentsView</servlet-name>
-  <servlet-class>
-com.jspiders.studentsapp.servlets.AllStudentsViewServlet
-  </servlet-class>
-</servlet>
-
-<servlet-mapping>
-  <servlet-name>allStudentsView</servlet-name>
-  <url-pattern>/allStudentsView</url-pattern>
-</servlet-mapping>   
-
-> Provide the below url in href attribute of index.html
-  http://localhost:8080/studentsApp/allStudentsView
-  
 
 
 
@@ -1742,7 +1783,40 @@ action=
 
  
 
- 
+  
+  
+*************** 
+* Assignment  *
+***************   
+> Create Servlet by name "LoginServlet" which gets 
+  the request from this form,
+  1. Gets the Form Data
+  2. Authenticate the Credentials by interacting 
+     with BECME91011_DB DataBase
+  3. If In-Valid Credentials, then display "In-Valid 
+     User Name / Password" Error Message in Browser
+  4. If Valid, then display corresponding Reg. No. 
+     Data ( Combination of Data Present in 
+            student_info & 
+	        guardian_info Tables), 
+     in the Browser as shown below
+	 
+
+
+
+SQL Query:-
+-----------
+select * from 
+student_info si, 
+guardian_info gi,
+students_otherinfo soi
+where si.regno = gi.regno 
+and si.regno = soi.regno 
+and soi.regno = ?	
+and soi.password = ?  
+  
+  
+   
  
  
  
@@ -2034,49 +2108,14 @@ action=
   
   
   
-*************			
-Assignment :
-*************	
-
-> Create a HTML Form as shown below
-  
-  Login.html
-  ----------
 
 
 
   
   
-  
-  
-
-
-> Create Servlet by name "LoginServlet" which gets 
-  the request from this form,
-  1. Gets the Form Data
-  2. Authenticate the Credentials by interacting 
-     with BECME91011_DB DataBase
-  3. If In-Valid Credentials, then display "In-Valid 
-     User Name / Password" Error Message in Browser
-  4. If Valid, then display corresponding Reg. No. 
-     Data ( Combination of Data Present in 
-            students_info & 
-	        guardian_info Tables), 
-     in the Browser as shown below
-	 
 
 
 
-SQL Query:-
------------
-select * from 
-students_info si, 
-guardian_info gi,
-students_otherinfo soi
-where si.regno = gi.regno 
-and si.regno = soi.regno 
-and soi.regno = ?	
-and soi.password = ?
 
 
 
