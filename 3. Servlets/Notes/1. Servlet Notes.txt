@@ -1514,32 +1514,18 @@ Advantages of Servlet Container
 ================================
 1. Communication Support :
 --------------------------
-Container helps both web server & servlets to 
+Container helps both web server & Servlet's to 
 communicate with each other 
-
-
-
-
-
 
 2. Multi-Threading Support :
 -----------------------------
 Container automatically creates a new thread 
 for every incoming request 
 
-
-
-
-
-
-
-
-
-
 3. Declarative Support :
 ------------------------
 With "web.xml", which is used by Servlet container, 
-we can change the behaviour of web application without 
+we can change the behavior of web application without 
 changing anything in Servlet/JSP Code
 
 4. Life Cycle Management :
