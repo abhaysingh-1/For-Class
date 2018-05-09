@@ -14,9 +14,7 @@ public class FormExampleServlet extends HttpServlet
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 	throws ServletException, IOException 
 	{
-		resp.setContentType("text/html");
-		PrintWriter out = resp.getWriter();
-		
+		//Get the Form Data
 		String name = req.getParameter("myName");
 		String pass = req.getParameter("pass");
 		String gender = req.getParameter("gender");
@@ -25,30 +23,39 @@ public class FormExampleServlet extends HttpServlet
 		String[] owns = req.getParameterValues("owns");
 		String aboutme = req.getParameter("aboutme");
 		
-		out.println("<B>Your Name :</B> "+name);
-		out.println("<BR>");
-		out.println("<B>Your Password :</B> "+pass);
-		out.println("<BR>");
-		out.println("<B>Your Gender :</B> "+gender);
-		out.println("<BR>");
-		out.println("<B>Your Education :</B> "+education);
-		out.println("<BR>");
+		//Generate HTML Response to Print above Data 
+		StringBuffer htmlResp = new StringBuffer("");
 		
-		out.println("<B>You know : </B>");
-		for(String know : knows)
-		{
-			out.println("<BR>");
-			out.println(know);
+		htmlResp.append("<B>Your Name :</B> "+name);
+		htmlResp.append("<BR><BR>");
+		htmlResp.append("<B>Your Password :</B> "+pass);
+		htmlResp.append("<BR><BR>");
+		htmlResp.append("<B>Your Gender :</B> "+gender);
+		htmlResp.append("<BR><BR>");
+		htmlResp.append("<B>Your Education :</B> "+education);
+		htmlResp.append("<BR><BR>");
+		
+		htmlResp.append("<B>You know : </B>");
+		
+		for(String know : knows){
+			htmlResp.append("<BR>");
+			htmlResp.append(know);
 		}
 		
-		out.println("<B>You Have :</B> ");
-		for(String own : owns)
-		{
-			out.println("<BR>");
-			out.println(own);
-		}
-		out.println("<BR>");
-		out.println("<B>About Your Self : </B>"+aboutme);
+		htmlResp.append("<BR><BR>");
 		
+		htmlResp.append("<B>You Have :</B> ");
+		
+		for(String own : owns) {
+			htmlResp.append("<BR>");
+			htmlResp.append(own);
+		}
+		htmlResp.append("<BR><BR>");
+		htmlResp.append("<B>About Your Self : </B>"+aboutme);
+		
+		//Print the Above Response in Browser
+		resp.setContentType("text/html");
+		PrintWriter out = resp.getWriter();
+		out.print(htmlResp);
 	}
 }

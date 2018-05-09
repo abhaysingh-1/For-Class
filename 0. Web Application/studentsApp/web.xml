@@ -84,3 +84,14 @@
 	<servlet-name>allStudents</servlet-name>
 	<url-pattern>/allStudents</url-pattern>
 </servlet-mapping>	
+
+
+
+<servlet>
+    <servlet-name>formExample</servlet-name>
+    <servlet-class>com.jspiders.studentsapp.servlets.FormExampleServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>formExample</servlet-name>
+	<url-pattern>/formExample</url-pattern>
+</servlet-mapping>

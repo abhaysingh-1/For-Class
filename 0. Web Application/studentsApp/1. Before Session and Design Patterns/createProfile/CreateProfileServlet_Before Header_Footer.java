@@ -7,13 +7,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.jspiders.studentsapp.util.StudentsAppUtil;
 
 public class CreateProfileServlet extends HttpServlet
 {
@@ -22,9 +19,6 @@ public class CreateProfileServlet extends HttpServlet
 						  HttpServletResponse resp)
 	throws ServletException, IOException 
 	{
-		resp.setContentType("text/html");
-		PrintWriter out = resp.getWriter();
-		
 		//I. Get the Form Data
 		//Profile Related Info
 		String regnoVal = req.getParameter("regno");
@@ -100,12 +94,10 @@ public class CreateProfileServlet extends HttpServlet
 		//II. Store the Form Data into DB
 		Connection con = null;
 		PreparedStatement pstmt = null;
+		StringBuffer htmlResp = new StringBuffer();
 		
-		dispatcher=req.getRequestDispatcher("header");
-		dispatcher.include(req, resp);
-
-		out.print("<html>");
-		out.print("<body>");
+		htmlResp.append("<html>");
+		htmlResp.append("<body>");
 		
 		try 
 		{
@@ -145,7 +137,7 @@ public class CreateProfileServlet extends HttpServlet
 
 			String[] dobVals = dobVal.split("-");
 			String birthDay = dobVals[2];
-			String birthMonth = StudentsAppUtil.getInstance().getMonthName(dobVals[1]);
+			String birthMonth = getMonthName(dobVals[1]);
 			String birthYear = dobVals[0];
 			
 			pstmt.setInt(7, Integer.parseInt(birthDay) );
@@ -259,14 +251,15 @@ public class CreateProfileServlet extends HttpServlet
 			pstmt.close();
 
 			//4. Process the Results returned by SQL Queries
-			out.print("<font color=\"green\">"); 
-			out.print("Successfully Created the Profile ...");
-			out.print("</font>");
+			//Generate HTML Response to Print above Data 
+			htmlResp.append("<font color=\"green\">"); 
+			htmlResp.append("Successfully Created the Profile ...");
+			htmlResp.append("</font>");
 			
 		} catch (Exception e) {
-			out.print("<font color=\"red\">"); 
-			out.print("Unable to Create the Profile !!!");
-			out.print("</font>");
+			htmlResp.append("<font color=\"red\">"); 
+			htmlResp.append("Unable to Create the Profile !!!");
+			htmlResp.append("</font>");
 			
 			e.printStackTrace();
 		} finally{
@@ -284,8 +277,32 @@ public class CreateProfileServlet extends HttpServlet
 			}
 		}//End of outer try-catch
 		
-		out.print("</body>");
-		out.print("</html>");
+		htmlResp.append("</body>");
+		htmlResp.append("</html>");
+		
+		//Print the Response in Browser
+		resp.setContentType("text/html");
+		PrintWriter out = resp.getWriter();
+		out.print(htmlResp);
 
 	}//End of doPost
+	
+	
+	private String getMonthName(String monthVal){
+		switch(monthVal){
+			case "1": return "JAN";
+			case "2": return "FEB";
+			case "3": return "MAR";
+			case "4": return "APR";
+			case "5": return "MAY";
+			case "6": return "JUN";
+			case "7": return "JUL";
+			case "8": return "AUG";
+			case "9": return "SEP";
+			case "10": return "OCT";
+			case "11": return "NOV";
+			default : return "DEC";
+		}
+	}//End of getMonthName
+	
 }//End of Class

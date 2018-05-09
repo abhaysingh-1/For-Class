@@ -945,7 +945,7 @@ Actual Content:
   becomes the “Actual Content” 
   
 > In case of dynamic resource, content present inside 
-  servlets / JSP becomes the “Actual Content”
+  Servlet's / JSP becomes the “Actual Content”
   
 > In case of Error Scenarios web server generates  
   error information & it becomes the “Actual Content”  
@@ -1638,6 +1638,8 @@ which helps to get information from Request Object
 			
 			
 			
+			
+			
 
 **************			
 * Assignment *
@@ -1650,6 +1652,10 @@ which helps to get information from Request Object
 
 
 
+  
+  
+  
+  
 
 
 Assignment Tips:-
@@ -1660,10 +1666,12 @@ Assignment Tips:-
 > In doPost() Method perform below Operations
   1. Get the Form Data using 
      getParameter() & getParameterValues() methods
-  2. Generate HTML Response
+  2. Generate HTML Response (tip:- rather than String 
+     concatenation use StringBuffer to generate response)
+     
 
 > After creating the Servlet configure URL for that
-  servlet in web.xml (/formExample)
+  Servlet in web.xml (/formExample)
 
 <servlet>
 	<servlet-name>formExample</servlet-name>
@@ -1686,7 +1694,6 @@ Assignment Tips:-
   fill out the form & 
   submit the form to make request to Servlet
 
-
 *************			
 Assignment :
 *************
@@ -1708,7 +1715,7 @@ Assignment :
   
   
   
-> Create Servelt by name "CreateProfileServlet", 
+> Create Servlet by name "CreateProfileServlet", 
   which gets the request from this form,
 1. Get the Form Data
 2. Store the Form Data into Corresponding Tables
@@ -1721,10 +1728,17 @@ Assignment :
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
 Tips:-
 ======
-> Since this form collects sensitive info, it should
-  have method="post"
+> Since this form collects sensitive & huge amount 
+  of data. Hence form should have method="post"
   
 > Create "CreateProfileServlet"	by extending 
   "HttpServlet" & Override doPost() Method
@@ -1735,7 +1749,7 @@ Tips:-
   3. Generate the Success / Error Response
   
 > After creating the Servlet configure URL for that
-  servlet in web.xml (/createProfile)
+  Servlet in web.xml (/createProfile)
 
 <servlet>
  <servlet-name>createProfile</servlet-name>
@@ -1771,35 +1785,7 @@ action=
 
   
   
-*************** 
-* Assignment  *
-***************   
-> Create Servlet by name "LoginServlet" which gets 
-  the request from this form,
-  1. Gets the Form Data
-  2. Authenticate the Credentials by interacting 
-     with BECME91011_DB DataBase
-  3. If In-Valid Credentials, then display "In-Valid 
-     User Name / Password" Error Message in Browser
-  4. If Valid, then display corresponding Reg. No. 
-     Data ( Combination of Data Present in 
-            student_info & 
-	        guardian_info Tables), 
-     in the Browser as shown below
-	 
-
-
-
-SQL Query:-
------------
-select * from 
-student_info si, 
-guardian_info gi,
-students_otherinfo soi
-where si.regno = gi.regno 
-and si.regno = soi.regno 
-and soi.regno = ?	
-and soi.password = ?  
+ 
   
   
    
@@ -1830,7 +1816,41 @@ javax.servlet.http.HttpServletResponse
 
 
 
+*************** 
+* Assignment  *
+***************   
+> Create Servlet by name "LoginServlet" which gets 
+  the request by submitting "Login.html" form,
+  I.   Gets the Form Data
+  II.  Authenticate the Credentials by interacting 
+       with BECME91011_DB DataBase
+  III. If In-Valid Credentials, then display "In-Valid 
+       User Name / Password" Error Message in Browser
+  IV.  If Valid, then fetch all the relevant student info 
+       and print it in Browser
+  
+  We should get the Data from below tables:
+  -----------------------------------------
+  1. student_info
+  2. guardian_info
+  3. student_addressinfo
+  4. student_courseinfo
+  5. student_educationinfo
+  6. student_otherinfo
+	 
 
+
+
+SQL Query:-
+-----------
+select * from 
+student_info si, 
+guardian_info gi,
+students_otherinfo soi
+where si.regno = gi.regno 
+and si.regno = soi.regno 
+and soi.regno = ?	
+and soi.password = ? 
  
  
  
