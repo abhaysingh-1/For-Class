@@ -1816,6 +1816,109 @@ javax.servlet.http.HttpServletResponse
 
 
 
+
+  
+  
+Methods in Response Object :-
+===================================================
+
+1. public void ServletResponse.setContentType
+						      (String contentType)
+---------------------------------------------------
+ 
+> This Method helps us to set Content Type info to 
+  Response Object
+
+
+  
+  
+  
+  
+  
+  
+2. public PrintWriter ServletResponse.getWriter() 
+   throws IOException 
+   public void PrintWriter.println(String response)		
+   public void PrintWriter.print(String response)
+------------------------------------------------------
+
+> These methods helps us to provide "Actual Content"
+  info in Response Object
+
+> First we should get "java.io.PrintWriter" Object 
+  from Response Object by invoking a method by name 
+  "getWriter()"
+
+> PrintWriter has "print()/ println()" methods which
+  helps us to add Actual Content to Response Object
+  
+NOTE : 
+------
+> PrintWriter is a "Concrete Class" but we SHOULD 
+  NOT create our own instance of this class, instead
+  we SHOULD get it from Response Object
+  
+> Between "print()" & "println()" methods print()
+  reduces the size of the Actual Content there by
+  increases the performance
+
+  
+  
+  
+  
+  
+
+    
+  
+  
+  
+  
+  
+  
+3. public void HttpServletResponse
+			  .setHeader(String key, String value)
+--------------------------------------------------------
+> As the name implies, this method helps us to set the 
+  Header info in the Response
+  
+4. public void HttpServletResponse
+		      .sendError(int statusCode, String errMsg) 
+   throws IOException      
+--------------------------------------------------------
+> As the name implies, this method helps us to send the 
+  Error Response to Browser
+
+Note:-
+=======  
+> Apart from the above, there are many more Methods,
+  which helps to send information in Response Object  
+    
+  
+  
+ 
+ 
+********************************************
+* NOTE : re-look at all the Servlets Code   *
+********************************************  
+  
+  
+*************			
+Assignment :
+*************
+> Replace all "String concatenation" / "StringBuffer"
+  code to PrintWriter 
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+
 *************** 
 * Assignment  *
 ***************   
@@ -1901,6 +2004,13 @@ and soi.password = ?
   --------------------------
 
 
+  
+  
+  
+  
+  
+  
+  
 > Whenever user submits the above form, request
   should go to "SearchByStudentInfoServlet" & it
   should display the corresponding results  
@@ -1914,99 +2024,10 @@ and soi.password = ?
   
   
   
-Methods in Response Object :-
-===================================================
-
-1. public void ServletResponse.setContentType
-						      (String contentType)
----------------------------------------------------
- 
-> This Method helps us to set Content Type info to 
-  Response Object
-
-
   
   
   
-  
-  
-  
-2. PrintWriter ServletResponse.getWriter() 
-   throws IOException 
-3. void PrintWriter.println(String response)		
-4. void PrintWriter.print(String response)
------------------------------------------------
-
-> These methods helps us to provide "Actual Content"
-  info in Response Object
-
-> First we should get "java.io.PrintWriter" Object 
-  from Response Object by invoking a method by name 
-  "getWriter()"
-
-> PrintWriter has "print()/ println()" methods which
-  helps us to add Actual Content to Response Object
-  
-NOTE : 
-------
-> PrintWriter is a "Concrete Class" but we SHOULD 
-  NOT create our own instance of this class, instead
-  we SHOULD get it from Response Object
-  
-> Between "print()" & "println()" methods print()
-  reduces the size of the Actual Content there by
-  increases the performance
-
-  
-  
-  
-  
-  
-
     
-  
-  
-  
-  
-  
-  
-5. public void HttpServletResponse
-			  .setHeader(String key, String value)
---------------------------------------------------------
-> As the name implies, this method helps us to set the 
-  Header info in the Response
-  
-6. public void HttpServletResponse
-		      .sendError(int statusCode, String errMsg) 
-   throws IOException      
---------------------------------------------------------
-> As the name implies, this method helps us to send the 
-  Error Response to Browser
-
-Note:-
-=======  
-> Apart from the above, there are many more Methods,
-  which helps to send information in Response Object  
-    
-  
-  
- 
- 
-********************************************
-* NOTE : re-look at all the Servlets Code   *
-********************************************  
-  
-  
-*************			
-Assignment :
-*************
-> Replace all "String concatenation" / "StringBuffer"
-  code to PrintWriter 
-
-
-
-
-  
   
 *************			
 Assignment :
