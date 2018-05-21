@@ -1926,7 +1926,7 @@ Assignment :
   the request by submitting "Login.html" form,
   I.   Gets the Form Data
   II.  Authenticate the Credentials by interacting 
-       with BECME91011_DB DataBase
+       with J2EE10AM_DB DataBase
   III. If In-Valid Credentials, then display "In-Valid 
        User Name / Password" Error Message in Browser
   IV.  If Valid, then fetch all the relevant student info 
@@ -2060,7 +2060,7 @@ Assignment :
 3. If NO, then display Error Message in the Browser
 
 4. If YES, then check Reg. No. & Current Password 
-   are valid by interacting with BECME91011_DB DataBase
+   are valid by interacting with J2EE10AM_DB DataBase
    
 5. If In-Valid, then display "Invalid Reg. No. & 
    Current Password" Error Message in the Browser
@@ -2069,6 +2069,8 @@ Assignment :
    "New Password" and Print Success Message in the 
    Browser
  	  
+
+	  
   
   
   
@@ -2193,7 +2195,7 @@ Comparison Between HTML & XML
    - Every Tag Data should have "data type"
    - Every Opening Tag should have Closing Tag
    - Order in which tags are opened, we should 
-     follow the same order to close
+     follow the reverse order to close
    
 6. File extension of HTML is ".html / .htm" 
    
@@ -2226,19 +2228,28 @@ Assignment :
   Header.html
   ------------  
 
+  
+  
+  
+  
+  
 
 > Provide the "href" for 
   - Create Profile
-  - Search
+  - Search - By Register Number
+  - Search - By Student Info
   - Change Password
   
-> Don't Provide "href" for "Home" & "Logout"
 
 > Create a "Footer Page" as shown below
   
   Footer.html
   ------------
 
+  
+  
+  
+  
   
 Deployment Descriptor (DD)  :-
 ==============================
@@ -2288,7 +2299,7 @@ Example:-
   configure a URL for a Servlet 
   
 > Container uses this information to identify a 
-  specific servlet to handle a given request 
+  specific Servlet to handle a given request 
 
 > There must be a at least ONE URL configured for a 
   Servlet. Also Servlet can have "More than One" URL
@@ -2332,6 +2343,11 @@ Order of Preference :
 3. Extension/Pattern Match
 
 
+  
+  
+  
+  
+  
   
   
   
@@ -2390,7 +2406,7 @@ extends GenericServlet
 	{
 	  resp.setContentType("text/html");
 	  PrintWriter out = resp.getWriter();
-	  out.print("Inside My Generic Servlet");
+	  out.print("Inside My Generic Servlet ...");
 	}//End of service
 }//End of Class
 
@@ -2502,6 +2518,7 @@ Difference between GenericServlet & HttpServlet
 	
 	
 	
+
 	
 1. Protocol Independent	
 
@@ -2865,7 +2882,7 @@ Note:
 	
 	
 > We can have "main() method" in the servlet but its
-  of "no use". Servlets are directly under the 
+  of "no use". Servlet's are directly under the 
   control of Container & Container will not execute 
   main method in any phases of Servlet Life-cycle
 
@@ -2881,7 +2898,7 @@ Note:
 
 
 
-> Servlets MUST have public default Constructor OR 
+> Servlet's MUST have public default Constructor OR 
   combination of any other constructor along with 
   public default constructor
    
@@ -2894,7 +2911,7 @@ Note:
 > At any point of time there will be multiple 
   threads acting on servlet instance
   
-> Hence by default servlets are Multi Threaded in 
+> Hence by default servlet's are Multi Threaded in 
   Nature. In other words Dynamic Web Applications 
   are "Multi Threaded environment"
 
@@ -2911,9 +2928,9 @@ Note:
 
 
 
-Single Threaded Servlets :
+Single Threaded Servlet's :
 ==========================
-> We Know that, by default servlets are Multi 
+> We Know that, by default servlet's are Multi 
   Threaded in nature. Hence following are the 2 ways
   to create Single Threaded Servlet  
   
@@ -2922,7 +2939,7 @@ Single Threaded Servlets :
 2. By Synchronizing Service Method
 
 > SingleThreadModel is a Marker Interface which 
-  ensures that servlets handle only one request 
+  ensures that servlet's handle only one request 
   at a time i.e. Container start handling the 
   requests "Synchronously"
  

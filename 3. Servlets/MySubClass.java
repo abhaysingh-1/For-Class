@@ -14,7 +14,7 @@ public class MySubClass extends MySupuerClass
 		System.out.println("BBBBBBBBBBBB");
 	}
 	
-	public void myAnothermethod(String str1, String str2) 
+	public void myAnotherMethod(String str1, String str2) 
 	{
 		//Another Business Logic
 		System.out.println("CCCCCCCCCCC");
