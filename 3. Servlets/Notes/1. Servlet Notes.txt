@@ -3230,9 +3230,20 @@ resp.sendRedirect(url);
   
   
   
+*************			
+*Assignment *
+*************	
+
+> Modify the AdvanceSearch.html HTML Form 
+  as shown below
+  
+  AdvanceSearch.html
+  --------------------   
   
   
-  
+> Modify "AdvanceSearchServlet" to display the 
+  results for that keyword in the corresponding 
+  Website
   
   
   
@@ -3482,6 +3493,21 @@ NOTE:
 ************************
 * Assignment           *
 ************************
+> Modify all the assignment responses to include 
+  "Header.html" and "Footer.html"
+
+
+
+
+
+
+
+
+
+
+
+
+
 > Modify the Error Response of "LoginServlet" 
   i.e. "Invalid User Name / Password" to include 
   "Login.html" 
@@ -3497,8 +3523,7 @@ NOTE:
   
   
   
-> Modify all the assignment responses to include 
-  "Header.html" and "Footer.html"
+
   
 
 

@@ -1,0 +1,104 @@
+Web Services 
+=============
+1. Web Services Introduction
+  - What are Web Services
+  - Why Web Services
+  - Real Time Examples of Web Services
+  - Types of Web Services
+  - Web Services Architecture
+  
+2. REST Web Services using Jersey
+  - Creating First REST Webservice
+  - Accessing REST Webservice
+
+4. Introduction to XML
+  - Why XML
+  - XSD
+  - XPath
+  - XML to Java Object and Vice-versa using JAXB
+
+4. Introduction to JAXB
+  - Why JXB
+  - Java Objects to XSD
+  - XSD to Java Objects
+  - 
+  
+5. Introduction to JSON
+  - Why JSON
+  - XML to Java Object and Vice-versa using 
+    - Jackson Framework
+	- GSON Framework
+    - JSONP
+	- Comparison between Jackson, GSON & JSONP
+
+6. Introduction to Apache Maven
+   - Why Maven
+   - Maven Installation Steps
+   - Maven Project Structure
+   - POM File
+   
+   
+   
+- About HTTPS
+- Understanding SOAP & REST Web Services
+- Understanding XPath
+- SOAP Webservice using Spring & Apache CXF 
+- REST Webservice using Spring-REST & Apache Jersey
+
+
+
+
+JMS Tutorial
+===============
+- What is JMS
+- Understanding Messaging
+- Requirement of JMS
+- Advantage of JMS
+- Messaging Domains
+	1) Point-to-Point (PTP) Messaging Domain (JMS Queue)
+	2) Publisher/Subscriber (Pub/Sub) Messaging Domain (JMS Topic)
+- JMS Programming Model
+- JMS Queue Example
+- JMS Topic Example
+- Spring JMS
+- Apache Camel JMS & Apache Mule JMS
+
+
+Pre-Requirements for Web Services
+=======================================
+Maven Build Tool
+Servelts
+Web Applications
+Web URL Structure (specially Query String)
+HTTP Protocol
+HTTP Methods
+Tomact Webserver
+Eclipse
+
+
+Technologies You Learn in Web Services
+========================================
+JAX-RS, JAX-WS, JAXB & JSON-P API's
+GlassFish Jersey, Apache CXF, GSON & Jackson Frameworks
+Apache Maven Build Framework
+Complete Knowledge of XML & JSON
+Real time example - Localhost Applications interacting with GoogleMaps & Instagram Applications
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

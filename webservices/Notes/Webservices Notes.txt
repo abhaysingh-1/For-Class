@@ -1,0 +1,471 @@
+Web Services Introduction
+============================
+> Servlets, JSP along with JDBC helps to develop Web Application
+
+> However "Web Services" a.k.a "Application Services" is a concept, independent of any specific 
+  programming language, helps web applications to interact with other applications (Mobile Apps / Desktop Applications / Web Applications)
+
+> Web Services, as name implies, they are the services avilable in "Web". They take the request from  	
+  Applications, via communication protocol such as HTTP & generate Response
+
+> Web Services take Web-applications to the Next Level!!!
+
+> Unlike Web Applications, Web Services do not provide the user with a GUI. 
+  In other words Web services are meant for "Inter-System Communication / Application-to-Application Interactions but not for Users". Hence Web Services do not require the use of browsers or HTML
+ 
+> Few real time examples of Web Services
+  - Mobile Apps (ex: GMail App) communicate with their correspondig Web Applications (ex: GMail) 
+    using Web Services
+  - Uber / OLA Apps interact with Google Maps using Web Services
+  - BookMyShow Web Application / Mobile Application interact with PVR Web Application using Web   
+    Services   
+ 
+> Web Service has two participants:
+  1. Service Provider / Producer
+  2. Service Consumer / Requester
+  
+> Service Provider exposes the "Service on Web" &  Service Consumer uses this "Web Service"
+
+> There are 2 types of Web Services
+  1. RESTful Web Services
+  2. SOAP Web Services / XML Web Services 
+
+> Java provides 2 API's to develop these web services
+  1. "JAX-RS" API for developing "RESTful Web Services"
+  2. "JAX-WS" API for developing "SOAP Web Services"
+
+> "javax.ws.rs.*" is the package representation of JAX-RS API  
+  "javax.jws.*" is the package representation of JAX-WS API  
+  
+Why Web Services / Advantages of Web Services
+==============================================
+
+1. Web Services Interoperability (WS-I)
+------------------------------------------
+> Web Services are "Application, Platform and Technology Independent"
+> Ex: VB / .NET applications can talk to Java Web Services and vice versa. Thus helping the organisations to use existing applications which are developed using other technologies (may be legacy) 
+
+
+2. Inter-System Communication & Data Sharing
+-----------------------------------------------
+> Web Services allows different applications to talk to each other and share data & services among themselves.
+> Hence it act as glue between applications and enable easier communications within and across organisations.
+
+> Ex: Uber / OLA and Google Maps shares the data among each other
+
+
+3. Loosely Coupled 
+------------------------
+> Each application is independent of one another. Hence changes done to one application will not impact the unrelated areas
+> Ex: Changes / Modifications done at Uber / OLA will not impact Google Maps
+
+
+4. No need of re-inventing the wheel
+-------------------------------------
+Web Services reduces the software development time. This helps the other business partners to quickly develop application and start doing business. This helps business to save time and money by cutting development time.
+
+Ex: Uber / OLA can make use of Google Maps 
+
+
+5. Business Opportunity
+-----------------------
+> Web Services will open the door for new business opportunities by making it easy to connect with partners
+
+> Ex: Domino's can get the order from Food Panda / Swiggy along with getting orders from its own site 
+
+
+6. Service Reuse
+------------------
+> Web Services takes code reuse a step further
+> A specific service within the organisation is only coded once and used over and over again by other  applications
+> Ex: An organization can have a "single Payment Gateway service" which helps other web applications of that organization to interact with "Payment Gateways" 
+
+
+Web Services Architecture
+===========================
+
+
+
+
+Maven Installation Steps 
+===========================================================
+Pre-requirement : JDK is installed & JAVA_HOME variable is set
+
+1. Download Maven Binary from Apache Maven
+2. Set the Following environment Variables
+   - M2_HOME (Its the latest variable)
+   - MAVEN_HOME (Some applications stil refer this variable)
+   - Modify path variable to add %M2_HOME%/bin
+3. run mvn in commond 
+
+
+
+Steps Followed to Create the First Web Service Producer & Consumer Web Applications
+==============================================================================================
+I. Steps for Web Service Producer Web Application
+---------------------------------------------------
+1. Created the Maven Project by providing the below set of information
+
+2. Added the Glassfish Jersey & Servlet Dependencies to pom.xml 
+
+3. Configured Jersey "ServletContainer" in web.xml 
+
+4. Created the Java Class which hosts the Rest Webservices
+		
+   
+
+II. Steps for Web Service Consumer Web Application
+-----------------------------------------------------
+1. Created the Maven Project by providing the below set of information
+
+2. Added the Glassfish Jersey & Servlet Dependencies to pom.xml 
+
+3. Created the Servlet which interact with above web application
+
+4. Configured this Servlet in web.xml 
+
+
+Maven Dependencies
+=======================
+> URL to get the Dependencies : https://mvnrepository.com/
+> Jersey Dependencies	:
+	jersey-client
+	jersey-server
+	jersey-container-servlet
+	jersey-media-json-jackson
+	jersey-common
+	jersey-media-multipart
+	jersey-container-servlet-core
+> Servelet Dependency	:
+	javax.servlet-api
+
+
+
+
+
+Java Architecture for XML Binding (JAXB)
+===============================================
+> JAXB is part of the JDK & it is one of the most often used frameworks to process XML documents. It provides a comfortable way to retrieve and store data from XML documents to Java classes.
+
+> JAXB is an API helps us to convert Java Object to XML & vice-versa
+> It helps us to Generate the Schema/XSD using Java Objects (with the help of "schemagen" commond)
+> It helps us to Generate Java Objects using Schema/XSD (with the help of "xjc" commond)
+> The JAX-RS API uses JAXB to convert the XML data from the request into a Java Object & vice-versa
+> JAXB was part of JDK from 1.6 onwards
+
+
+
+Jersey RESTful Web Services framework is an open source, production quality, framework for developing RESTful Web Services in Java that provides support for JAX-RS APIs and serves as a JAX-RS (JSR 311 & JSR 339) Reference Implementation.
+
+The accepted answer does work, but only if the webapp is deployed to an app server like Glassfish or Wildfly, and possibly servlet containers with EE extensions like TomEE. It doesn't work on standard servlet containers like Tomcat, which I'm sure most people looking for a solution here want to use.
+
+If you're using a standard Tomcat install (or some other servlet container), you need to include a REST implementation since Tomcat doesn't come with one. If you're using Maven, add this to the dependencies section:
+
+
+http://stackoverflow.com/questions/9373081/how-to-set-up-jax-rs-application-using-annotations-only-no-web-xml
+
+
+eXtensible Markup Language (XML) - Part I:-
+==================================================
+> XML is "Programing Language & Platform Independent Language" which helps to store and transport data
+
+> Different Applications which are developed using different technologies can Transfer the Data among themselves with the help of XML
+
+> As the name implies it's an extension of HTML & hence XML looks similar to HTML but it’s not a HTML
+
+> XML has User-defind Tags. XML tags are also called as "elements"
+
+> XML Elements are "Case Sensitive"
+
+> XML is "Strictly Typed" Language & Hence every opening element should have 
+  corresponding closing element. In other words, XML Elements Must be Properly Nested
+   Ex: <employee>
+			<name>Praveen</name>
+	   </employee>
+   
+> Below line is called the "XML prolog", which is optional. 
+  If it exists, it must be the First Line of XML  
+  <?xml version="1.0" encoding="UTF-8" ?>
+
+> File extension of XML is ".xml"    
+   
+
+XML Structure
+================
+> Like HTML, XML follows a Tree Structure
+
+> An XML tree starts at a "root element" and branches from "root element" will have "child elements"
+
+> XML Consists of "Only One" root element which is parent of all other elements
+
+> "child elements" can have "sub elements / child elements"
+
+> Structure
+-------------
+<root>
+  <child>
+    <subchild>.....</subchild>
+  </child>
+</root>
+
+> Example:
+-------------
+<?xml version="1.0" encoding="UTF-8"?> ====> XML Declaration
+<!-- bookstore.xml -->				 ====> XML Comment
+<bookstore>							 ====> Root element start-tag 
+  <book ISBN="1234">				 ====> Child element start-tag with an attribute in name="value" pair
+    <title>Java EE</title>       --
+    <author>Praveen D</author>     | ====> Sub elements / Child elements 
+    <year>2008</year>              |
+    <price>25.99</price>         --
+  </book>							 ====> Child element end-tag
+
+  <book ISBN="5678">				 ====> Second Child element start-tag
+    <title>Java</title>
+    <author>Keshav</author>
+	<author>Madhu</author>
+    <year>2009</year>
+    <price>19.99</price>
+  </book>					        ====> Second Child element end-tag
+</bookstore> 					    ====> Root element end-tag 
+
+Entity References
+====================
+> Some characters have a special meaning in XML
+> If you place a character like "<" inside an XML element, it will generate an error because it represents the start of a new element
+Ex: <message>salary < 1000</message>
+
+> To avoid this error, we can replace the "<" character with an "entity reference" as shown below
+  <message>salary &lt; 1000</message>
+> There are 5 pre-defined entity references in XML:
+
+&lt;	<	less than
+&gt;	>	greater than
+&amp;	&	ampersand 
+&apos;	'	apostrophe
+&quot;	"	quotation mark
+
+Comments in XML
+=================
+The syntax of XML comment is similar to that of HTML
+<!-- This is a comment -->
+
+XML Elements
+=============
+> XML element is everything from (including) the element's start tag to (including) the element's end tag
+> An element can contain:
+  1. text/data
+  2. attributes
+  3. other elements OR
+  4. All of the above
+  
+> In the above example
+  - <title>, <author>, <year>, and <price> have text content because they contain text 
+  - <bookstore> and <book> have element contents, because they contain elements
+  - <book> has an attribute (ISBN="------")
+
+  > An element with no content is said to be "empty". In XML, you can indicate an empty element like this
+  <element></element>
+  OR
+  <element />
+  
+> Empty elements can have attributes
+  <book ISBN="5678" />
+
+> if data present between elemets consist of white spaces then they are considered in XML.
+  However HTML truncates multiple white-spaces to one single white-space
+
+> XML Elements Naming Rules
+-----------------------------
+  - they are case-sensitive
+  - they must start with a letter or underscore
+  - they are cannot start with the letters xml or XML or Xml etc.,
+  - they can contain letters, digits, hyphens, underscores, and periods
+  - they cannot contain spaces
+  - Any name can be used, no words are reserved (except xml)
+  
+> Best Naming Practices
+-------------------------
+  - Avoid "-"
+  - Avoid "."
+  - Avoid ":"
+  - Create descriptive names, like
+    <person>, <firstname>, <lastname>
+  - Create short and simple names, like 
+    <book_title> not like this: <the_title_of_the_book>
+  - Non-English letters are perfectly legal in XML but avoid them
+
+
+XML Attributes
+================
+> Like HTML, XML elements can also have attributes
+> Attributes are designed to contain data related to a specific element
+> XML Attributes Must be Quoted either single or double quotes can be used
+  Ex:
+	<person gender="female">
+	OR
+    <person gender='female'>
+	
+> If the attribute value itself contains double quotes then we can use single quotes
+  Ex:
+	<person name='Praveen "Bangalore" D'>
+	OR
+	<person name='Praveen &quot;Bangalore&quot; D'>
+
+XML Elements Vs Attributes
+==============================	
+> Example 1 :-
+-----------------
+<person gender="male">
+  <name>Praveen</name>
+</person>
+
+> Example 2 :-
+-----------------
+<person>
+  <gender>male</gender>
+  <name>Praveen</name>
+</person>
+
+> Note: 
+--------
+In Example 1 gender is an attribute &
+In Example 2 gender is an element
+Both examples provide the same information
+
+> There are no rules about when to use attributes or when to use elements in XML
+
+When to avoid XML Attributes?
+==============================
+> attributes cannot contain multiple values but elements can
+> attributes cannot contain tree structures but elements can
+> attributes are not easily expandable for future changes but elements can
+
+XML Schema Definition (XSD)
+============================
+> XSD describes the structure and the legal elements and attributes of an XML document
+> It defines,
+  - the elements and attributes that can appear in a document
+  - the number of (and order of) child elements
+  - data types for elements and attributes
+  - default and fixed values for elements and attributes
+> One of the greatest strength of XML Schemas is the support for data types
+> Another great strength about XML Schemas is that they are written in XML
+> XML Schemas are extensible, because they are written in XML
+> With an extensible Schema definition we can:
+  -	Reuse your Schema in other Schemas
+  -	Create your own data types derived from the standard types
+  -	Reference multiple schemas in the same document
+> When sending data from a sender to a receiver, it is essential that both parts have the same "expectations" about the content.
+
+With XML Schemas, the sender can describe the data in a way that the receiver will understand.
+
+A date like: "03-11-2004" will, in some countries, be interpreted as 3.November and in other countries as 11.March.
+
+However, an XML element with a data type like this:
+
+<date type="date">2004-03-11</date>
+
+ensures a mutual understanding of the content, because the XML data type "date" requires the format "YYYY-MM-DD"
+
+
+> XML documents can have a reference to a DTD or to an XML Schema
+
+XML DTD
+==========
+> DTD is a Document Type Definition
+> A DTD also defines the structure and the legal elements and attributes of an XML document
+> With a DTD, independent groups of people can agree on a standard DTD for interchanging data.
+  An application can use a DTD to verify that XML data is valid
+> There are 2 ways to declare the DTD
+  1. An Internal DTD Declaration
+  2. An External DTD Declaration
+  
+  
+  
+  
+  
+DTD vs XSD
+
+There are many differences between DTD (Document Type Definition) and XSD (XML Schema Definition). In short, DTD provides less control on XML structure whereas XSD (XML schema) provides more control.
+
+The important differences are given below:
+
+No.	DTD	XSD
+1)	DTD stands for Document Type Definition.	XSD stands for XML Schema Definition.
+2)	DTDs are derived from SGML syntax.	XSDs are written in XML.
+3)	DTD doesn't support datatypes.	XSD supports datatypes for elements and attributes.
+4)	DTD doesn't support namespace.	XSD supports namespace.
+5)	DTD doesn't define order for child elements.	XSD defines order for child elements.
+6)	DTD is not extensible.	XSD is extensible.
+7)	DTD is not simple to learn.	XSD is simple to learn because you don't need to learn new language.
+8)	DTD provides less control on XML structure.	XSD provides more control on XML structure.   
+  
+  
+  
+> PCDATA : Parsed Character Data
+
+> CDATA	 : Character Data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XML Namespaces
+===============
+
+
+Parsing XML Documents (XML Parsers)
+=========================================
+
+> There are two standard APIs for parsing XML documents:
+  1. SAX (Simple API for XML)
+  2. DOM (Document Object Model)
+
+
+
+
+
+https://www3.ntu.edu.sg/home/ehchua/programming/java/j6d_xml.html
+
+
+
+eXtensible Markup Language (XML) Continued - Part II :-
+===========================================================
+
+	
+
+
+XSLT
+=======
+
+
+
+XPath
+========
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

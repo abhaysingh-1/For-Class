@@ -95,3 +95,25 @@
 	<servlet-name>formExample</servlet-name>
 	<url-pattern>/formExample</url-pattern>
 </servlet-mapping>
+
+
+
+  <servlet>
+  	<servlet-name>graingerSearch</servlet-name>
+  	<servlet-class>com.jspiders.studentsapp.servlets.GraingerSearchServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>graingerSearch</servlet-name>
+  	<url-pattern>/graingerSearch</url-pattern>
+  </servlet-mapping>  
+  
+    <servlet>
+  	<servlet-name>advanceSearch</servlet-name>
+  	<servlet-class>com.jspiders.studentsapp.servlets.AdvanceSearchServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>advanceSearch</servlet-name>
+  	<url-pattern>/advanceSearch</url-pattern>
+  </servlet-mapping>  
