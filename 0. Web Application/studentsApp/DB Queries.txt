@@ -292,7 +292,8 @@ insert into library values('XYZ', 'Springs');
 
 
 
-
+CREATE USER 'j2ee'@'localhost' IDENTIFIED BY 'j2ee' ;
+GRANT ALL PRIVILEGES ON * . * TO 'j2ee'@'localhost' ;
 
 
 
