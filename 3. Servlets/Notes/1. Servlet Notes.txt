@@ -3748,7 +3748,7 @@ Examples :
 Cookie myNameCookie 
 		= new Cookie("myName", "Praveen");
 
-//persistent Cookie
+//Persistent Cookie
 Cookie myLocationCookie 
 		= new Cookie("myLocation", "Bangalore");
 //Time in Seconds as int value		
